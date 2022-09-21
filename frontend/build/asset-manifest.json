@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b3f5efc8.css",
+    "main.js": "/static/js/main.7151f1f7.js",
+    "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
+    "static/media/photo_2022-06-07_14-36-31.png": "/static/media/photo_2022-06-07_14-36-31.47d122d63e440afec75e.png",
+    "static/media/photo-avtorization.png": "/static/media/photo-avtorization.d528d1d8aaec784648f6.png",
+    "static/media/png-transparent-kitten-cat-desktop-horse-puppy-kitten-horse-mammal-animals.png": "/static/media/png-transparent-kitten-cat-desktop-horse-puppy-kitten-horse-mammal-animals.5f559e7f372c1b6156fc.png",
+    "static/media/2022-05-05_16-19-39.png": "/static/media/2022-05-05_16-19-39.7f541153140bf796425c.png",
+    "index.html": "/index.html",
+    "main.b3f5efc8.css.map": "/static/css/main.b3f5efc8.css.map",
+    "main.7151f1f7.js.map": "/static/js/main.7151f1f7.js.map",
+    "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b3f5efc8.css",
+    "static/js/main.7151f1f7.js"
+  ]
+}
