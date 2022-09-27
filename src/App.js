@@ -11,6 +11,8 @@ import Profile_Edit from "./Profile_Edit";
 import View from "./Task_View";
 import axios from "axios";
 import Archive from "./archive";
+import Task_Calendar, {Calendar} from "./Calendar";
+import {useEffect} from "react";
 
 let path_create
 let create_page
@@ -41,9 +43,7 @@ function App() {
         let Token = localStorage.getItem('Token')
         console.log(Token);
         if (Token != null) {
-            if (document.getElementById('sidebar close')) {
-                document.getElementById('sidebar close').style.display = "block";
-            }
+            document.getElementById('sidebar close').style.display = "block";
             axios.get('https://djandoreact.herokuapp.com/auth/me/', {
                 headers: {
                     'Content-Type': 'application/json',
@@ -63,6 +63,7 @@ function App() {
                     console.log(err)
                     console.log('oshibka')
                 })
+
         } else {
             document.getElementById('sidebar close').style.display = "none";
         }
@@ -144,13 +145,14 @@ function App() {
                 <Routes>
                     {main}
                     {path_create}
-                    <Route path={"/task-update/:id"} element={<Update/>}/>
+                    {user_id == 2 &&<Route path={"/task-update/:id"} element={<Update/>}/>}
                     <Route path={"/a"} element={<Authorization/>}/>
                     <Route path={"/task-view/:id"} element={<View/>}/>
                     <Route path={'/profile'} element={<Profile/>}/>
                     {/* eslint-disable-next-line react/jsx-pascal-case */}
                     <Route path={'/profile-edit'} element={<Profile_Edit/>}/>
                     <Route path={'/archive'} element={<Archive/>}/>
+                    <Route path={'/calendar'} element={<Task_Calendar/>}/>
                 </Routes>
             </div>
             <script src={'./index.js'}/>

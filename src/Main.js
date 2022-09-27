@@ -7,7 +7,7 @@ import {generatePath} from "react-router";
 import {Delete} from "./functions";
 // eslint-disable-next-line no-unused-vars
 import Add from "./Add";
-
+let user_id = localStorage.getItem('user_id')
 function Main() {
     const [tasks, SetTasks] = useState()
     let Token = localStorage.getItem('Token')
@@ -21,6 +21,7 @@ function Main() {
                 },
             })
             .then(res => {
+                console.log(res.data)
                 SetTasks(res.data)
 
                 let user = localStorage.getItem('user_id')
@@ -31,9 +32,27 @@ function Main() {
             .catch(err => {
             })
     }, [])
+    function sort(task){
+        let sort_tasks = []
+        for(let i in task){
+            console.log('task assignee:'+task[i].assignee[0])
+            console.log(user_id)
+            let assignee = task[i].assignee
+            let author = task[i].author
+            if(author == user_id) {
+                sort_tasks.push(task[i])
+            }
+            if(assignee == user_id){
+                sort_tasks.push(task[i])
+            }
+        }
+        console.log({'сортированный массив':sort_tasks})
+        return sort_tasks
+    }
+    sort(tasks);
     return (
         <div className={"all-tasks-status"} id={"all-tasks-status"}>
-            {tasks?.filter(object => object.status !== ("Закрыта")).map((task) => (
+            {sort(tasks).filter(object => object.status != "Закрыта")?.map((task) => (
                 <div className="task-status">
                     <div className="task-name">
                         <span key={task.id}>{task.title}</span>

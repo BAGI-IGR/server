@@ -35,6 +35,30 @@ axios
     .catch(err => {
         console.log(err)
     })
+
+let user_id = localStorage.getItem('user_id')
+console.log('мой ' + user_id)
+axios.get('https://djandoreact.herokuapp.com/profile/retrieve/' + user_id, {
+    headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+        // eslint-disable-next-line no-useless-concat
+        'Authorization': 'Token' + ' ' + Token
+    },
+})
+    .then(res => {
+        console.log(res)
+        if (res.data != null) {
+            localStorage.setItem('fio', res.data.fio)
+            localStorage.setItem('avatar', res.data.avatar)
+            localStorage.setItem('email', res.data.email)
+            localStorage.setItem('number', res.data.work_phone_num)
+            localStorage.setItem('position', res.data.position)
+        }
+    })
+    .catch(err => {
+        console.log("ne robotaet")
+    })
+
 const nexline = document.getElementById('user_nexline_pass');
 
 nexline.addEventListener('keydown', function (e) {

@@ -28,7 +28,6 @@ export default function View() {
             localStorage.setItem('title', res.data.title)
             localStorage.setItem('comments', JSON.stringify(res.data.comments))
             localStorage.setItem('assignee', res.data.assignee)
-
         })
         .catch(err => {
             console.log(err)
@@ -61,17 +60,25 @@ export default function View() {
             .catch(err => console.log(err))
     }
     let comments = JSON.parse(localStorage.getItem('comments'))
+    window.onload = function() {
+        if(!window.location.hash) {
+            window.location = window.location + '#';
+            window.location.reload();
+        }
+    }
     return (
         <div className="all">
             <div className="one">
                 <div className="task-name">
-                    <span className="task-name__style">{title}</span>
+                    <span className="task-name__style">
+                        {title}
+                    </span>
                 </div>
                 <div className="task-description">
                     <span className="task-name__style">{description}</span>
                 </div>
                 <div className="edit">
-                    {status != 'Закрыта' && <a href={generatePath("/task-update/:id/", {id: localStorage.getItem('id')})}><span className="task-name__style">Редактировать</span></a>}
+                    {localStorage.getItem('user_id') == 2 && <a className="edit_button" href={generatePath("/task-update/:id/", {id: localStorage.getItem('id')})}><span>Редактировать</span></a>}
                 </div>
                 <div className="comment">
                     <div>
@@ -101,7 +108,7 @@ export default function View() {
                         <span className="task-name__style">Автор: {localStorage.getItem('users' + (author - 1))}</span>
                         </div>
                     <div className="Priority">
-                        <span className="task-name__style">Приоритет:   {priority}</span>
+                        <span className="task-name__style">Приоритет: {priority}</span>
                     </div>
                     <div className="Created">
                         <span className="task-name__style">Создано:</span><input className="date" value={created_at} type="date"/>

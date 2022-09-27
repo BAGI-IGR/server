@@ -1,10 +1,8 @@
 .modal-box {
     width: 657px;
-
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
     margin-top: 101px;
     margin-left: 222px;
 }
@@ -43,40 +41,30 @@
 }
 
 .functional-wrapper {
-    display: flex;
+    display: grid;
+    align-content: space-between;
+    margin-top: -240px;
+    margin-left: 1100px;
 }
 
 .task-assignee,
-.task-priority {
+.task-priority, .deadline, .send {
     width: 277px;
     height: 47px;
 
     background: #EDEBEB;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
-
+    margin-top: -100px;
     border: none;
     text-align: center;
     font-size: x-large;
-    margin-top: 61px;
 }
 
 .task-assignee {
     margin-right: 103px;
 }
 
-.deadline {
-    width: 552px;
-    height: 47px;
-
-    background: #EDEBEB;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 9px;
-
-    text-align: center;
-    font-size: x-large;
-    margin-top: 61px;
-}
 
 .button-wrapper {
     display: flex;
@@ -84,18 +72,15 @@
 }
 
 .send {
-    width: 315px;
-    height: 46px;
-
+    width: 280px;
+    height: 100px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
-
     text-align: center;
     background: #1BAFEA;
     color: white;
     cursor: pointer;
     font-size: x-large;
-    margin-right: 103px;
 }
 
 .cancel {

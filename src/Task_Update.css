@@ -1,137 +1,34 @@
-.editing {
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start
-}
-
-
-.pen {
-    position: absolute;
-    width: 548px;
-    height: 56px;
-    left: 70px;
-    top: 4%;
+.update_title{
+    height: 80px;
+    width: 575px;
+    background: #BFBDBD;
+    margin: -20px 0 0 0px;
+    border-radius: 5px;
+    font-size: 25px;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 200%;
-    line-height: 150%;
-    color: #000000;
-    margin-left: 25%;
+}
+.update_description{
+    height: 205px;
+    width: 575px;
+    background: #BFBDBD;
+    margin: -20px 0 0 0px;
+    border-radius: 5px;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
 }
 
 
-.dog {
-    background: #C4C4C4;
-    border-radius: 12px;
-    position: absolute;
-    width: 350px;
-    height: 56px;
-    margin-left: 9%;
-    top: 108px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
+.save{
+    border-radius: 8px;
+    background: #1BAFEA;
     font-size: 30px;
-    line-height: 56px;
-    color: #000000;
-
+    width: 150px;
+    height: 50px;
+    margin-left: -70px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.cat {
-    position: absolute;
-    width: 800px;
-    height: 250px;
-    margin-left: 9%;
-    top: 200px;
-    background: #C4C4C4;
-    border-radius: 14px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 35px;
-    line-height: 56px;
-    color: #000000;
-
-}
-
-.cow {
-    position: absolute;
-    width: 158px;
-    height: 54px;
-    margin-left: 9%;
-    top: 490px;
-    background: #17BDFF;
-    border-radius: 10px;
-    font-size: 24px;
-    color: #FFFFFF;
-}
-
-.rat {
-    position: absolute;
-    width: 250px;
-    height: 81px;
-    margin-left: 9%;
-    top: 580px;
-    background: #1BAFEA;
-    border-radius: 12px;
-    font-size: 32px;
-    color: #FFFFFF;
-}
-
-.sheep {
-    position: absolute;
-    width: 250px;
-    height: 81px;
-    margin-left: 32%;
-    top: 580px;
-    background: #1BAFEA;
-    border-radius: 12px;
-    font-size: 32px;
-    color: #FFFFFF;
-}
-
-.rabbit {
-    position: absolute;
-    width: 250px;
-    height: 81px;
-    margin-left: 55%;
-    top: 580px;
-    background: #1BAFEA;
-    border-radius: 12px;
-    font-size: 32px;
-    color: #FFFFFF;
-}
-
-.bird {
-    position: absolute;
-    width: 250px;
-    height: 81px;
-    margin-left: 9%;
-    top: 700px;
-    background: #1BAFEA;
-    border-radius: 12px;
-    font-size: 32px;
-    color: #FFFFFF;
-}
-
-.parrot {
-    position: absolute;
-    width: 250px;
-    height: 81px;
-    margin-left: 55%;
-    top: 700px;
-    background: #1BAFEA;
-    border-radius: 12px;
-    font-size: 32px;
-    color: #FFFFFF;
-}
-
-
-#logo_alabuga {
-    position: relative;
-    margin-left: 97%;
-    width: 50px;
-    margin-top: -1.6%;
-}

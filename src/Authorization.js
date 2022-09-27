@@ -50,19 +50,35 @@ class Authorization extends React.Component{
             }
         })
             .then(res => {
-                console.log(res)
-                console.log('ne oshibka')
                 if (res.status === 200) {
                     console.log(res.status)
-                    window.location.replace("https://server-njsy.vercel.app/");
-                } else {
+                    axios.get('https://djandoreact.herokuapp.com/auth/me/', {
+                        headers: {
+                            'Content-Type': 'application/json',
+                            // eslint-disable-next-line no-useless-concat
+                            'Authorization': 'Token' + ' ' + Token,
+                        }
+                    })
+                        .then(res => {
+                            localStorage.setItem('user_id', res.data.user)
+                            let user_id = localStorage.getItem('user_id')
+                            console.log(user_id)
+                            if (res.status === 401) {
+                                window.location.replace("https://server-njsy.vercel.app/");
+                            }
+                        })
+                        .catch(err => {
+                            console.log(err)
+                            console.log('oshibka')
+                        })
+
+
+
                     window.location.replace("https://server-njsy.vercel.app/");
                 }
             })
             .catch(err => {
-                console.log(err)
-                console.log('oshibka')
-            })
+                console.log(err)})
     }
 
 

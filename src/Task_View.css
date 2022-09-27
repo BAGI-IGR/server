@@ -18,7 +18,6 @@
 .one .task-name {
     display: flex;
     align-items: center;
-
     width: 575px;
     height: 100px;
     background: #EDEBEB;
@@ -34,7 +33,21 @@
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 400;
+    height: 50px;
+    margin-top: 15px;
 }
+.edit_button{
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    background: #1bafea;
+    margin-left: -120px;
+    height: 50px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
 .edit .task-name__style{
     border-radius: 8px;
     background: #1BAFEA;

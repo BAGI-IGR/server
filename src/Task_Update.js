@@ -70,6 +70,9 @@ class Update extends React.Component {
                 console.log(response.status)
                 if(response.status === 200) {
                     document.getElementById('send').style.background = 'green';
+                    setTimeout(() => {
+                        window.location.replace('https://server-njsy.vercel.app/task-view/'+loc)
+                    })
                 } else{
                     document.getElementById('send').style.background = 'red';
                 }
@@ -100,17 +103,16 @@ class Update extends React.Component {
             <div className="all">
                 <div className="one">
                     <div className="task-name">
-                        <span className="task-name__style"><input type="text" className="task_1" placeholder="Наименование задачи" name={'title'} value={this.state.title} onChange={this.changeHandler} /></span>
+                        <span className="task-name__style"><input type="text" className="update_title" placeholder="Наименование задачи" name={'title'} value={this.state.title} onChange={this.changeHandler} /></span>
                     </div>
                     <div className="task-description">
-                        <span className="task-name__style"><input type="text" className="task_1" placeholder={'Описание'} name={'description'} value={this.state.description} onChange={this.changeHandler} /></span>
+                        <span className="task-name__style"><textarea     type="text" className="update_description" placeholder={'Описание'} name={'description'} value={this.state.description} onChange={this.changeHandler} /></span>
                     </div>
                     <div className="edit">
-                        <span className="task-name__style" onClick={() => window.location.replace('https://server-njsy.vercel.app/task-view/' + window.location.href.split('/')[4])}>Отменa</span>
-                        <span className="task-name__styles" id={'send'} onClick={() => this.submitForm()}>Сохранить</span>
+                        <span className="save" id={'send'} onClick={() => this.submitForm()}>Сохранить</span>
+                        <span className="back" onClick={() => window.location.replace('https://server-njsy.vercel.app/task-view/' + window.location.href.split('/')[4])}>.......Назад......</span>
                     </div>
-                    {/*<div className="save">*/}
-                    {/*</div>*/}
+
                     <div className="comment">
                         <div>
                             <form id={'submit_comment'} onSubmit={Comment}>
@@ -162,7 +164,7 @@ class Update extends React.Component {
                                 <option selected disabled value={this.state.status}>{this.state.status}</option>
                                 <option value={"Открыта"}>Открыта</option>
                                 <option value={"В работе"}>В работе</option>
-                                <option value={"Закрыта"}>Выполнена</option>
+                                <option value={"зЗакрыта"}>Выполнена</option>
                             </select>
 
                         </div>

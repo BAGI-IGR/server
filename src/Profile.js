@@ -65,7 +65,7 @@ function Profile() {
     }, [])
 
     function ClearToken() {
-        localStorage.removeItem("Token")
+        localStorage.clear()
         document.getElementById('sidebar close').style.display = "none";
         window.location.replace("https://server-njsy.vercel.app/");
 

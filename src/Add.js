@@ -2,7 +2,7 @@ import React from "react";
 // eslint-disable-next-line no-unused-vars
 import axios from 'axios'
 import './Add.css';
-
+import {today} from "react-big-calendar/lib/utils/dates";
 
 class Add extends React.Component {
     constructor() {
@@ -117,12 +117,13 @@ class Add extends React.Component {
                         <option value={"Средний"}>Средний</option>
                         <option value={"Высокий"}>Высокий</option>
                     </select>
-                </div>
-                <input name={'deadline'} onChange={this.changeHandler} type={"date"} className={"deadline"} placeholder={"дедлайн"}/>
-                <div className="button-wrapper">
+                    <input name={'deadline'} onChange={this.changeHandler} type={"date"} className={"deadline"} placeholder={"дедлайн"}/>
                     <button type={'submit'} id={'send'} onClick={this.submitForm} className={"send"} placeholder='Создать'>Создать</button>
-                    <button type={'submit'} className={"cancel"} placeholder='Отменить'>Отменить</button>
                 </div>
+                {/*<div className="button-wrapper">*/}
+                {/*    <button type={'submit'} id={'send'} onClick={this.submitForm} className={"send"} placeholder='Создать'>Создать</button>*/}
+                {/*    <button type={'submit'} className={"cancel"} placeholder='Отменить' onClick={() => {window.location.replace('/')}}>Отменить</button>*/}
+                {/*</div>*/}
             </div>
         )
     }
