@@ -5,7 +5,7 @@ export function Delete(id) {
     window.location = window.location.href
     let Token = localStorage.getItem('Token')
     axios
-        .delete('http://127.0.0.1:8000/task/delete/' + id, {
+        .delete('https://djandoreact.herokuapp.com/task/delete/' + id, {
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
                 // eslint-disable-next-line no-useless-concat

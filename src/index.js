@@ -18,7 +18,7 @@ ReactDOM.render(
 
 let Token = localStorage.getItem('Token')
 axios
-    .get('http://127.0.0.1:8000/profile/', {
+    .get('https://djandoreact.herokuapp.com/profile/', {
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
             // eslint-disable-next-line no-useless-concat
@@ -102,7 +102,7 @@ window.addEventListener('load', async function (event) {
     console.log(Token);
     if (Token != null) {
         document.getElementById('sidebar close').style.display = "block";
-        axios.get('http://127.0.0.1:8000/auth/me/', {
+        axios.get('https://djandoreact.herokuapp.com/auth/me/', {
             headers: {
                 'Content-Type': 'application/json',
                 // eslint-disable-next-line no-useless-concat
@@ -114,7 +114,7 @@ window.addEventListener('load', async function (event) {
                 let user_id = localStorage.getItem('user_id')
                 console.log(user_id)
                 if (res.status === 401) {
-                    window.location.replace("http://localhost:3000/");
+                    window.location.replace("https://server-njsy.vercel.app/");
                 }
             })
             .catch(err => {
@@ -122,10 +122,10 @@ window.addEventListener('load', async function (event) {
                 console.log('oshibka')
             })
     } else {
-        if (window.location.href !== window.location.href("http://localhost:3000/")) {
+        if (window.location.href !== window.location.href("https://server-njsy.vercel.app/")) {
             document.getElementById('sidebar close').style.display = "none";
             setTimeout(() => {
-                window.location.replace("http://localhost:3000/")
+                window.location.replace("https://server-njsy.vercel.app/")
             }, 30000);
         } else {
             document.getElementById('sidebar close').style.display = "none";

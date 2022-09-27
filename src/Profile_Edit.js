@@ -33,7 +33,7 @@ class Profile_Edit extends React.Component {
         let Token = localStorage.getItem('Token')
         event.preventDefault();
         console.log(this.state)
-        fetch('http://127.0.0.1:8000/profile/update/' + user_id, {
+        fetch('https://djandoreact.herokuapp.com/profile/update/' + user_id, {
             headers: {'Content-type': 'application/json'}, method: "PUT",
             body: JSON.stringify(this.state),
             // eslint-disable-next-line no-useless-concat
@@ -49,11 +49,11 @@ class Profile_Edit extends React.Component {
 
     ClearToken() {
         localStorage.removeItem("Token")
-        window.location.replace("http://localhost:3000/");
+        window.location.replace("https://server-njsy.vercel.app/");
     }
 
     Save(data) {
-        window.location.replace("http://localhost:3000/profile");
+        window.location.replace("https://server-njsy.vercel.app/profile");
         localStorage.removeItem("fio")
         localStorage.removeItem("email")
         localStorage.removeItem("number")
@@ -65,7 +65,7 @@ class Profile_Edit extends React.Component {
     }
 
     Cancle() {
-        window.location.replace("http://localhost:3000/profile");
+        window.location.replace("https://server-njsy.vercel.app/profile");
 
     }
 

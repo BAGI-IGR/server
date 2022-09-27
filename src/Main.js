@@ -13,7 +13,7 @@ function Main() {
     let Token = localStorage.getItem('Token')
     useEffect(() => {
         axios
-            .get('http://127.0.0.1:8000/tasks/?format=json', {
+            .get('https://djandoreact.herokuapp.com/tasks/?format=json', {
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
                     // eslint-disable-next-line no-useless-concat

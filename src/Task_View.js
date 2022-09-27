@@ -8,7 +8,7 @@ export default function View() {
     let loc = window.location.href.split('/')[4]
     console.log(loc)
     let Token = localStorage.getItem('Token')
-    axios.get('http://127.0.0.1:8000/task/retrieve/' + loc, {
+    axios.get('https://djandoreact.herokuapp.com/task/retrieve/' + loc, {
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
             // eslint-disable-next-line no-useless-concat
@@ -50,7 +50,7 @@ export default function View() {
             text: event.target.text.value,
         }
         console.log(state.text)
-        fetch('http://127.0.0.1:8000/comment/create', {
+        fetch('https://djandoreact.herokuapp.com/comment/create', {
             method: "POST",
             body: JSON.stringify(state),
             headers: {

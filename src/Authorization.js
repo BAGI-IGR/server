@@ -25,7 +25,7 @@ class Authorization extends React.Component{
         event.preventDefault();
         console.log(this.state)
         axios
-            .post('http://127.0.0.1:8000/auth/token/login', {
+            .post('https://djandoreact.herokuapp.com/auth/token/login', {
                 headers: {'Content-type': 'application/json'},
                 'username': this.state.username,
                 'password': this.state.password
@@ -42,7 +42,7 @@ class Authorization extends React.Component{
         localStorage.setItem('Token', token)
         const Token = localStorage.getItem('Token')
         console.log(Token);
-        axios.get('http://127.0.0.1:8000/auth/me/', {
+        axios.get('https://djandoreact.herokuapp.com/auth/me/', {
             headers: {
                 'Content-Type': 'application/json',
                 // eslint-disable-next-line no-useless-concat
@@ -54,9 +54,9 @@ class Authorization extends React.Component{
                 console.log('ne oshibka')
                 if (res.status === 200) {
                     console.log(res.status)
-                    window.location.replace("http://localhost:3000/");
+                    window.location.replace("https://server-njsy.vercel.app/");
                 } else {
-                    window.location.replace("http://localhost:3000/");
+                    window.location.replace("https://server-njsy.vercel.app/");
                 }
             })
             .catch(err => {

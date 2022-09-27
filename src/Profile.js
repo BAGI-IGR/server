@@ -10,7 +10,7 @@ function Profile() {
         let Token = localStorage.getItem('Token')
         console.log(Token);
         if (Token != null) {
-            axios.get('http://127.0.0.1:8000/auth/me/', {
+            axios.get('https://djandoreact.herokuapp.com/auth/me/', {
                 headers: {
                     'Content-Type': 'application/json',
                     // eslint-disable-next-line no-useless-concat
@@ -22,7 +22,7 @@ function Profile() {
                     let user_id = localStorage.getItem('user_id')
                     console.log(user_id)
                     if (res.status === 401) {
-                        window.location.replace("http://localhost:3000/authorization");
+                        window.location.replace("https://server-njsy.vercel.app/authorization");
                     }
                 })
                 .catch(err => {
@@ -32,7 +32,7 @@ function Profile() {
         } else {
             document.getElementById('sidebar close').style.display = "none";
             setTimeout(() => {
-                window.location.replace("http://localhost:3000/authorization")
+                window.location.replace("https://server-njsy.vercel.app/authorization")
             }, 10000);
         }
     });
@@ -41,7 +41,7 @@ function Profile() {
     const [profiles, SetProfile] = useState()
     let Token = localStorage.getItem('Token')
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/profile/retrieve/' + user_id, {
+        axios.get('https://djandoreact.herokuapp.com/profile/retrieve/' + user_id, {
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
                 // eslint-disable-next-line no-useless-concat
@@ -67,7 +67,7 @@ function Profile() {
     function ClearToken() {
         localStorage.removeItem("Token")
         document.getElementById('sidebar close').style.display = "none";
-        window.location.replace("http://localhost:3000/");
+        window.location.replace("https://server-njsy.vercel.app/");
 
     }
 
@@ -80,12 +80,12 @@ function Profile() {
 
 
     function Edit() {
-        window.location.replace("http://localhost:3000/profile-edit");
+        window.location.replace("https://server-njsy.vercel.app/profile-edit");
 
     }
 
     function To_Main() {
-        window.location.replace("http://localhost:3000/");
+        window.location.replace("https://server-njsy.vercel.app/");
 
     }
 

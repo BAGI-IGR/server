@@ -53,7 +53,7 @@ class Add extends React.Component {
         console.log(this.state);
         let Token = localStorage.getItem('Token')
         console.log(Token)
-        fetch('http://127.0.0.1:8000/task/create/', {
+        fetch('https://djandoreact.herokuapp.com/task/create/', {
             method: "POST",
             body: JSON.stringify(this.state),
             headers: {

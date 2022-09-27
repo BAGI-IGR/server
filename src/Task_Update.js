@@ -58,7 +58,7 @@ class Update extends React.Component {
         console.log(this.state);
         let Token = localStorage.getItem('Token')
         console.log(Token)
-        fetch('http://127.0.0.1:8000/task/update/' + loc, {
+        fetch('https://djandoreact.herokuapp.com/task/update/' + loc, {
             method: "PUT",
             body: JSON.stringify(this.state),
             headers: {
@@ -106,7 +106,7 @@ class Update extends React.Component {
                         <span className="task-name__style"><input type="text" className="task_1" placeholder={'Описание'} name={'description'} value={this.state.description} onChange={this.changeHandler} /></span>
                     </div>
                     <div className="edit">
-                        <span className="task-name__style" onClick={() => window.location.replace('http://localhost:3000/task-view/' + window.location.href.split('/')[4])}>Отменa</span>
+                        <span className="task-name__style" onClick={() => window.location.replace('https://server-njsy.vercel.app/task-view/' + window.location.href.split('/')[4])}>Отменa</span>
                         <span className="task-name__styles" id={'send'} onClick={() => this.submitForm()}>Сохранить</span>
                     </div>
                     {/*<div className="save">*/}
