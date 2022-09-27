@@ -4,6 +4,8 @@
     gap: 169px 298px;
     justify-content: center;
     font-family: 'Roboto', sans-serif;
+    margin-left: 100px;
+    margin-bottom: 30px;
 }
 
 .task-status {
