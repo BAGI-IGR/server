@@ -165,7 +165,7 @@ class Update extends React.Component {
                                 <option selected disabled value={this.state.status}>{this.state.status}</option>
                                 <option value={"Открыта"}>Открыта</option>
                                 <option value={"В работе"}>В работе</option>
-                                <option value={"зЗакрыта"}>Выполнена</option>
+                                <option value={"Закрыта"}>Выполнена</option>
                             </select>
 
                         </div>
