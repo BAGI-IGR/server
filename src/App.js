@@ -38,12 +38,12 @@ if (Token != null) {
     main = <Route path={'/'} element={<Authorization/>}/>
 }
 
-function App() {
+await function App() {
     window.addEventListener('load', async function (event) {
         let Token = localStorage.getItem('Token')
         console.log(Token);
         if (Token != null) {
-            await document.getElementById('sidebar close').style.display = "block";
+            document.getElementById('sidebar close').style.display = "block";
             axios.get('https://djandoreact.herokuapp.com/auth/me/', {
                 headers: {
                     'Content-Type': 'application/json',
