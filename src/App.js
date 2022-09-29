@@ -38,7 +38,7 @@ if (Token != null) {
     main = <Route path={'/'} element={<Authorization/>}/>
 }
 
-await function App() {
+function App() {
     window.addEventListener('load', async function (event) {
         let Token = localStorage.getItem('Token')
         console.log(Token);
