@@ -118,3 +118,4 @@ AUTHENTICATION_BACKENDS = [
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 CORS_ALLOW_ALL_ORIGINS = True
 
+django_heroku.settings(locals())
