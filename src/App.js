@@ -43,7 +43,9 @@ function App() {
         let Token = localStorage.getItem('Token')
         console.log(Token);
         if (Token != null) {
-            document.getElementById('sidebar close').style.display = "block";
+            if (document.getElementById('sidebar close') != null) {
+               document.getElementById('sidebar close').style.display = "block";
+            }
             axios.get('https://djandoreact.herokuapp.com/auth/me/', {
                 headers: {
                     'Content-Type': 'application/json',
