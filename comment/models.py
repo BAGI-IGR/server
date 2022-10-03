@@ -15,7 +15,7 @@ class Profile(models.Model):
     position = models.CharField(max_length=100, null=True, blank=True)
     work_phone_num = models.CharField(max_length=20, null=True, blank=True)
     email = models.EmailField(null=True, blank=True)
-    avatar = models.ImageField(upload_to='./build/static/media/', null=True, blank=True)
+    avatar = models.ImageField(upload_to='./staticfiles/', null=True, blank=True)
 
 
 @receiver(post_save, sender=User)
@@ -49,7 +49,7 @@ class Task(MPTTModel):
     is_active = models.BooleanField(default=True)
     status = models.CharField(max_length=100, choices=TASK_STATUS_CHOICE, default='Открыта')
     priority = models.CharField(max_length=100, choices=TASK_PRIORITY_CHOICE, default='low')
-    file = models.FileField(verbose_name='build/static/media/', null=True)
+    file = models.FileField(verbose_name='staticfiles', null=True)
 
     def __str__(self):
         return self.title
@@ -74,7 +74,7 @@ class Report(models.Model):
     content = models.TextField(blank=True)
     task = models.OneToOneField(Task, on_delete=models.CASCADE, null=True, blank=True, related_name='report')
     created_at = models.DateTimeField(auto_now_add=True)
-    file = models.FileField(verbose_name='build/static/media/', null=True)
+    file = models.FileField(verbose_name='staticfiles/', null=True)
 
     def __str__(self):
         return self.content
