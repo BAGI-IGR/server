@@ -1,8 +1,9 @@
 import os
 from pathlib import Path
+import django_heroku
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = "django-insecure-7hcx7s$aua5c@v4fhorp_raqr&7zs8gjz^x0ta!*16%a*uezf_"
+SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = False
 ALLOWED_HOSTS = ["*"]
 
@@ -39,7 +40,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'static')
+            os.path.join(BASE_DIR, 'dlst')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -86,7 +87,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SITE_ID = 1
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'dlst/static')
 ]
 
 REST_FRAMEWORK = {
@@ -111,9 +112,10 @@ ACCOUNT_USERNAME_REQUIRED = False
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 
-    'allauth.account.auth_backends.A    uthenticationBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 CORS_ALLOW_ALL_ORIGINS = True
 
+django_heroku.settings(locals())
