@@ -1,9 +1,8 @@
 import os
 from pathlib import Path
-import django_heroku
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = "django-insecure-7hcx7s$aua5c@v4fhorp_raqr&7zs8gjz^x0ta!*16%a*uezf_"
 DEBUG = False
 ALLOWED_HOSTS = ["*"]
 
@@ -118,4 +117,3 @@ AUTHENTICATION_BACKENDS = [
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 CORS_ALLOW_ALL_ORIGINS = True
 
-django_heroku.settings(locals())
