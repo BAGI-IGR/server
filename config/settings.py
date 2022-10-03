@@ -40,7 +40,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'staticfiles')
+            os.path.join(BASE_DIR, 'staticfiles/static')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -87,7 +87,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SITE_ID = 1
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'staticfiles')
+    os.path.join(BASE_DIR, 'staticfiles/static')
 ]
 
 REST_FRAMEWORK = {
@@ -112,7 +112,7 @@ ACCOUNT_USERNAME_REQUIRED = False
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 
-    'allauth.account.auth_backends.AuthenticationBackend',
+    'allauth.account.auth_backends.A    uthenticationBackend',
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
