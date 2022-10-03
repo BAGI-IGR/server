@@ -40,7 +40,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'staticfiles/static')
+            os.path.join(BASE_DIR, 'static')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -87,7 +87,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SITE_ID = 1
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'staticfiles/static')
+    os.path.join(BASE_DIR, 'static')
 ]
 
 REST_FRAMEWORK = {
