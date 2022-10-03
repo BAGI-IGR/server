@@ -141,6 +141,7 @@ class Update extends React.Component {
                                 <option value={1}>{localStorage.getItem('users' + 0)}</option>
                                 <option value={2}>{localStorage.getItem('users' + 1)}</option>
                                 <option value={3}>{localStorage.getItem('users' + 2)}</option>
+                                <option value={4}>{localStorage.getItem('users' + 3)}</option>
                             </select>
                         </div>
                         <div className="Author">
@@ -164,7 +165,7 @@ class Update extends React.Component {
                                 <option selected disabled value={this.state.status}>{this.state.status}</option>
                                 <option value={"Открыта"}>Открыта</option>
                                 <option value={"В работе"}>В работе</option>
-                                <option value={"зЗакрыта"}>Выполнена</option>
+                                <option value={"Закрыта"}>Выполнена</option>
                             </select>
 
                         </div>

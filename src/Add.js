@@ -110,6 +110,7 @@ class Add extends React.Component {
                         <option value={1}>{localStorage.getItem('users' + [0])}</option>
                         <option value={2}>{localStorage.getItem('users' + [1])}</option>
                         <option value={3}>{localStorage.getItem('users' + [2])}</option>
+                        <option value={4}>{localStorage.getItem('users' + [3])}</option>
                     </select>
                     <select name={'priority'} onChange={this.changeHandler} className={"task-priority"}>
                         <option value={"p1"} selected disabled>Приоритет</option>
