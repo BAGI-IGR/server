@@ -1,0 +1,167 @@
+.all-tasks-status {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 284px);
+    gap: 169px 298px;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+.task-status {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 284px;
+    height: 228px;
+
+    background: #F7F7F7;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.task-status .task-name {
+    height: 23px;
+
+    margin-top: 25px;
+    margin-left: 20px;
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+
+    color: #333333;
+}
+
+.title-task {
+    box-sizing: border-box;
+
+    margin-left: 20px;
+
+    width: 244px;
+    height: 42px;
+
+    background: #FFFFFF;
+    border-radius: 8px;
+}
+
+.title-task-content {
+    display: flex;
+    align-items: center;
+
+    height: 44px;
+    margin-left: 85px;
+}
+
+.task-content {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.content-task {
+    display: flex;
+    justify-content: space-between;
+}
+
+.employee {
+    width: auto;
+    height: 16px;
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #333333;
+}
+
+.priority .flag1 {
+    width: 16px;
+    height: 14px;
+    fill: #35DF72;
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
+.priority .flag2 {
+    width: 16px;
+    height: 14px;
+    fill: yellow;
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
+.priority .flag3 {
+    width: 16px;
+    height: 14px;
+    fill: red;
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
+.linedead {
+    width: 71px;
+    height: 16px;
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #333333;
+}
+
+.edit-edit {
+    display: flex;
+
+    margin-left: 20px;
+    margin-bottom: 25px;
+    margin-right: 20px;
+
+    width: 244px;
+    height: 42px;
+}
+
+.edit-task {
+    width: 192px;
+    height: 42px;
+
+    margin-right: 10px;
+
+    background: #37C96B;
+    border-radius: 8px;
+}
+
+.edit-content {
+    width: 192px;
+    height: 42px;
+
+    font-weight: 600;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+
+    padding-left: 48px;
+    text-decoration-line: none;
+}
+
+.delete-task {
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    background: #F03838;
+    border-radius: 8px;
+}
+
+
+.delete-task svg {
+    margin-left: 10px;
+    margin-top: 8px;
+}

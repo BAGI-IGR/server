@@ -1,0 +1,98 @@
+.modal-box {
+    width: 657px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 101px;
+    margin-left: 222px;
+}
+
+.author-wrapper {
+    display: flex;
+}
+
+.task-title {
+    width: 657px;
+    height: 58px;
+
+    background: #EDEBEB;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    text-align: left;
+    border: solid 1px;
+    font-size: x-large;
+}
+
+.task-description {
+    width: 657px;
+    height: 250px;
+
+    background: #EDEBEB;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    text-align: -webkit-left;
+    white-space: pre-wrap;
+    border: solid 1px;
+    font-size: x-large;
+    padding-bottom: 200px;
+    margin-top: 32px;
+}
+
+.functional-wrapper {
+    display: grid;
+    align-content: space-between;
+    margin-top: -240px;
+    margin-left: 1100px;
+}
+
+.task-assignee,
+.task-priority, .deadline, .send {
+    width: 277px;
+    height: 47px;
+
+    background: #EDEBEB;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    margin-top: -100px;
+    border: none;
+    text-align: center;
+    font-size: x-large;
+}
+
+.task-assignee {
+    margin-right: 103px;
+}
+
+
+.button-wrapper {
+    display: flex;
+    margin-top: 126px;
+}
+
+.send {
+    width: 280px;
+    height: 100px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    text-align: center;
+    background: #1BAFEA;
+    color: white;
+    cursor: pointer;
+    font-size: x-large;
+}
+
+.cancel {
+    width: 315px;
+    height: 46px;
+
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+
+    text-align: center;
+    background: #1BAFEA;
+    font-size: x-large;
+    color: white;
+    cursor: pointer;
+}
