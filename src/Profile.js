@@ -96,7 +96,8 @@ function Profile() {
             <div className="main">
                 <div className="container">
                     <div className="container-ava">
-                        <img className="container-ava" src={require("./files/" + avatar.split('/')[6])}/>
+                        {/*<img className="container-ava" src={require("./files/" + avatar.split('/')[6])}/>*/}
+                        <img className="container-ava"/>
                     </div>
                     <div className="container__body-info">
                         <div className="container-info">
