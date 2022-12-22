@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 export function Delete(id) {
     //потом убрать
     window.location = window.location.href

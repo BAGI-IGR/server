@@ -41,7 +41,6 @@ export default function View() {
     let title = localStorage.getItem('title')
     let assignee = localStorage.getItem('assignee')
     function Comment(event){
-
         let state = {
             task: id,
             author: author,

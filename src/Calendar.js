@@ -13,7 +13,6 @@ import 'moment/locale/ru';
 
 
 const locales = {'ru':ru}
-
 const messages = {
     allDay: 'Весь день',
     previous: '<',
@@ -28,7 +27,6 @@ const messages = {
     event: 'Событие',
     showMore: total => `+ Показать больше (${total})`
 };
-
 const localaizer = dateFnsLocalizer({
     format,
     parse,
@@ -36,8 +34,6 @@ const localaizer = dateFnsLocalizer({
     getDay,
     locales
 })
-
-
 export default function Task_Calendar(){
     const [tasks, SetTasks] = useState()
     useEffect(() => {
@@ -59,7 +55,6 @@ export default function Task_Calendar(){
         .catch(err => {
         })
     }, [])
-
     return(
         <div>
             <div id="calendar">

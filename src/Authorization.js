@@ -14,13 +14,11 @@ class Authorization extends React.Component{
         this.changeHandler = this.changeHandler.bind(this);
         this.submitForm = this.submitForm.bind(this);
     }
-
     changeHandler(event) {
         this.setState({
             [event.target.name]: event.target.value
         });
     }
-
     submitForm(event) {
         event.preventDefault();
         console.log(this.state)
@@ -68,19 +66,13 @@ class Authorization extends React.Component{
                             console.log(err)
                             console.log('oshibka')
                         })
-
-
-
                     window.location.replace("https://server-njsy.vercel.app/");
                 }
             })
             .catch(err => {
                 console.log(err)})
     }
-
-
     render() {
-
         return(
             <div className="main_">
                 <div className="autorization-image"></div>

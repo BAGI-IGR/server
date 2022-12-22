@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import React from "react";
 
+
 class Update extends React.Component {
     constructor() {
         let user_id = localStorage.getItem('user_id')
@@ -107,7 +108,6 @@ class Update extends React.Component {
                         <span className="save" id={'send'} onClick={() => this.submitForm()}>Сохранить</span>
                         <span className="back" onClick={() => window.location.replace('https://server-njsy.vercel.app/task-view/' + window.location.href.split('/')[4])}>.......Назад......</span>
                     </div>
-
                     <div className="comment">
                         <div>
                             <form id={'submit_comment'} onSubmit={Comment}>
@@ -152,7 +152,6 @@ class Update extends React.Component {
                                 <option value={"Средний"}>Средний</option>
                                 <option value={"Высокий"}>Высокий</option>
                             </select>
-
                         </div>
                         <div className="Priority">
                             <span className="task-name__style">Статус:</span>
@@ -162,7 +161,6 @@ class Update extends React.Component {
                                 <option value={"В работе"}>В работе</option>
                                 <option value={"Закрыта"}>Выполнена</option>
                             </select>
-
                         </div>
                         <div className="Created">
                             <span className="task-name__style">Создано:</span><input value={created_at} className="date" type="date" disabled />

@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
 import axios from "axios";
 
+
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
@@ -14,8 +15,6 @@ ReactDOM.render(
     </React.StrictMode>,
     document.getElementById('root')
 );
-
-
 let Token = localStorage.getItem('Token')
 axios
     .get('http://robot0005.pythonanywhere.com/profile/', {
@@ -34,7 +33,6 @@ axios
     .catch(err => {
         console.log(err)
     })
-
 let user_id = localStorage.getItem('user_id')
 console.log('мой ' + user_id)
 axios.get('http://robot0005.pythonanywhere.com/profile/retrieve/' + user_id, {
@@ -56,25 +54,16 @@ axios.get('http://robot0005.pythonanywhere.com/profile/retrieve/' + user_id, {
     .catch(err => {
         console.log("ne robotaet")
     })
-
 const nexline = document.getElementById('user_nexline_pass');
-
 nexline.addEventListener('keydown', function (e) {
-
     const subm = document.getElementById('password');
-
     if (e.keyCode === 13) {
         subm.focus();
     }
 })
-
-
 const password = document.getElementById('password');
-
 password.addEventListener('keydown', function (e) {
-
     const subm = document.getElementById('submit_button_aut_user');
-
     if (e.keyCode === 13) {
         subm.click();
         console.log('succ');
@@ -93,7 +82,6 @@ const body = document.querySelector('body'),
     searchBtn = body.querySelector(".search-box"),
     modeSwitch = body.querySelector(".toggle-switch"),
     modeText = body.querySelector(".mode-text");
-
 let arrow = document.querySelectorAll(".arrow");
 for (let i = 0; i < arrow.length; i++) {
     arrow[i].addEventListener("click", (e) => {
@@ -101,18 +89,14 @@ for (let i = 0; i < arrow.length; i++) {
         arrowParent.classList.toggle('showMenu')
     });
 }
-
 toggle.addEventListener("click", () => {
     sidebar.classList.toggle("close");
 })
-
 searchBtn.addEventListener("click", () => {
     sidebar.classList.remove("close");
 })
-
 modeSwitch.addEventListener("click", () => {
     body.classList.toggle("dark");
-
     if (body.classList.contains("dark")) {
         modeText.innerText = "Светлая тема";
     } else {
@@ -152,9 +136,7 @@ window.addEventListener('load', async function (event) {
             document.getElementById('sidebar close').style.display = "none";
         }
     }
-
 });
-
 // class giveaway_list_with_people {
 //     constructor() {
 //         for (let i = localStorage.getItem('number_users'); i !== '0'; i--) {
