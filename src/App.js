@@ -45,7 +45,7 @@ function App() {
             if (document.getElementById('sidebar close') != null) {
                document.getElementById('sidebar close').style.display = "block";
             }
-            axios.get('http://robot0005.pythonanywhere.com/auth/me/', {
+            axios.get('https://robot0005.pythonanywhere.com/auth/me/', {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Token' + ' ' + Token,

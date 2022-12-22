@@ -13,7 +13,7 @@ function Main() {
     let Token = localStorage.getItem('Token')
     useEffect(() => {
         axios
-            .get('http://robot0005.pythonanywhere.com/tasks/?format=json', {
+            .get('https://robot0005.pythonanywhere.com/tasks/?format=json', {
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
                     'Authorization': 'Token' + ' ' + Token

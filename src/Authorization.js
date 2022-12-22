@@ -23,7 +23,7 @@ class Authorization extends React.Component{
         event.preventDefault();
         console.log(this.state)
         axios
-            .post('http://robot0005.pythonanywhere.com/auth/token/login', {
+            .post('https://robot0005.pythonanywhere.com/auth/token/login', {
                 headers: {'Content-type': 'application/json'},
                 'username': this.state.username,
                 'password': this.state.password
@@ -39,7 +39,7 @@ class Authorization extends React.Component{
         localStorage.setItem('Token', token)
         const Token = localStorage.getItem('Token')
         console.log(Token);
-        axios.get('http://robot0005.pythonanywhere.com/auth/me/', {
+        axios.get('https://robot0005.pythonanywhere.com/auth/me/', {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Token' + ' ' + Token,
@@ -48,7 +48,7 @@ class Authorization extends React.Component{
             .then(res => {
                 if (res.status === 200) {
                     console.log(res.status)
-                    axios.get('http://robot0005.pythonanywhere.com/auth/me/', {
+                    axios.get('https://robot0005.pythonanywhere.com/auth/me/', {
                         headers: {
                             'Content-Type': 'application/json',
                             'Authorization': 'Token' + ' ' + Token,

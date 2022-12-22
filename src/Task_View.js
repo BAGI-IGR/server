@@ -8,7 +8,7 @@ export default function View() {
     let loc = window.location.href.split('/')[4]
     console.log(loc)
     let Token = localStorage.getItem('Token')
-    axios.get('http://robot0005.pythonanywhere.com/task/retrieve/' + loc, {
+    axios.get('https://robot0005.pythonanywhere.com/task/retrieve/' + loc, {
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
             'Authorization': 'Token' + ' ' + Token
@@ -47,7 +47,7 @@ export default function View() {
             text: event.target.text.value,
         }
         console.log(state.text)
-        fetch('http://robot0005.pythonanywhere.com/comment/create', {
+        fetch('https://robot0005.pythonanywhere.com/comment/create', {
             method: "POST",
             body: JSON.stringify(state),
             headers: {

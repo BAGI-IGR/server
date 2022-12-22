@@ -17,7 +17,7 @@ ReactDOM.render(
 );
 let Token = localStorage.getItem('Token')
 axios
-    .get('http://robot0005.pythonanywhere.com/profile/', {
+    .get('https://robot0005.pythonanywhere.com/profile/', {
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
             'Authorization': 'Token' + ' ' + Token
@@ -35,7 +35,7 @@ axios
     })
 let user_id = localStorage.getItem('user_id')
 console.log('мой ' + user_id)
-axios.get('http://robot0005.pythonanywhere.com/profile/retrieve/' + user_id, {
+axios.get('https://robot0005.pythonanywhere.com/profile/retrieve/' + user_id, {
     headers: {
         'Content-type': 'application/json; charset=UTF-8',
         'Authorization': 'Token' + ' ' + Token
@@ -108,7 +108,7 @@ window.addEventListener('load', async function (event) {
     console.log(Token);
     if (Token != null) {
         document.getElementById('sidebar close').style.display = "block";
-        axios.get('http://robot0005.pythonanywhere.com/auth/me/', {
+        axios.get('https://robot0005.pythonanywhere.com/auth/me/', {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Token' + ' ' + Token,
