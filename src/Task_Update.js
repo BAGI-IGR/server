@@ -1,7 +1,5 @@
 import './Task_Update.css';
-// eslint-disable-next-line no-unused-vars
 import { useEffect, useState } from "react";
-// eslint-disable-next-line no-unused-vars
 import axios from "axios";
 import React from "react";
 
@@ -28,7 +26,6 @@ class Update extends React.Component {
         this.changeSelectedMultiple = this.changeSelectedMultiple.bind(this);
         this.submitForm = this.submitForm.bind(this);
     }
-
     changeHandler(event) {
         if (event.target.type === 'select-multiple') {
             this.changeSelectedMultiple(event);
@@ -41,7 +38,6 @@ class Update extends React.Component {
     changeSelectedMultiple(e) {
         const options = e.target.options;
         const selectedValues = [];
-
         for (let i = 0; i < options.length; i++) {
             console.log(selectedValues);
             if (options[i].selected) {
@@ -58,7 +54,7 @@ class Update extends React.Component {
         console.log(this.state);
         let Token = localStorage.getItem('Token')
         console.log(Token)
-        fetch('https://djandoreact.herokuapp.com/task/update/' + loc, {
+        fetch('http://robot0005.pythonanywhere.com/task/update/' + loc, {
             method: "PUT",
             body: JSON.stringify(this.state),
             headers: {
@@ -94,7 +90,6 @@ class Update extends React.Component {
             assignee: [],
         });
     }
-
     render() {
         let created_at = localStorage.getItem('created_at')
         let author = localStorage.getItem('author')
@@ -106,7 +101,7 @@ class Update extends React.Component {
                         <span className="task-name__style"><input type="text" className="update_title" placeholder="Наименование задачи" name={'title'} value={this.state.title} onChange={this.changeHandler} /></span>
                     </div>
                     <div className="task-description">
-                        <span className="task-name__style"><textarea     type="text" className="update_description" placeholder={'Описание'} name={'description'} value={this.state.description} onChange={this.changeHandler} /></span>
+                        <span className="task-name__style"><textarea type="text" className="update_description" placeholder={'Описание'} name={'description'} value={this.state.description} onChange={this.changeHandler} /></span>
                     </div>
                     <div className="edit">
                         <span className="save" id={'send'} onClick={() => this.submitForm()}>Сохранить</span>

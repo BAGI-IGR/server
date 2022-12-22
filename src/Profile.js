@@ -1,19 +1,15 @@
 import './Profile.css'
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-// eslint-disable-next-line no-unused-vars
 import {Save} from "./index";
-// eslint-disable-next-line no-unused-vars
 function Profile() {
-
     window.addEventListener('load', async function (event) {
         let Token = localStorage.getItem('Token')
         console.log(Token);
         if (Token != null) {
-            axios.get('https://djandoreact.herokuapp.com/auth/me/', {
+            axios.get('http://robot0005.pythonanywhere.com/auth/me/', {
                 headers: {
                     'Content-Type': 'application/json',
-                    // eslint-disable-next-line no-useless-concat
                     'Authorization': 'Token' + ' ' + Token,
                 }
             })
@@ -37,14 +33,12 @@ function Profile() {
         }
     });
     let user_id = localStorage.getItem('user_id')
-    // eslint-disable-next-line no-unused-vars
     const [profiles, SetProfile] = useState()
     let Token = localStorage.getItem('Token')
     useEffect(() => {
-        axios.get('https://djandoreact.herokuapp.com/profile/retrieve/' + user_id, {
+        axios.get('http://robot0005.pythonanywhere.com/profile/retrieve/' + user_id, {
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
-                // eslint-disable-next-line no-useless-concat
                 'Authorization': 'Token' + ' ' + Token
             },
         })
@@ -63,40 +57,32 @@ function Profile() {
                 console.log("ne robotaet")
             })
     }, [])
-
     function ClearToken() {
         localStorage.clear()
         document.getElementById('sidebar close').style.display = "none";
         window.location.replace("https://server-njsy.vercel.app/");
 
     }
-
     let fio = localStorage.getItem('fio')
-    // eslint-disable-next-line no-unused-vars
     let avatar = localStorage.getItem('avatar')
     let email = localStorage.getItem('email')
     let number = localStorage.getItem('number')
     let position = localStorage.getItem('position')
-
-
     function Edit() {
         window.location.replace("https://server-njsy.vercel.app/profile-edit");
 
     }
-
     function To_Main() {
         window.location.replace("https://server-njsy.vercel.app/");
 
     }
-
-
     return (
         <div>
             {/*{profiles?.map(profile =>(*/}
             <div className="main">
                 <div className="container">
                     <div className="container-ava">
-                        <img className="container-ava" src={require("./files/" + avatar.split('/')[6])}/>
+                        {/*<img className="container-ava" src={require("./files/" + avatar.split('/')[6])}/>*/}
                     </div>
                     <div className="container__body-info">
                         <div className="container-info">
@@ -132,7 +118,6 @@ function Profile() {
                 </div>
             </footer>
         </div>
-
     )
 }
 

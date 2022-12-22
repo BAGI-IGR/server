@@ -36,7 +36,8 @@
     height: 50px;
     margin-top: 15px;
 }
-.edit_button{
+
+.edit_button {
     font-size: 25px;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -48,19 +49,21 @@
     margin-top: 15px;
 }
 
-.edit .task-name__style{
+.edit .task-name__style {
     border-radius: 8px;
     background: #1BAFEA;
     font-size: 30px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
-.edit .task-name__styles{
+
+.edit .task-name__styles {
     border-radius: 8px;
     background: #1BAFEA;
     font-size: 30px;
     margin-left: 50px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
+
 .one .task-description {
     width: 575px;
     height: 181px;
@@ -85,10 +88,11 @@
     align-items: center;
 }
 
-.edit a{
+.edit a {
     text-decoration: none;
     color: white;
 }
+
 .comment {
     width: 800px;
     height: 100%;
@@ -184,9 +188,11 @@
         height: 50px;
     }
 }
-.fake_knopka{
+
+.fake_knopka {
     display: none;
 }
+
 .chat {
     overflow: scroll;
     width: 600px;
@@ -196,4 +202,3 @@
 ::-webkit-scrollbar {
     width: 0;
 }
-

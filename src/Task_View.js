@@ -8,10 +8,9 @@ export default function View() {
     let loc = window.location.href.split('/')[4]
     console.log(loc)
     let Token = localStorage.getItem('Token')
-    axios.get('https://djandoreact.herokuapp.com/task/retrieve/' + loc, {
+    axios.get('http://robot0005.pythonanywhere.com/task/retrieve/' + loc, {
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
-            // eslint-disable-next-line no-useless-concat
             'Authorization': 'Token' + ' ' + Token
         },
     })
@@ -49,7 +48,7 @@ export default function View() {
             text: event.target.text.value,
         }
         console.log(state.text)
-        fetch('https://djandoreact.herokuapp.com/comment/create', {
+        fetch('http://robot0005.pythonanywhere.com/comment/create', {
             method: "POST",
             body: JSON.stringify(state),
             headers: {

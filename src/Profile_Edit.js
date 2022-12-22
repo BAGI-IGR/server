@@ -1,5 +1,4 @@
 import React from "react";
-// eslint-disable-next-line no-unused-vars
 import axios from "axios";
 
 class Profile_Edit extends React.Component {
@@ -16,27 +15,23 @@ class Profile_Edit extends React.Component {
             work_phone_num: number,
             email: email,
             position: position,
-
         }
         this.changeHandler = this.changeHandler.bind(this);
         this.submitForm = this.submitForm.bind(this);
     }
-
     changeHandler(event) {
         this.setState({
             [event.target.name]: event.target.value
         });
     }
-
     submitForm(event) {
         let user_id = localStorage.getItem('user_id')
         let Token = localStorage.getItem('Token')
         event.preventDefault();
         console.log(this.state)
-        fetch('https://djandoreact.herokuapp.com/profile/update/' + user_id, {
+        fetch('http://robot0005.pythonanywhere.com/profile/update/' + user_id, {
             headers: {'Content-type': 'application/json'}, method: "PUT",
             body: JSON.stringify(this.state),
-            // eslint-disable-next-line no-useless-concat
             'Authorization': 'Token' + ' ' + Token
         })
             .then(response => {
@@ -46,12 +41,10 @@ class Profile_Edit extends React.Component {
                 console.error(err)
             })
     }
-
     ClearToken() {
         localStorage.removeItem("Token")
         window.location.replace("https://server-njsy.vercel.app/");
     }
-
     Save(data) {
         window.location.replace("https://server-njsy.vercel.app/profile");
         localStorage.removeItem("fio")
@@ -63,12 +56,9 @@ class Profile_Edit extends React.Component {
         localStorage.setItem("number", data.work_phone_num)
         localStorage.setItem("position", data.position)
     }
-
     Cancle() {
         window.location.replace("https://server-njsy.vercel.app/profile");
-
     }
-
     render() {
         return (
             <div>
@@ -76,7 +66,6 @@ class Profile_Edit extends React.Component {
                 <div className="main">
                     <div className="container">
                         <div className="container-ava">
-                            {/* eslint-disable-next-line jsx-a11y/alt-text */}
                             <img className="image"
                                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAbpJREFUaEPtWdFNxTAMvDcBbPBgAxiBCR5MACswCWwAI8AE720AI8AEsAHopEZqo7RxHDdtJeeramP7zndN03aHjY/dxvHDCSytoCuwVgUuADwBuALA4xbjC8AngEcAPBaNlIUI+APAuSiD/aRfANdSEikCbwAO9riKMr4DuJVEpAj8LNj9gJkWutQS+IsCW61UqropcKpEkm5l5qjqOgGDzocUrkBVJwyUcAVcgYSNHgBwa8Cne26szkLcCB471HyqksjUWBUBbgQJniQ4qMDdlgi8AriPAJPAlJUWUYAe58br1APLcy+JbtNCU1ZqTiB4nC8hNx3gcG7sXWLKSk0JxB4nARLp+37M8jkr5VarwXXtZi72OC30nfB9CkzOSrMTGPN4SWHJqiTKV6pAzuOiot0kEyuVEIh9XwJWYqXZb+LU2l5Lom+l2QnUgs3FO4HQIVUncu0VXFfVLbmJBRiqppgR4IPmrArKMDhuUgy0tNQgX4tPi80J8OMu9zVWKjQnQElJ4rl7IdmXahzNX4RAJWZVuNlNrKpuEOQEDJpYlcIVqGqfQfDmFVD1oNXvIxU4SZATkHRpzjn/0QpoMWWt6TQAAAAASUVORK5CYII="/>
                         </div>
@@ -119,7 +108,6 @@ class Profile_Edit extends React.Component {
                     </div>
                 </footer>
             </div>
-
         )
     }
 }

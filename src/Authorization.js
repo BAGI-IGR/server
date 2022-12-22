@@ -2,9 +2,9 @@ import React from "react";
 import axios from 'axios'
 import './Authorization.css'
 import logo from './logo.png'
+
+
 class Authorization extends React.Component{
-
-
     constructor() {
         super();
         this.state = {
@@ -25,7 +25,7 @@ class Authorization extends React.Component{
         event.preventDefault();
         console.log(this.state)
         axios
-            .post('https://djandoreact.herokuapp.com/auth/token/login', {
+            .post('http://robot0005.pythonanywhere.com/auth/token/login', {
                 headers: {'Content-type': 'application/json'},
                 'username': this.state.username,
                 'password': this.state.password
@@ -37,25 +37,22 @@ class Authorization extends React.Component{
                 console.error(err)
             })
     }
-
     setLogined(token) {
         localStorage.setItem('Token', token)
         const Token = localStorage.getItem('Token')
         console.log(Token);
-        axios.get('https://djandoreact.herokuapp.com/auth/me/', {
+        axios.get('http://robot0005.pythonanywhere.com/auth/me/', {
             headers: {
                 'Content-Type': 'application/json',
-                // eslint-disable-next-line no-useless-concat
                 'Authorization': 'Token' + ' ' + Token,
             }
         })
             .then(res => {
                 if (res.status === 200) {
                     console.log(res.status)
-                    axios.get('https://djandoreact.herokuapp.com/auth/me/', {
+                    axios.get('http://robot0005.pythonanywhere.com/auth/me/', {
                         headers: {
                             'Content-Type': 'application/json',
-                            // eslint-disable-next-line no-useless-concat
                             'Authorization': 'Token' + ' ' + Token,
                         }
                     })

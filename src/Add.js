@@ -1,8 +1,8 @@
 import React from "react";
-// eslint-disable-next-line no-unused-vars
 import axios from 'axios'
 import './Add.css';
 import {today} from "react-big-calendar/lib/utils/dates";
+
 
 class Add extends React.Component {
     constructor() {
@@ -24,7 +24,6 @@ class Add extends React.Component {
     changeSelectedMultiple(e) {
         const options = e.target.options;
         const selectedValues = [];
-
         for (let i = 0; i < options.length; i++) {
             console.log(selectedValues);
             if (options[i].selected) {
@@ -41,24 +40,20 @@ class Add extends React.Component {
             this.changeSelectedMultiple(event);
             return;
         }
-
-
         this.setState({
             [event.target.name]: event.target.value
         });
     }
     submitForm() {
-        // eslint-disable-next-line react/no-direct-mutation-state
         this.state.file = null
         console.log(this.state);
         let Token = localStorage.getItem('Token')
         console.log(Token)
-        fetch('https://djandoreact.herokuapp.com/task/create/', {
+        fetch('http://robot0005.pythonanywhere.com/task/create/', {
             method: "POST",
             body: JSON.stringify(this.state),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
-                // eslint-disable-next-line no-useless-concat
                 'Authorization': 'Token' + ' ' + Token
             },
         })
@@ -88,7 +83,6 @@ class Add extends React.Component {
             assignee: [],
         });
     }
-
     render() {
         return (
             <div className={'modal-box'} id={'modal-box-id'}>

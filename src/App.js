@@ -4,7 +4,6 @@ import Add from './Add'
 import Profile from './Profile';
 import Authorization from "./Authorization";
 import Main from "./Main";
-// eslint-disable-next-line no-unused-vars
 import {Routes, Route, Link, Navigate} from "react-router-dom";
 import Update from "./Task_Update";
 import Profile_Edit from "./Profile_Edit";
@@ -13,6 +12,7 @@ import axios from "axios";
 import Archive from "./archive";
 import Task_Calendar, {Calendar} from "./Calendar";
 import {useEffect} from "react";
+
 
 let path_create
 let create_page
@@ -38,6 +38,7 @@ if (Token != null) {
     main = <Route path={'/'} element={<Authorization/>}/>
 }
 
+
 function App() {
     window.addEventListener('load', async function (event) {
         let Token = localStorage.getItem('Token')
@@ -46,10 +47,9 @@ function App() {
             if (document.getElementById('sidebar close') != null) {
                document.getElementById('sidebar close').style.display = "block";
             }
-            axios.get('https://djandoreact.herokuapp.com/auth/me/', {
+            axios.get('http://robot0005.pythonanywhere.com/auth/me/', {
                 headers: {
                     'Content-Type': 'application/json',
-                    // eslint-disable-next-line no-useless-concat
                     'Authorization': 'Token' + ' ' + Token,
                 }
             })
@@ -65,12 +65,10 @@ function App() {
                     console.log(err)
                     console.log('oshibka')
                 })
-
         } else {
             document.getElementById('sidebar close').style.display = "none";
         }
     })
-
     return (
         <div>
             <div className={"slider-main"}>
@@ -82,7 +80,6 @@ function App() {
                     </span>
                         </div>
                     </header>
-
                     <div className={'menu-bar'}>
                         <div className={'menu'}>
                             <ul className={'menu-links'}>
@@ -103,7 +100,6 @@ function App() {
                                 </li>
                             </ul>
                         </div>
-
                         <div className={'bottom-content'}>
                             <ul className={'menu-links'}>
                                 <div className={'arhive-button'}>
@@ -127,14 +123,12 @@ function App() {
                                         </a>
                                     </li>
                                 </div>
-
                                 <li className={'mode'}>
                                     <div className={'sun-moon'}>
                                         <i className={'bx bx-moon icon moon'}/>
                                         <i className={'bx bx-sun icon sun'}/>
                                     </div>
                                     <span className={'mode-text text'}>Темная тема</span>
-
                                     <div className={'toggle-switch'}>
                                         <span className={'switch'}/>
                                     </div>
@@ -151,7 +145,6 @@ function App() {
                     <Route path={"/a"} element={<Authorization/>}/>
                     <Route path={"/task-view/:id"} element={<View/>}/>
                     <Route path={'/profile'} element={<Profile/>}/>
-                    {/* eslint-disable-next-line react/jsx-pascal-case */}
                     <Route path={'/profile-edit'} element={<Profile_Edit/>}/>
                     <Route path={'/archive'} element={<Archive/>}/>
                     <Route path={'/calendar'} element={<Task_Calendar/>}/>
@@ -161,4 +154,5 @@ function App() {
         </div>
     );
 };
+
 export default App;

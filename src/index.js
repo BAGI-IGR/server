@@ -18,10 +18,9 @@ ReactDOM.render(
 
 let Token = localStorage.getItem('Token')
 axios
-    .get('https://djandoreact.herokuapp.com/profile/', {
+    .get('http://robot0005.pythonanywhere.com/profile/', {
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
-            // eslint-disable-next-line no-useless-concat
             'Authorization': 'Token' + ' ' + Token
         },
     })
@@ -38,10 +37,9 @@ axios
 
 let user_id = localStorage.getItem('user_id')
 console.log('мой ' + user_id)
-axios.get('https://djandoreact.herokuapp.com/profile/retrieve/' + user_id, {
+axios.get('http://robot0005.pythonanywhere.com/profile/retrieve/' + user_id, {
     headers: {
         'Content-type': 'application/json; charset=UTF-8',
-        // eslint-disable-next-line no-useless-concat
         'Authorization': 'Token' + ' ' + Token
     },
 })
@@ -126,10 +124,9 @@ window.addEventListener('load', async function (event) {
     console.log(Token);
     if (Token != null) {
         document.getElementById('sidebar close').style.display = "block";
-        axios.get('https://djandoreact.herokuapp.com/auth/me/', {
+        axios.get('http://robot0005.pythonanywhere.com/auth/me/', {
             headers: {
                 'Content-Type': 'application/json',
-                // eslint-disable-next-line no-useless-concat
                 'Authorization': 'Token' + ' ' + Token,
             }
         })

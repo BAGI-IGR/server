@@ -1,22 +1,20 @@
 import './Main.css';
 import {useEffect, useState} from "react";
 import axios from "axios";
-// eslint-disable-next-line no-unused-vars
 import {Link, Route} from "react-router-dom";
 import {generatePath} from "react-router";
 import {Delete} from "./functions";
-// eslint-disable-next-line no-unused-vars
 import Add from "./Add";
+
 
 function Archive() {
     let [closes, SetClose] = useState()
     let Token = localStorage.getItem('Token')
     useEffect(() => {
         axios
-            .get('https://djandoreact.herokuapp.com/tasks/?format=json', {
+            .get('http://robot0005.pythonanywhere.com/tasks/?format=json', {
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
-                    // eslint-disable-next-line no-useless-concat
                     'Authorization': 'Token' + ' ' + Token
                 },
             })
@@ -30,7 +28,6 @@ function Archive() {
             .catch(err => {
             })
     }, [])
-
     return (
         <div className={"all-tasks-status"} id={"all-tasks-status"}>
             {closes?.filter(object => object.status === "Закрыта").map((task) => (
