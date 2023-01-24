@@ -46,6 +46,7 @@ class Task(MPTTModel):
     created_at = models.DateField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
     deadline = models.DateField()
+    progress = models.CharField(max_length=3, null=True, blank=True, default='0')
     is_active = models.BooleanField(default=True)
     status = models.CharField(max_length=100, choices=TASK_STATUS_CHOICE, default='Открыта')
     priority = models.CharField(max_length=100, choices=TASK_PRIORITY_CHOICE, default='low')
