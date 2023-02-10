@@ -38,6 +38,12 @@ class Task(MPTTModel):
         ('Закрыта', 'Закрыта'),
     )
 
+    TASK_BELONGS_CHOICE = (
+        ('Задача', 'Задача'),
+        ('Событие', 'Событие'),
+        ('Напоминание', 'Напоминание'),
+    )
+
     author = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='tasks')
     assignee = models.ManyToManyField(Profile)
     title = models.CharField(max_length=255)
@@ -49,6 +55,7 @@ class Task(MPTTModel):
     progress = models.CharField(max_length=3, null=True, blank=True, default='0')
     weight = models.CharField(max_length=3, null=True, blank=True, default='0')
     is_active = models.BooleanField(default=True)
+    belongs = models.CharField(max_length=100, choices=TASK_BELONGS_CHOICE, default='Задача')
     status = models.CharField(max_length=100, choices=TASK_STATUS_CHOICE, default='Открыта')
     priority = models.CharField(max_length=100, choices=TASK_PRIORITY_CHOICE, default='low')
     file = models.FileField(verbose_name='files/', null=True)
