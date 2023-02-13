@@ -102,8 +102,7 @@ class Profile_Edit extends React.Component {
                             </div>
                             <div className="edit_save-button" id={"edit_save-button"}>
                                 <button className="edit-button" onClick={this.Cancle}>Отмена</button>
-                                <button className="button-save" id={'edit_save'} onClick={this.submitForm}>Сохранить
-                                </button>
+                                <button className="button-save" id={'edit_save'} onClick={this.submitForm}>Сохранить</button>
                             </div>
 
                         </div>

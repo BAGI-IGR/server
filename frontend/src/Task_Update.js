@@ -8,6 +8,9 @@ class Update extends React.Component {
         let user_id = localStorage.getItem('user_id')
         let title = localStorage.getItem('title')
         let description = localStorage.getItem('description')
+        let belongs = localStorage.getItem('belongs')
+        let progress = localStorage.getItem('progress')
+        let weight = localStorage.getItem('weight')
         let deadline = localStorage.getItem('deadline')
         let priority = localStorage.getItem('priority')
         let status = localStorage.getItem('status')
@@ -17,6 +20,9 @@ class Update extends React.Component {
             title: title,
             author: user_id,
             description: description,
+            belongs: belongs,
+            progress: progress,
+            weight: weight,
             deadline: deadline,
             priority: priority,
             status: status,
@@ -86,6 +92,9 @@ class Update extends React.Component {
             author: user_id,
             description: '',
             file: '',
+            belongs: '',
+            progress: '',
+            weight: '',
             deadline: '',
             priority: '',
             status: '',
