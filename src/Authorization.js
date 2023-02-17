@@ -75,19 +75,15 @@ class Authorization extends React.Component{
     render() {
         return(
             <div className="main_">
-                <div className="autorization-image"></div>
                 <div className="login-form_main-container">
-                    <div className="logo-image">
-                        <img className="image" src={logo}/>
-                    </div>
                     <div className="login--form__container">
                         <div className="login__form">
-                            <span className="login__text">Авторизация</span>
-                            <div className="login__password_sign-in--button">
+                            <h4 className="h3 login__text">Авторизация</h4>
+                            <form>
                                 <input className="login__input" name={'username'} id={'user_nexline_pass'} type="login" onChange={this.changeHandler} placeholder="Логин"/>
                                 <input className="password__input" type="password" id={'password'} name={'password'} onChange={this.changeHandler} placeholder="Пароль"/>
                                 <button className="sign-in--button" id={'submit_button_aut_user'} onClick={this.submitForm}>Войти</button>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
