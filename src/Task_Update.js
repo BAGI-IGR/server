@@ -92,6 +92,7 @@ class Update extends React.Component {
             description: '',
             file: '',
             belongs: '',
+            progress: '',
             weight: '',
             deadline: '',
             priority: '',
