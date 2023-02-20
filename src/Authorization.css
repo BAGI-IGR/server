@@ -6,7 +6,7 @@ html {
     box-sizing: inherit;
 }
 
-body {
+.main_ {
     background-image: url("./files/wallpaper.png");
     background-repeat: no-repeat;
     background-size: 100%;
