@@ -16,8 +16,8 @@
     width: 284px;
     height: 228px;
 
-    background: #F7F7F7;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    background: rgba(238, 231, 221, 0.46);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
 }
 
@@ -44,8 +44,9 @@
     width: 244px;
     height: 42px;
 
-    background: #FFFFFF;
+    background: #F1EFEB;
     border-radius: 8px;
+    border: 1px solid #968B63;
 }
 
 .title-task-content {
@@ -86,6 +87,7 @@
     margin-left: 5px;
     margin-right: 15px;
 }
+
 .priority .flag2 {
     width: 16px;
     height: 14px;
@@ -130,7 +132,7 @@
 
     margin-right: 10px;
 
-    background: #37C96B;
+    background: #91A14D;
     border-radius: 8px;
 }
 
@@ -160,5 +162,46 @@
 
 .delete-task svg {
     margin-left: 10px;
-    margin-top: 8px;
+    margin-top: -7px;
+}
+
+
+.create-new-task {
+    background: rgba(238, 231, 221, 0.46);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+
+    width: 284px;
+    height: 228px;
+}
+
+
+.createtask {
+    display:inline-flex;
+
+    margin-left: 87px;
+    margin-top: 33px;
+}
+
+
+.plusik {
+    display:inline-flex;
+
+    width: 47px;
+    height: 47px;
+
+    margin-left: 100px;
+    margin-top: 39px;
+
+    background: #EEE7DD;
+    border: 1px solid #91A14D;
+    border-radius: 25px;
+}
+
+
+.task-new {
+    display:inline-flex;
+
+    margin: 11px;
+    margin-top: 11px;
 }
