@@ -75,6 +75,7 @@ class Authorization extends React.Component{
     render() {
         return(
             <div className="main_">
+                <div className="autorization-image"></div>
                 <div className="login-form_main-container">
                     <div className="login--form__container">
                         <div className="login__form">
