@@ -17,7 +17,7 @@ import {useEffect} from "react";
 let path_create
 let create_page
 let user_id = localStorage.getItem('user_id')
-if (user_id !== '2') {
+if (user_id !== '0') {
     path_create = <Route path={'/task-create'} element={<Add/>}/>
     // create_page = <div className={'knopka'}>
     //     <li className={'nav-link'}  onClick={() => window.location.replace('/task-create')}>
