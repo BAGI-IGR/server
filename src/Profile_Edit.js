@@ -44,10 +44,10 @@ class Profile_Edit extends React.Component {
     }
     ClearToken() {
         localStorage.removeItem("Token")
-        window.location.replace("https://server-njsy.vercel.app/");
+        window.location.replace("http://localhost:3000/");
     }
     Save(data) {
-        window.location.replace("https://server-njsy.vercel.app/profile");
+        window.location.replace("http://localhost:3000/profile");
         localStorage.removeItem("fio")
         localStorage.removeItem("email")
         localStorage.removeItem("number")
@@ -58,7 +58,7 @@ class Profile_Edit extends React.Component {
         localStorage.setItem("position", data.position)
     }
     Cancle() {
-        window.location.replace("https://server-njsy.vercel.app/profile");
+        window.location.replace("http://localhost:3000/profile");
     }
     render() {
         return (

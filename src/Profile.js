@@ -20,7 +20,7 @@ function Profile() {
                     let user_id = localStorage.getItem('user_id')
                     console.log(user_id)
                     if (res.status === 401) {
-                        window.location.replace("https://server-njsy.vercel.app/authorization");
+                        window.location.replace("http://localhost:3000/authorization");
                     }
                 })
                 .catch(err => {
@@ -30,7 +30,7 @@ function Profile() {
         } else {
             document.getElementById('sidebar close').style.display = "none";
             setTimeout(() => {
-                window.location.replace("https://server-njsy.vercel.app/authorization")
+                window.location.replace("http://localhost:3000/authorization")
             }, 10000);
         }
     });
@@ -62,7 +62,7 @@ function Profile() {
     function ClearToken() {
         localStorage.clear()
         document.getElementById('sidebar close').style.display = "none";
-        window.location.replace("https://server-njsy.vercel.app/");
+        window.location.replace("http://localhost:3000/");
 
     }
     let fio = localStorage.getItem('fio')
@@ -71,10 +71,10 @@ function Profile() {
     let number = localStorage.getItem('number')
     let position = localStorage.getItem('position')
     function Edit() {
-        window.location.replace("https://server-njsy.vercel.app/profile-edit");
+        window.location.replace("http://localhost:3000/profile-edit");
     }
     function To_Main() {
-        window.location.replace("https://server-njsy.vercel.app/");
+        window.location.replace("http://localhost:3000/");
     }
     return (
         <div>

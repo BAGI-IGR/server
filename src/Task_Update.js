@@ -74,7 +74,7 @@ class Update extends React.Component {
                 if(response.status === 200) {
                     document.getElementById('send').style.background = 'green';
                     setTimeout(() => {
-                        window.location.replace('https://server-njsy.vercel.app/task-view/'+loc)
+                        window.location.replace('http://localhost:3000/task-view/'+loc)
                     })
                 } else{
                     document.getElementById('send').style.background = 'red';
@@ -115,7 +115,7 @@ class Update extends React.Component {
                     </div>
                     <div className="edit">
                         <span className="save" id={'send'} onClick={() => this.submitForm()}>Сохранить</span>
-                        <span className="back" onClick={() => window.location.replace('https://server-njsy.vercel.app/task-view/' + window.location.href.split('/')[4])}>.......Назад......</span>
+                        <span className="back" onClick={() => window.location.replace('http://localhost:3000/task-view/' + window.location.href.split('/')[4])}>.......Назад......</span>
                     </div>
                     <div className="comment">
                         <div>

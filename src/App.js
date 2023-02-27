@@ -56,7 +56,7 @@ function App() {
                     let user_id = localStorage.getItem('user_id')
                     console.log(user_id)
                     if (res.status === 401) {
-                        window.location.replace("https://server-njsy.vercel.app/");
+                        window.location.replace("http://localhost:3000/");
                     }
                 })
                 .catch(err => {

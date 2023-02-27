@@ -119,7 +119,7 @@ window.addEventListener('load', async function (event) {
                 let user_id = localStorage.getItem('user_id')
                 console.log(user_id)
                 if (res.status === 401) {
-                    window.location.replace("https://server-njsy.vercel.app/");
+                    window.location.replace("http://localhost:3000/");
                 }
             })
             .catch(err => {
@@ -127,10 +127,10 @@ window.addEventListener('load', async function (event) {
                 console.log('oshibka')
             })
     } else {
-        if (window.location.href !== window.location.href("https://server-njsy.vercel.app/")) {
+        if (window.location.href !== window.location.href("http://localhost:3000/")) {
             document.getElementById('sidebar close').style.display = "none";
             setTimeout(() => {
-                window.location.replace("https://server-njsy.vercel.app/")
+                window.location.replace("http://localhost:3000/")
             }, 30000);
         } else {
             document.getElementById('sidebar close').style.display = "none";
