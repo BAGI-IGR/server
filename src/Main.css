@@ -1,11 +1,11 @@
 .all-tasks-status {
     display: grid;
     grid-template-columns: repeat(auto-fill, 284px);
-    gap: 169px 298px;
+    gap: 64px 105px;
     justify-content: center;
     font-family: 'Roboto', sans-serif;
-    margin-left: 100px;
-    margin-top: 30px;
+    margin-left: 40px;
+    margin-top: 134px;
 }
 
 .task-status {
@@ -177,10 +177,11 @@
 
 
 .createtask {
-    display:inline-flex;
+    font-size: 20px;
+    line-height: 23px;
 
-    margin-left: 87px;
-    margin-top: 33px;
+    margin-top: 63px;
+    margin-left: 68px;
 }
 
 
@@ -190,8 +191,8 @@
     width: 47px;
     height: 47px;
 
-    margin-left: 100px;
-    margin-top: 39px;
+    margin-left: 118px;
+    margin-top: 28px;
 
     background: #EEE7DD;
     border: 1px solid #91A14D;
