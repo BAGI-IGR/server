@@ -9,17 +9,17 @@ class Add extends React.Component {
         let user_id = localStorage.getItem('user_id')
         super();
         this.state = {
-            title: '',
             author: user_id,
-            description: '',
-            file: '',
-            belongs: '',
-            progress: '',
-            weight: '',
-            deadline: '',
-            priority: '',
-            status: '',
             assignee: [],
+            title: '',
+            description: '',
+            deadline: '',
+            progress: '0',
+            weight: '0',
+            belongs: 'Задача',
+            status: 'Открыта',
+            priority: '',
+            file: '',
         }
         this.changeHandler = this.changeHandler.bind(this);
         this.changeSelectedMultiple = this.changeSelectedMultiple.bind(this);
@@ -78,17 +78,17 @@ class Add extends React.Component {
             });
         let user_id = localStorage.getItem('user_id')
         this.setState = ({
-            title: '',
             author: user_id,
+            assignee: [],
+            title: '',
             description: '',
-            file: '',
-            belongs: '',
+            deadline: '',
             progress: '',
             weight: '',
-            deadline: '',
-            priority: '',
+            belongs: '',
             status: '',
-            assignee: [],
+            priority: '',
+            file: '',
         });
     }
     render() {
