@@ -14,9 +14,11 @@ class Add extends React.Component {
             description: '',
             file: '',
             belongs: '',
+            progress: '',
             weight: '',
             deadline: '',
             priority: '',
+            status: '',
             assignee: [],
         }
         this.changeHandler = this.changeHandler.bind(this);
@@ -81,9 +83,11 @@ class Add extends React.Component {
             description: '',
             file: '',
             belongs: '',
+            progress: '',
             weight: '',
             deadline: '',
             priority: '',
+            status: '',
             assignee: [],
         });
     }
