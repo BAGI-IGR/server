@@ -87,17 +87,17 @@ class Update extends React.Component {
             });
         let user_id = localStorage.getItem('user_id')
         this.setState = ({
-            title: '',
             author: user_id,
+            assignee: [],
+            title: '',
             description: '',
-            file: '',
-            belongs: '',
+            deadline: '',
             progress: '',
             weight: '',
-            deadline: '',
-            priority: '',
+            belongs: '',
             status: '',
-            assignee: [],
+            priority: '',
+            file: '',
         });
     }
     render() {
