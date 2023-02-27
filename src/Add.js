@@ -89,41 +89,78 @@ class Add extends React.Component {
     }
     render() {
         return (
-            <div className={'modal-box'} id={'modal-box-id'}>
-                <div className="author-wrapper">
-                    <input name={'title'} onChange={this.changeHandler} className={'task-title'} placeholder={"Наименование задачи"}/>
+            <div>
+                <div className="footer">
+                    <h2 className="textbox">Название задачи</h2>
                 </div>
-                <div className="description-wrapper">
-                    <input name="description" onChange={this.changeHandler} className={"task-description"} placeholder={"Описание задачи"}/>
-                </div>
-                {/*<div className="file-wrapper">*/}
-                {/*    <input name={"file"} onChange={this.changeSelectedMultiple} type={"file"} ref={this.fileInput} id={"input__file"} className={"file"} multiple/>*/}
-                {/*    <label htmlFor={"input__file"} className={"input__file-button"}>*/}
-                {/*        <span className={"input__file-button-text"}>+Файл</span>*/}
-                {/*    </label>*/}
-                {/*</div>*/}
-                <div className="functional-wrapper">
-                    <select name={'assignee'} onChange={this.changeSelectedMultiple} className={"task-assignee"}>
-                        <option value={0} selected disabled>Принимающий</option>
-                        <option value={1}>{localStorage.getItem('users' + [0])}</option>
-                        <option value={2}>{localStorage.getItem('users' + [1])}</option>
-                        <option value={3}>{localStorage.getItem('users' + [2])}</option>
-                        <option value={4}>{localStorage.getItem('users' + [3])}</option>
+                <div className="status">
+                    <select className="task-status">
+                        <option value="1">В работе</option>
+                        <option value="2">Завершено</option>
+                        <option value="3">Не начато</option>
                     </select>
-                    <select name={'priority'} onChange={this.changeHandler} className={"task-priority"}>
-                        <option value={"p1"} selected disabled>Приоритет</option>
-                        <option value={"Низкий"}>Низкий</option>
-                        <option value={"Средний"}>Средний</option>
-                        <option value={"Высокий"}>Высокий</option>
-                    </select>
-                    <input name={'deadline'} onChange={this.changeHandler} type={"date"} className={"deadline"} placeholder={"дедлайн"}/>
-                    <button type={'submit'} id={'send'} onClick={this.submitForm} className={"send"} placeholder='Создать'>Создать</button>
+                    <p><input type="button" value="Дедлайн" className="deadline"/></p>
                 </div>
-                {/*<div className="button-wrapper">*/}
-                {/*    <button type={'submit'} id={'send'} onClick={this.submitForm} className={"send"} placeholder='Создать'>Создать</button>*/}
-                {/*    <button type={'submit'} className={"cancel"} placeholder='Отменить' onClick={() => {window.location.replace('/')}}>Отменить</button>*/}
-                {/*</div>*/}
+                <div className="create-task">
+                    <input className="name_task" name="title" onChange={this.changeHandler} placeholder="Наименование задачи"/>
+                    <input className="description" name="description" onChange={this.changeHandler} placeholder=""/>
+                    <div>
+                        <div className="executor">Исполнитель :</div>
+                        <input type="text" className="fio" placeholder=""/>
+                        <button type="submit" className="add_fio"/>
+                    </div>
+                    <button className="add_file" name="file" onChange={this.changeSelectedMultiple} type="file" ref={this.fileInput} id="input__file" multiple>+ Добавить файл</button>
+                    <div className="attached_files">Вложенные файлы
+                        <button type="submit" className="add_1"></button>
+                        <button type="submit" className="add_2"></button>
+                        <button type="submit" className="add_3"></button>
+                    </div>
+                    <button type="submit" className="save_task">Сохранить и закрыть</button>
+                    <button type="submit" className="delete_task">Удалить задачу</button>
+                </div>
+                <div className="chat"/>
+                <div className="message">
+                    <input type="text" className="task_1" name="text" placeholder="Введите комментарий"/>
+                    <span className="send">
+                    <a className="send_message">Отправить</a>
+                </span>
+                </div>
             </div>
+            // <div className={'modal-box'} id={'modal-box-id'}>
+            //     <div className="author-wrapper">
+            //         <input name={'title'} onChange={this.changeHandler} className={'task-title'} placeholder={"Наименование задачи"}/>
+            //     </div>
+            //     <div className="description-wrapper">
+            //         <input name="description" onChange={this.changeHandler} className={"task-description"} placeholder={"Описание задачи"}/>
+            //     </div>
+            //     {/*<div className="file-wrapper">*/}
+            //     {/*    <input name={"file"} onChange={this.changeSelectedMultiple} type={"file"} ref={this.fileInput} id={"input__file"} className={"file"} multiple/>*/}
+            //     {/*    <label htmlFor={"input__file"} className={"input__file-button"}>*/}
+            //     {/*        <span className={"input__file-button-text"}>+Файл</span>*/}
+            //     {/*    </label>*/}
+            //     {/*</div>*/}
+            //     <div className="functional-wrapper">
+            //         <select name={'assignee'} onChange={this.changeSelectedMultiple} className={"task-assignee"}>
+            //             <option value={0} selected disabled>Принимающий</option>
+            //             <option value={1}>{localStorage.getItem('users' + [0])}</option>
+            //             <option value={2}>{localStorage.getItem('users' + [1])}</option>
+            //             <option value={3}>{localStorage.getItem('users' + [2])}</option>
+            //             <option value={4}>{localStorage.getItem('users' + [3])}</option>
+            //         </select>
+            //         <select name={'priority'} onChange={this.changeHandler} className={"task-priority"}>
+            //             <option value={"p1"} selected disabled>Приоритет</option>
+            //             <option value={"Низкий"}>Низкий</option>
+            //             <option value={"Средний"}>Средний</option>
+            //             <option value={"Высокий"}>Высокий</option>
+            //         </select>
+            //         <input name={'deadline'} onChange={this.changeHandler} type={"date"} className={"deadline"} placeholder={"дедлайн"}/>
+            //         <button type={'submit'} id={'send'} onClick={this.submitForm} className={"send"} placeholder='Создать'>Создать</button>
+            //     </div>
+            //     {/*<div className="button-wrapper">*/}
+            //     {/*    <button type={'submit'} id={'send'} onClick={this.submitForm} className={"send"} placeholder='Создать'>Создать</button>*/}
+            //     {/*    <button type={'submit'} className={"cancel"} placeholder='Отменить' onClick={() => {window.location.replace('/')}}>Отменить</button>*/}
+            //     {/*</div>*/}
+            // </div>
         )
     }
 }

@@ -50,15 +50,23 @@ function Main() {
     }
     sort(tasks);
     return (
+        // <div className={'knopka'}>
+        //     <li className={'nav-link'}  onClick={() => window.location.replace('/task-create')}>
+        //         <a >
+        //             <i className={'bx bx-add-to-queue icon'}/>
+        //             <span className={'text nav-text'}>Создать задачу</span>
+        //         </a>
+        //     </li>
+        // </div>
         <div className={"all-tasks-status"} id={"all-tasks-status"}>
-            {/*<div className="create-new-task">*/}
-            {/*    <p className="createtask">task create</p>*/}
-            {/*    <a className="plusik" href={generatePath("/task-view/:id/", {id: task.id,})}>*/}
-            {/*        <span className="task-new" key={task.id}><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'*/}
-            {/*                                                      fill='#91A14D' width='24' height='24'><path*/}
-            {/*            d="M15 2.013H9V9H2v6h7v6.987h6V15h7V9h-7z"></path></svg></span>*/}
-            {/*    </a>*/}
-            {/*</div>*/}
+            <div className="create-new-task">
+                <p className="createtask">Создать задачу</p>
+                <a className="plusik" onClick={() => window.location.replace('/task-create')}>
+                        <span className="task-new"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'
+                                                                      fill='#91A14D' width='24' height='24'><path
+                            d="M15 2.013H9V9H2v6h7v6.987h6V15h7V9h-7z"></path></svg></span>
+                </a>
+            </div>
             {sort(tasks).filter(object => object.status != "Закрыта")?.map((task) => (
                 // <div className="task-status">
                 //     <div className="task-name">
