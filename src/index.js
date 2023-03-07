@@ -5,7 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
 import axios from "axios";
-import {generatePath} from "react-router";
 
 
 ReactDOM.render(
@@ -73,7 +72,6 @@ document.getElementById('submit_comment').addEventListener('keydown', function (
     const subm = document.getElementById('fake_knopka');
     if (e.keyCode === 13) {
         subm.click();
-        window.location.replace(generatePath("/task/:id/", {id: localStorage.getItem('id')}))
     }
 })
 const body = document.querySelector('body'),

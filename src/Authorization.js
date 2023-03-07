@@ -1,7 +1,6 @@
 import React from "react";
 import axios from 'axios'
 import './Authorization.css'
-import logo from './logo.png'
 
 
 class Authorization extends React.Component{
@@ -59,14 +58,14 @@ class Authorization extends React.Component{
                             let user_id = localStorage.getItem('user_id')
                             console.log(user_id)
                             if (res.status === 401) {
-                                window.location.replace("https://server-njsy.vercel.app");
+                                window.location.replace("https://server-njsy.vercel.app/");
                             }
                         })
                         .catch(err => {
                             console.log(err)
                             console.log('oshibka')
                         })
-                    window.location.replace("https://server-njsy.vercel.app");
+                    window.location.replace("https://server-njsy.vercel.app/");
                 }
             })
             .catch(err => {
@@ -76,17 +75,13 @@ class Authorization extends React.Component{
         return(
             <div className="main_">
                 <div className="autorization-image"></div>
-                <div className="login-form_main-container">
-                    <div className="login--form__container">
-                        <div className="login__form">
-                            <h4 className="h3 login__text">Авторизация</h4>
-                            <form>
-                                <input className="login__input" name="username" id="user_nexline_pass" type="login" onChange={this.changeHandler} placeholder="Логин"/>
-                                <input className="password__input" type="password" id="password" name="password" onChange={this.changeHandler} placeholder="Пароль"/>
-                                <button className="sign-in--button" id="submit_button_aut_user" onClick={this.submitForm}>Войти</button>
-                            </form>
-                        </div>
-                    </div>
+                <div className="login__form">
+                    <h4 className="h3 login__text">Авторизация</h4>
+                    <form>
+                        <input className="login__input" name="username" id="user_nexline_pass" type="login" onChange={this.changeHandler} placeholder="Логин"/>
+                        <input className="password__input" type="password" id="password" name="password" onChange={this.changeHandler} placeholder="Пароль"/>
+                        <button className="sign-in--button" id="submit_button_aut_user" onClick={this.submitForm}>Войти</button>
+                    </form>
                 </div>
             </div>
         )

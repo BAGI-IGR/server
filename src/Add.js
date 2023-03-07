@@ -1,7 +1,5 @@
 import React from "react";
-// import axios from 'axios'
 import './Add.css';
-// import {today} from "react-big-calendar/lib/utils/dates";
 
 
 class Add extends React.Component {
@@ -65,7 +63,7 @@ class Add extends React.Component {
                 console.log(response.status)
                 if(response.status === 201) {
                     document.getElementById('send').style.background = 'green';
-                    window.location.replace("https://server-njsy.vercel.app");
+                    window.location.replace("https://server-njsy.vercel.app/");
                 } else{
                     document.getElementById('send').style.background = 'red';
                     window.location.reload();

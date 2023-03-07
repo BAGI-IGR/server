@@ -9,7 +9,7 @@ export function Delete(id) {
         .delete('https://robot0005.pythonanywhere.com/task/delete/' + id, {
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
-                'Authorization': 'Token' + ' ' + Token
+                'Authorization': 'Token ' + Token
             },
         })
         .then(res => {

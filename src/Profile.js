@@ -12,7 +12,7 @@ function Profile() {
             axios.get('https://robot0005.pythonanywhere.com/auth/me/', {
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Token' + ' ' + Token,
+                    'Authorization': 'Token ' + Token,
                 }
             })
                 .then(res => {
@@ -41,7 +41,7 @@ function Profile() {
         axios.get('https://robot0005.pythonanywhere.com/profile/retrieve/' + user_id, {
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
-                'Authorization': 'Token' + ' ' + Token
+                'Authorization': 'Token ' + Token
             },
         })
             .then(res => {

@@ -14,7 +14,6 @@ export default function View() {
         },
     })
         .then(res => {
-            console.log(res)
             localStorage.setItem('author', res.data.author)
             localStorage.setItem('assignee', res.data.assignee)
             localStorage.setItem('title', res.data.title)
