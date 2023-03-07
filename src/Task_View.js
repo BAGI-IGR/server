@@ -7,6 +7,13 @@ import {logDOM} from "@testing-library/react";
 export default function View() {
     let loc = window.location.href.split('/')[4]
     let Token = localStorage.getItem('Token')
+    document.getElementById('submit_comment').addEventListener('keydown', function (e) {
+        const subm = document.getElementById('fake_knopka');
+        if (e.keyCode === 13) {
+            subm.click();
+            window.location.replace({generatePath("/task/:id/", {id: localStorage.getItem('id')})})
+    }
+})
     axios.get('https://robot0005.pythonanywhere.com/task/retrieve/' + loc, {
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
