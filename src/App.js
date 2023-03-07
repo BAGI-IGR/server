@@ -1,54 +1,42 @@
 import './App.css';
-import logo from './logo.png'
 import Add from './Add'
 import Profile from './Profile';
 import Authorization from "./Authorization";
 import Main from "./Main";
-import {Routes, Route, Link, Navigate} from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 import Update from "./Task_Update";
 import Profile_Edit from "./Profile_Edit";
 import View from "./Task_View";
 import axios from "axios";
 import Archive from "./archive";
-import Task_Calendar, {Calendar} from "./Calendar";
-// import {useEffect} from "react";
+import Task_Calendar from "./Calendar";
+import Archive_my from "./archive_my";
+import Archive_anmy from "./archive_anmy";
 
 
 let path_create
-// let create_page
+let create_page
 let user_id = localStorage.getItem('user_id')
-if (user_id !== '0') {
-    path_create = <Route path={'/task-create'} element={<Add/>}/>
-    // create_page = <div className={'knopka'}>
-    //     <li className={'nav-link'}  onClick={() => window.location.replace('/task-create')}>
-    //         <a >
-    //             <i className={'bx bx-add-to-queue icon'}/>
-    //             <span className={'text nav-text'}>Создать задачу</span>
-    //         </a>
-    //     </li>
-    // </div>
-} else {
-    console.log('you are not    manager')
-}
 let Token = localStorage.getItem('Token')
 let main
 if (Token != null) {
-    main = <Route path={'/'} element={<Main/>}/>
+    main = <Route path='/' element={<Main/>}/>
+    path_create = <Route path='/task-create' element={<Add/>}/>
+    create_page = <Route path="/task/update/:id" element={<Update/>}/>
 } else {
-    main = <Route path={'/'} element={<Authorization/>}/>
+    main = <Route path='/' element={<Authorization/>}/>
 }
 function App() {
     window.addEventListener('load', async function (event) {
         let Token = localStorage.getItem('Token')
-        console.log(Token);
         if (Token != null) {
-            if (document.getElementById('sidebar close') != null) {
-               document.getElementById('sidebar close').style.display = "block";
-            }
+            // if (document.getElementById('sidebar close') != null) {
+            //    document.getElementById('sidebar close').style.display = "block";
+            // }
             axios.get('https://robot0005.pythonanywhere.com/auth/me/', {
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Token' + ' ' + Token,
+                    'Authorization': 'Token ' + Token,
                 }
             })
                 .then(res => {
@@ -64,45 +52,44 @@ function App() {
                     console.log('oshibka')
                 })
         } else {
-            document.getElementById('sidebar close').style.display = "none";
+            // document.getElementById('sidebar close').style.display = "none";
         }
     })
     return (
         <div>
-            <div className={"slider-main"}>
-                {/*<nav id={'sidebar close'} className={'sidebar close'}>*/}
+            <div className="slider-main">
+                {/*<nav id='sidebar close' className='sidebar close'>*/}
                 {/*    <header>*/}
-                {/*        <div className={'image-text'}>*/}
-                {/*    <span className={'image'}>*/}
-                {/*       <a href={"/"}><img src={logo} alt={'logo'}></img></a>*/}
+                {/*        <div className='image-text'>*/}
+                {/*    <span className='image'>*/}
+                {/*       <a href="/"><img src=logo} alt='logo'></img></a>*/}
                 {/*    </span>*/}
                 {/*        </div>*/}
                 {/*    </header>*/}
-                {/*    <div className={'menu-bar'}>*/}
-                {/*        <div className={'menu'}>*/}
-                {/*            <ul className={'menu-links'}>*/}
-                {/*                <li className={'nav-link MAIN'}  onClick={() => window.location.replace('/')}>*/}
+                {/*    <div className='menu-bar'>*/}
+                {/*        <div className='menu'>*/}
+                {/*            <ul className='menu-links'>*/}
+                {/*                <li className='nav-link MAIN' onClick={() => window.location.replace('/')}>*/}
                 {/*                    <a>*/}
-                {/*                        <i className={'bx bx-receipt icon'}/>*/}
-                {/*                        <span className={'text nav-text'}>Задачи</span>*/}
+                {/*                        <i className='bx bx-receipt icon'/>*/}
+                {/*                        <span className='text nav-text'>Задачи</span>*/}
                 {/*                    </a>*/}
-                {/*                    <i className={'bx bxs-chevron-down arrow'}/>*/}
+                {/*                    <i className='bx bxs-chevron-down arrow'/>*/}
                 {/*                </li>*/}
                 {/*                {create_page}*/}
-                {/*                <li className={'nav-link MAIN'} onClick={() => window.location.replace('/calendar')}>*/}
+                {/*                <li className='nav-link MAIN' onClick={() => window.location.replace('/calendar')}>*/}
                 {/*                    <a>*/}
                 {/*                        <i className='bx bx-calendar icon'></i>*/}
-                {/*                        <span className={'text nav-text'}>Календарь</span>*/}
+                {/*                        <span className='text nav-text'>Календарь</span>*/}
                 {/*                    </a>*/}
-                {/*                    <i className={'bx bxs-chevron-down arrow'}/>*/}
+                {/*                    <i className='bx bxs-chevron-down arrow'/>*/}
                 {/*                </li>*/}
                 {/*            </ul>*/}
                 {/*        </div>*/}
-                {/*        <div className={'bottom-content'}>*/}
-                {/*            <ul className={'menu-links'}>*/}
-                {/*                <div className={'arhive-button'}>*/}
+                {/*        <div className='bottom-content'>*/}
+                {/*            <ul className='menu-links'>*/}
+                {/*                <div className='arhive-button'>*/}
                 {/*                    <li className={''} onClick={() => window.location.replace('/archive')}>*/}
-                {/*                        /!* eslint-disable-next-line jsx-a11y/anchor-is-valid *!/*/}
                 {/*                        <a >*/}
                 {/*                            <i className={'bx icon'}>*/}
                 {/*                                <svg width="42" height="42" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">*/}
@@ -113,42 +100,44 @@ function App() {
                 {/*                        </a>*/}
                 {/*                    </li>*/}
                 {/*                </div>*/}
-                {/*                <div className={'profile-button'}>*/}
-                {/*                    <li className={''} onClick={() => window.location.replace('/profile')}>*/}
+                {/*                <div className='profile-button'>*/}
+                {/*                    <li className='' onClick={() => window.location.replace('/profile')}>*/}
                 {/*                        <a >*/}
-                {/*                            <i className={'bx bx-user icon'}></i>*/}
-                {/*                            <span className={'text nav-text'}>Профиль</span>*/}
+                {/*                            <i className='bx bx-user icon'></i>*/}
+                {/*                            <span className='text nav-text'>Профиль</span>*/}
                 {/*                        </a>*/}
                 {/*                    </li>*/}
                 {/*                </div>*/}
-                {/*                <li className={'mode'}>*/}
-                {/*                    <div className={'sun-moon'}>*/}
-                {/*                        <i className={'bx bx-moon icon moon'}/>*/}
-                {/*                        <i className={'bx bx-sun icon sun'}/>*/}
+                {/*                <li className='mode'>*/}
+                {/*                    <div className='sun-moon'>*/}
+                {/*                        <i className='bx bx-moon icon moon'/>*/}
+                {/*                        <i className='bx bx-sun icon sun'/>*/}
                 {/*                    </div>*/}
-                {/*                    <span className={'mode-text text'}>Темная тема</span>*/}
-                {/*                    <div className={'toggle-switch'}>*/}
-                {/*                        <span className={'switch'}/>*/}
+                {/*                    <span className='mode-text text'>Темная тема</span>*/}
+                {/*                    <div className='toggle-switch'>*/}
+                {/*                        <span className='switch'/>*/}
                 {/*                    </div>*/}
                 {/*                </li>*/}
                 {/*            </ul>*/}
                 {/*        </div>*/}
                 {/*    </div>*/}
-                {/*    <div className={'vl'}/>*/}
+                {/*    <div className='vl'/>*/}
                 {/*</nav>*/}
                 <Routes>
                     {main}
                     {path_create}
-                    {user_id !== 0 &&<Route path={"/task-update/:id"} element={<Update/>}/>}
-                    <Route path={"/a"} element={<Authorization/>}/>
-                    <Route path={"/task-view/:id"} element={<View/>}/>
-                    <Route path={'/profile'} element={<Profile/>}/>
-                    <Route path={'/profile-edit'} element={<Profile_Edit/>}/>
-                    <Route path={'/archive'} element={<Archive/>}/>
-                    <Route path={'/calendar'} element={<Task_Calendar/>}/>
+                    {create_page}
+                    <Route path="/authorization" element={<Authorization/>}/>
+                    <Route path="/task/:id" element={<View/>}/>
+                    <Route path='/profile' element={<Profile/>}/>
+                    <Route path='/profile/edit' element={<Profile_Edit/>}/>
+                    <Route path='/archive' element={<Archive/>}/>
+                    <Route path='/archive/my' element={<Archive_my/>}/>
+                    <Route path='/archive/anmy' element={<Archive_anmy/>}/>
+                    <Route path='/calendar' element={<Task_Calendar/>}/>
                 </Routes>
             </div>
-            <script src={'./index.js'}/>
+            <script src='./index.js'/>
         </div>
     );
 };

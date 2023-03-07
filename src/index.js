@@ -66,14 +66,12 @@ password.addEventListener('keydown', function (e) {
     const subm = document.getElementById('submit_button_aut_user');
     if (e.keyCode === 13) {
         subm.click();
-        console.log('succ');
     }
 })
 document.getElementById('submit_comment').addEventListener('keydown', function (e) {
     const subm = document.getElementById('fake_knopka');
     if (e.keyCode === 13) {
         subm.click();
-        console.log('succ');
     }
 })
 const body = document.querySelector('body'),

@@ -81,9 +81,9 @@ class Authorization extends React.Component{
                         <div className="login__form">
                             <h4 className="h3 login__text">Авторизация</h4>
                             <form>
-                                <input className="login__input" name={'username'} id={'user_nexline_pass'} type="login" onChange={this.changeHandler} placeholder="Логин"/>
-                                <input className="password__input" type="password" id={'password'} name={'password'} onChange={this.changeHandler} placeholder="Пароль"/>
-                                <button className="sign-in--button" id={'submit_button_aut_user'} onClick={this.submitForm}>Войти</button>
+                                <input className="login__input" name="username" id="user_nexline_pass" type="login" onChange={this.changeHandler} placeholder="Логин"/>
+                                <input className="password__input" type="password" id="password" name="password" onChange={this.changeHandler} placeholder="Пароль"/>
+                                <button className="sign-in--button" id="submit_button_aut_user" onClick={this.submitForm}>Войти</button>
                             </form>
                         </div>
                     </div>

@@ -1,34 +1,14 @@
-.update_title{
-    height: 80px;
-    width: 575px;
-    background: #BFBDBD;
-    margin: -20px 0 0 0px;
-    border-radius: 5px;
-    font-size: 25px;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-}
-.update_description{
-    height: 205px;
-    width: 575px;
-    background: #BFBDBD;
-    margin: -20px 0 0 0px;
-    border-radius: 5px;
-    font-size: 25px;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-}
+.status-choice {
+    box-sizing: border-box;
 
+    margin-left: 56px;
+    margin-top: 18px;
+    padding-left: 16px;
 
-.save{
+    width: 141px;
+    height: 42px;
+
+    background: #ECE9E2;
+    border: 1px solid #968B63;
     border-radius: 8px;
-    background: #1BAFEA;
-    font-size: 30px;
-    width: 150px;
-    height: 50px;
-    margin-left: -70px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
-

@@ -5,8 +5,8 @@ import {generatePath} from "react-router";
 
 
 let user_id = localStorage.getItem('user_id')
-function Main() {
-    const [tasks, SetTasks] = useState()
+function Archive_anmy() {
+    let [archiveanmy, SetArchiveanmy] = useState()
     let Token = localStorage.getItem('Token')
     useEffect(() => {
         axios
@@ -17,40 +17,25 @@ function Main() {
                 },
             })
             .then(res => {
-                SetTasks(res.data)
+                SetArchiveanmy(res.data)
             })
             .catch(err => {
             })
     }, [])
-    function sort(task){
-        let sort_tasks = []
-        for(let i in task){
-            let assignee = task[i].assignee
-            let author = task[i].author
-            if(author == user_id) {
-                sort_tasks.push(task[i])
-            }
-            if(assignee == user_id){
-                sort_tasks.push(task[i])
+    function sorty(archivanmy){
+        let sorty_tasks = []
+        for(let i in archivanmy){
+            let assignee = archivanmy[i].assignee
+            if(assignee == user_id) {
+                sorty_tasks.push(archivanmy[i])
             }
         }
-        console.log({'сортированный массив':sort_tasks})
-        return sort_tasks
+        return sorty_tasks
     }
-    sort(tasks);
+    sorty(archiveanmy);
     return (
         <div className="all-tasks-status" id="all-tasks-status">
-            <div className="create-new-task">
-                <p className="createtask">Создать задачу</p>
-                <a className="plusik" onClick={() => window.location.replace('/task-create')}>
-                    <span className="task-new">
-                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='#91A14D' width='24' height='24'>
-                            <path d="M15 2.013H9V9H2v6h7v6.987h6V15h7V9h-7z"/>
-                        </svg>
-                    </span>
-                </a>
-            </div>
-            {sort(tasks).filter(object => object.is_active != false)?.map((task) => (
+            {sorty(archiveanmy)?.filter(object => object.is_active === false).map((task) => (
                 <div className="task-status">
                     <div className="task-name">
                         <span key={task.id}>{task.title}</span>
@@ -59,8 +44,7 @@ function Main() {
                         <span className="title-task-content" key={task.id}>{task.status}</span>
                     </div>
                     <div className="task-content">
-                        {task.author == user_id && <span className="employee" key={task.id}>для {localStorage.getItem('users' + (task.assignee - 1))}</span>}
-                        {task.author != user_id && <span className="employee" key={task.id}>от {localStorage.getItem('users' + (task.author - 1))}</span>}
+                        <span className="employee" key={task.id}>для {localStorage.getItem('users' + (task.assignee - 1))}</span>
                         <span className="linedead" key={task.id}>{task.deadline}</span>
                     </div>
                     <div className="edit-edit">
@@ -74,4 +58,4 @@ function Main() {
     );
 }
 
-export default Main;
+export default Archive_anmy;
