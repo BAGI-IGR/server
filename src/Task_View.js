@@ -14,7 +14,6 @@ export default function View() {
         },
     })
         .then(res => {
-            console.log(res)
             localStorage.setItem('author', res.data.author)
             localStorage.setItem('assignee', res.data.assignee)
             localStorage.setItem('title', res.data.title)
@@ -27,12 +26,10 @@ export default function View() {
             localStorage.setItem('priority', res.data.priority)
             localStorage.setItem('id', res.data.id)
             localStorage.setItem('comments', JSON.stringify(res.data.comments))
-            localStorage.setItem('onload', '1')
         })
         .catch(err => {
             console.log(err)
         })
-    let c = localStorage.getItem('onload')
     let author = localStorage.getItem('author')
     let assignee = localStorage.getItem('assignee')
     let title = localStorage.getItem('title')
