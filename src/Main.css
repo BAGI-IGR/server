@@ -8,6 +8,45 @@
     margin-top: 134px;
 }
 
+.create-new-task {
+    background: rgba(238, 231, 221, 0.46);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+
+    width: 284px;
+    height: 228px;
+}
+
+
+.createtask {
+    font-size: 20px;
+    line-height: 23px;
+
+    margin-top: 63px;
+    margin-left: 68px;
+}
+
+
+.plusik {
+    display:inline-flex;
+
+    width: 47px;
+    height: 47px;
+
+    margin-left: 118px;
+    margin-top: 28px;
+
+    background: #EEE7DD;
+    border: 1px solid #91A14D;
+    border-radius: 25px;
+}
+
+
+.task-new {
+    display:inline-flex;
+    margin: 11px;
+}
+
 .task-status {
     display: flex;
     flex-direction: column;
@@ -60,9 +99,7 @@
 .task-content {
     margin-left: 20px;
     margin-right: 20px;
-}
 
-.content-task {
     display: flex;
     justify-content: space-between;
 }
@@ -165,44 +202,3 @@
     margin-top: 7px;
 }
 
-
-.create-new-task {
-    background: rgba(238, 231, 221, 0.46);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-
-    width: 284px;
-    height: 228px;
-}
-
-
-.createtask {
-    font-size: 20px;
-    line-height: 23px;
-
-    margin-top: 63px;
-    margin-left: 68px;
-}
-
-
-.plusik {
-    display:inline-flex;
-
-    width: 47px;
-    height: 47px;
-
-    margin-left: 118px;
-    margin-top: 28px;
-
-    background: #EEE7DD;
-    border: 1px solid #91A14D;
-    border-radius: 25px;
-}
-
-
-.task-new {
-    display:inline-flex;
-
-    margin: 11px;
-    margin-top: 11px;
-}

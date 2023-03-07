@@ -1,98 +1,409 @@
 .modal-box {
-    width: 657px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 101px;
-    margin-left: 222px;
+    margin-top: 169px;
+    margin-left: 110px;
+
+    width: 1700px;
+    height: 742px;
+
+    background: #ECE9E2;
+    border-radius: 15px;
+
 }
 
-.author-wrapper {
+.top-panel {
+    display: flex;
+    justify-content: space-between;
+
+    width: 1700px;
+    height: 50px;
+
+    background: #EEE7DD;
+    border-radius: 15px 15px 0 0;
+}
+
+.top-panel .task-title {
+    padding-top: 11px;
+    padding-left: 47px;
+
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 24px;
+    align-items: center;
+
+    color: #000000;
+    cursor: context-menu;
+}
+
+.top-panel .cancel {
+    margin: 10px;
+}
+
+.down-panel {
     display: flex;
 }
 
-.task-title {
-    width: 657px;
-    height: 58px;
-
-    background: #EDEBEB;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-
-    text-align: left;
-    border: solid 1px;
-    font-size: x-large;
+.left-panel {
+    width: 852px;
+    height: 691px;
 }
 
-.task-description {
-    width: 657px;
-    height: 250px;
-
-    background: #EDEBEB;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-
-    text-align: -webkit-left;
-    white-space: pre-wrap;
-    border: solid 1px;
-    font-size: x-large;
-    padding-bottom: 200px;
-    margin-top: 32px;
-}
-
-.functional-wrapper {
-    display: grid;
-    align-content: space-between;
-    margin-top: -240px;
-    margin-left: 1100px;
-}
-
-.task-assignee,
-.task-priority, .deadline, .send {
-    width: 277px;
-    height: 47px;
-
-    background: #EDEBEB;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 9px;
-    margin-top: -100px;
-    border: none;
-    text-align: center;
-    font-size: x-large;
-}
-
-.task-assignee {
-    margin-right: 103px;
-}
-
-
-.button-wrapper {
+.status-work {
     display: flex;
-    margin-top: 126px;
+    justify-content: space-between;
+    box-sizing: border-box;
+
+    width: 852px;
+    height: 80px;
+
+    background: #ECE9E2;
+    border: 1px solid #CBCDCE;
+    border-right-width: 0;
 }
 
-.send {
-    width: 280px;
-    height: 100px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+.status {
+    box-sizing: border-box;
+
+    margin-left: 56px;
+    margin-top: 18px;
+    padding-top: 8px;
+    padding-left: 16px;
+
+    width: 141px;
+    height: 42px;
+
+    background: #ECE9E2;
+    border: 1px solid #968B63;
     border-radius: 8px;
-    text-align: center;
-    background: #1BAFEA;
-    color: white;
-    cursor: pointer;
-    font-size: x-large;
 }
 
-.cancel {
-    width: 315px;
-    height: 46px;
+.status-name {
+    font-family: 'Roboto';
+    font-size: 18px;
+    cursor: context-menu;
 
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    color: #000000;
+}
+
+.dedline {
+    box-sizing: border-box;
+
+    margin-right: 152px;
+    margin-top: 18px;
+    padding-top: 8px;
+    padding-left: 16px;
+
+    width: 158px;
+    height: 42px;
+
+    border: 1px solid #968B63;
+    border-radius: 8px;
+}
+
+.dedline .deadline {
+    background: #ECE9E2;
+}
+
+.all-information {
+    margin-left: 50px;
+    margin-top: 34px;
+    display: flex;
+    flex-direction: column;
+
+    width: 852px;
+    height: 611px;
+}
+
+.block-title .name-title {
+    box-sizing: border-box;
+    padding-left: 13px;
+
+    width: 648px;
+    height: 45px;
+
+    background: #ECE9E2;
+    border: 1px solid #968B63;
+    border-radius: 8px
+}
+
+.block-title .name-title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+
+    letter-spacing: 0.01em;
+
+    color: #000000
+}
+
+.block-description .name_description {
+    box-sizing: border-box;
+    padding-left: 13px;
+    margin-top: 19px;
+    margin-bottom: 19px;
+
+    width: 648px;
+    height: 110px;
+
+    background: #ECE9E2;
+    border: 1px solid #968B63;
+    border-radius: 8px;
+}
+
+.block-description .name_description {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+
+    letter-spacing: 0.01em;
+
+    color: #000000;
+}
+
+.block-executor {
+    display: flex;
+    width: 649px;
+    height: 40px;
+}
+
+.name-executor {
+    width: 121px;
+    margin-right: 17px;
+
+    font-family: 'Roboto';
+    font-size: 18px;
+
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+    cursor: context-menu;
+}
+
+.choice-executor {
+    box-sizing: border-box;
+    padding-left: 20px;
+    margin-right: 23px;
+
+    width: 448px;
+    height: 40px;
+
+    background: #ECE9E2;
+    border: 1px solid #968B63;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.block-author {
+    margin-top: 19px;
+    margin-bottom: 33px;
+    display: flex;
+    width: 585px;
+    height: 40px;
+}
+
+.name-author {
+    width: 56px;
+    margin-right: 20px;
+
+    font-family: 'Roboto';
+    font-size: 18px;
+
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+    cursor: context-menu;
+}
+
+.choice-author {
+    box-sizing: border-box;
+    padding-top: 8px;
+    padding-left: 20px;
+
+    width: 509px;
+    height: 40px;
+
+    background: #ECE9E2;
+    border: 1px solid #968B63;
+    border-radius: 7px;
+    cursor: context-menu;
+}
+
+.block-file {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 168px;
+}
+
+.name-file {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #000000;
+    cursor: context-menu;
+}
+
+.buttony {
+    display: flex;
+    margin-top: 16px;
+}
+
+.buttony .send {
+    width: 203px;
+    height: 37px;
+
+    background: #91A14D;
+    border-radius: 8px;
+    margin-right: 58px;
+
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 18px;
+
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.buttony .cancel {
+    width: 168px;
+    height: 37px;
+
+    background: #9E0000;
     border-radius: 8px;
 
-    text-align: center;
-    background: #1BAFEA;
-    font-size: x-large;
-    color: white;
-    cursor: pointer;
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 18px;
+
+    text-decoration: none;
+
+    color: #FFFFFF;
 }
+
+.buttony .cancel .cancel-text {
+    margin: 8px 0 0 40px;
+}
+
+.chat {
+    width: 847px;
+    height: 691px;
+
+    background: #ECE9E2;
+    border-radius: 0 0 15px 0;
+    border: 1px solid #CBCDCE;
+    border-right-width: 0;
+    border-bottom-width: 0;
+}
+
+.chat-area {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 847px;
+    height: 600px;
+    border: 0 solid #CBCDCE;
+    border-bottom-width: 1px;
+}
+
+.chat-view {
+    display: flex;
+    margin-left: 51px;
+    margin-bottom: 25px;
+
+    width: auto;
+    height: auto;
+}
+
+.chat-avatar {
+    width: 35px;
+    height: 35px;
+
+    background: #707070;
+}
+
+.chat-cloud {
+    box-sizing: border-box;
+
+    width: auto;
+    height: auto;
+
+    background: #FFFFFF;
+    border: 1px solid #CBCDCE;
+    border-radius: 5px;
+}
+
+.chat-name {
+    margin: 10px;
+
+    font-weight: 500;
+    line-height: 14px;
+
+    color: #546FD0;
+}
+
+.chat-text {
+    width: auto;
+    height: auto;
+    margin: 10px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    text-align: center;
+
+    color: #000000;
+}
+
+.chat-menu {
+    box-sizing: border-box;
+
+    width: 847px;
+    height: 90px;
+
+    background: #ECE9E2;
+}
+
+.chat-message {
+    margin-left: 50px;
+    margin-top: 18px;
+    margin-right: 25px;
+    box-sizing: border-box;
+
+    width: 536px;
+    height: 56px;
+
+    background: #ECE9E2;
+    border: 1px solid #968B63;
+    border-radius: 8px;
+    cursor: auto;
+}
+
+.fake_knopka {
+    width: 190px;
+    height: 56px;
+
+    background: #91A14D;
+    border-radius: 8px;
+}
+
+.otpravit {
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+
