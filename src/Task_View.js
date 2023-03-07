@@ -7,7 +7,6 @@ import {logDOM} from "@testing-library/react";
 export default function View() {
     let loc = window.location.href.split('/')[4]
     let Token = localStorage.getItem('Token')
-})
     axios.get('https://robot0005.pythonanywhere.com/task/retrieve/' + loc, {
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
