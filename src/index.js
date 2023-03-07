@@ -20,7 +20,7 @@ axios
     .get('https://robot0005.pythonanywhere.com/profile/', {
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
-            'Authorization': 'Token' + ' ' + Token
+            'Authorization': 'Token ' + Token
         },
     })
     .then(res => {
@@ -38,7 +38,7 @@ console.log('мой ' + user_id)
 axios.get('https://robot0005.pythonanywhere.com/profile/retrieve/' + user_id, {
     headers: {
         'Content-type': 'application/json; charset=UTF-8',
-        'Authorization': 'Token' + ' ' + Token
+        'Authorization': 'Token ' + Token
     },
 })
     .then(res => {
@@ -66,14 +66,14 @@ password.addEventListener('keydown', function (e) {
     const subm = document.getElementById('submit_button_aut_user');
     if (e.keyCode === 13) {
         subm.click();
-        console.log('succ');
     }
 })
 document.getElementById('submit_comment').addEventListener('keydown', function (e) {
     const subm = document.getElementById('fake_knopka');
     if (e.keyCode === 13) {
         subm.click();
-        console.log('succ');
+        let loc = window.location.href.split('/')[5]
+        window.location.replace('https://server-njsy.vercel.app/task/'+loc)
     }
 })
 const body = document.querySelector('body'),
