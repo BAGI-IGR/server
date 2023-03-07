@@ -18,7 +18,7 @@ class Add extends React.Component {
             weight: '0',
             belongs: 'Задача',
             status: 'Открыта',
-            priority: 'Низкий',
+            priority: '',
             file: '',
         }
         this.changeHandler = this.changeHandler.bind(this);
