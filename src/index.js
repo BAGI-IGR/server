@@ -72,7 +72,7 @@ document.getElementById('submit_comment').addEventListener('keydown', function (
     const subm = document.getElementById('fake_knopka');
     if (e.keyCode === 13) {
         subm.click();
-        let loc = window.location.href.split('/')[5]
+        let loc = window.location.href.split('/')[4]
         window.location.replace('https://server-njsy.vercel.app/task/'+loc)
     }
 })
