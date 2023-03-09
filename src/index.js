@@ -38,7 +38,7 @@ console.log('мой ' + user_id)
 axios.get('https://robot0005.pythonanywhere.com/profile/retrieve/' + user_id, {
     headers: {
         'Content-type': 'application/json; charset=UTF-8',
-        'Authorization': 'Token' + ' ' + Token
+        'Authorization': 'Token ' + Token
     },
 })
     .then(res => {
@@ -54,62 +54,15 @@ axios.get('https://robot0005.pythonanywhere.com/profile/retrieve/' + user_id, {
     .catch(err => {
         console.log("ne robotaet")
     })
-const nexline = document.getElementById('user_nexline_pass');
-nexline.addEventListener('keydown', function (e) {
-    const subm = document.getElementById('password');
-    if (e.keyCode === 13) {
-        subm.focus();
-    }
-})
-const password = document.getElementById('password');
-password.addEventListener('keydown', function (e) {
-    const subm = document.getElementById('submit_button_aut_user');
-    if (e.keyCode === 13) {
-        subm.click();
-    }
-})
-document.getElementById('submit_comment').addEventListener('keydown', function (e) {
-    const subm = document.getElementById('fake_knopka');
-    if (e.keyCode === 13) {
-        subm.click();
-    }
-})
-const body = document.querySelector('body'),
-    sidebar = body.querySelector('nav'),
-    toggle = body.querySelector(".toggle"),
-    searchBtn = body.querySelector(".search-box"),
-    modeSwitch = body.querySelector(".toggle-switch"),
-    modeText = body.querySelector(".mode-text");
-let arrow = document.querySelectorAll(".arrow");
-for (let i = 0; i < arrow.length; i++) {
-    arrow[i].addEventListener("click", (e) => {
-        let arrowParent = e.target.parentElement.parentElement;
-        arrowParent.classList.toggle('showMenu')
-    });
-}
-toggle.addEventListener("click", () => {
-    sidebar.classList.toggle("close");
-})
-searchBtn.addEventListener("click", () => {
-    sidebar.classList.remove("close");
-})
-modeSwitch.addEventListener("click", () => {
-    body.classList.toggle("dark");
-    if (body.classList.contains("dark")) {
-        modeText.innerText = "Светлая тема";
-    } else {
-        modeText.innerText = "Темная тема";
-    }
-});
+
 window.addEventListener('load', async function (event) {
     let Token = localStorage.getItem('Token')
     console.log(Token);
     if (Token != null) {
-        document.getElementById('sidebar close').style.display = "block";
         axios.get('https://robot0005.pythonanywhere.com/auth/me/', {
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Token' + ' ' + Token,
+                'Authorization': 'Token ' + Token,
             }
         })
             .then(res => {

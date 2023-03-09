@@ -59,7 +59,6 @@ class Update extends React.Component {
         });
     }
     submitForm() {
-
         console.log(this.state);
         let Token = localStorage.getItem('Token')
         console.log(Token)
@@ -74,11 +73,15 @@ class Update extends React.Component {
             .then(response => {response.json()
                 console.log(response.status)
                 if(response.status === 200) {
-                    document.getElementById('send').style.background = 'green';
-                    window.location.replace('http://localhost:3000/task/'+loc)
+                    document.getElementById('save').style.background = 'green';
+                    setTimeout(() => {
+                        window.location.replace('http://localhost:3000/task/'+loc)
+                    })
                 } else{
-                    document.getElementById('send').style.background = 'red';
-                    window.location.reload();
+                    document.getElementById('save').style.background = 'red';
+                    setTimeout(() => {
+                        window.location.reload();
+                    })
                 }
             })
             .then((data) => console.log(data))
@@ -167,8 +170,8 @@ class Update extends React.Component {
                                        ref={this.fileInput} id="input__file"/>
                             </div>
                             <div className="buttony">
-                                <button className="send" type="submit" id="send" onClick={this.submitForm}
-                                        placeholder="Сохранить">Создать
+                                <button className="save" id="send" onClick={() => this.submitForm()}
+                                        placeholder="Сохранить">Сохранить
                                 </button>
                                 <a className="cancel" href={'http://localhost:3000/task/'+loc}><p className="cancel-text">Отменить</p>
                                 </a>

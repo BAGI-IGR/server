@@ -12,3 +12,19 @@
     border: 1px solid #968B63;
     border-radius: 8px;
 }
+
+.save {
+    width: 203px;
+    height: 37px;
+
+    background: #91A14D;
+    border-radius: 8px;
+    margin-right: 58px;
+
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 18px;
+
+    color: #FFFFFF;
+    cursor: pointer;
+}

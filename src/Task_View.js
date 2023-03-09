@@ -142,9 +142,9 @@ export default function View() {
                         ))}
                     </div>
                     <div className="chat-menu">
-                        <form>
-                            <input className="chat-message" placeholder="Введите ваше сообщение..."/>
-                            <button className="fake_knopka">
+                        <form id="submit_comment" onSubmit={Comment}>
+                            <input className="chat-message" type="text" name='text' placeholder="Введите ваше сообщение..."/>
+                            <button className="fake_knopka" id="fake_knopka">
                                 <p className="otpravit">Отправить</p>
                             </button>
                         </form>
