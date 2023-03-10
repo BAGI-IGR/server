@@ -37,9 +37,12 @@ function App() {
     window.addEventListener('load', async function (event) {
         let Token = localStorage.getItem('Token')
         if (Token != null) {
-            // if (document.getElementById('sidebar close') != null) {
-            //    document.getElementById('sidebar close').style.display = "block";
-            // }
+            if (document.getElementById('up-footer').style.display != null) {
+               document.getElementById('up-footer').style.display = "block";
+            }
+            if (document.getElementById('down-footer').style.display != null) {
+               document.getElementById('down-footer').style.display = "block";
+            }
             axios.get('https://robot0005.pythonanywhere.com/auth/me/', {
                 headers: {
                     'Content-Type': 'application/json',
@@ -52,6 +55,8 @@ function App() {
                     console.log(user_id)
                     if (res.status === 401) {
                         window.location.replace("https://server-njsy.vercel.app/");
+                        document.getElementById('up-footer').style.display = "none";
+                        document.getElementById('down-footer').style.display = "none";
                     }
                 })
                 .catch(err => {
