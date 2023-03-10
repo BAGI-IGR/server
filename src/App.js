@@ -96,9 +96,15 @@ function App() {
                     <input className="search" type="text" placeholder="Поиск..."/>
                     <select className="filter" name='status'>
                         <option selected disabled value="Статус">Статус</option>
-                        <option value={"Открыта"} onClick={() => window.location.replace("https://server-njsy.vercel.app/unlock")}>Открыта</option>
-                        <option value={"В работе"} onClick={() => window.location.replace("https://server-njsy.vercel.app/work")}>В работе</option>
-                        <option value={"Закрыта"} onClick={() => window.location.replace("https://server-njsy.vercel.app/closed")}>Выполнена</option>
+                        <option value={"Открыта"}>
+                            <a className="tak-v" href="https://server-njsy.vercel.app/unlock">Открыта</a>
+                        </option>
+                        <option value={"В работе"}>
+                            <a className="tak-v" href="https://server-njsy.vercel.app/work">В работе</a>
+                        </option>
+                        <option value={"Закрыта"}>
+                            <a className="tak-v" href="https://server-njsy.vercel.app/closed">Закрыта</a>
+                        </option>
                     </select>
                     <select className="filter">
                         <option selected disabled value="Автор/исполнитель">Автор/исполнитель</option>

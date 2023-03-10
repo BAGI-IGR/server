@@ -93,6 +93,11 @@ button {
     color: #000000;
 }
 
+.tak-v {
+    text-decoration: none;
+    color: #000000;
+}
+
 .profile {
     align-items: center;
     justify-content: space-between;
