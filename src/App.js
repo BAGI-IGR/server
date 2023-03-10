@@ -59,7 +59,8 @@ function App() {
                     console.log('oshibka')
                 })
         } else {
-            // document.getElementById('sidebar close').style.display = "none";
+            document.getElementById('up-footer').style.display = "none";
+            document.getElementById('down-footer').style.display = "none";
         }
     })
     return (
