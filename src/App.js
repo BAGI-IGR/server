@@ -71,7 +71,7 @@ function App() {
     return (
         <div>
             <div className="slider-main">
-                <div className="up-footer">
+                <div className="up-footer" id="up-footer">
                     <a className="home" href="https://server-njsy.vercel.app/">
                         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15.0404 0.458181C14.9092 0.313869 14.7493 0.198564 14.571 0.119661C14.3926 0.0407585 14.1998 0 14.0047 0C13.8097 0 13.6169 0.0407585 13.4385 0.119661C13.2602 0.198564 13.1003 0.313869 12.9691 0.458181L0.373406 14.453C0.187672 14.6533 0.0645933 14.9035 0.019342 15.1728C-0.0259092 15.4422 0.00864462 15.7189 0.118744 15.9688C0.228844 16.2188 0.409677 16.431 0.638954 16.5795C0.86823 16.7279 1.13593 16.806 1.40905 16.8041H4.2081V26.6005C4.2081 26.9717 4.35555 27.3276 4.61801 27.5901C4.88047 27.8526 5.23644 28 5.60762 28H22.4019C22.7731 28 23.129 27.8526 23.3915 27.5901C23.6539 27.3276 23.8014 26.9717 23.8014 26.6005V16.8041H26.6004C26.9716 16.8041 27.3276 16.6567 27.5901 16.3942C27.8525 16.1318 28 15.7758 28 15.4047C28.0026 15.053 27.8726 14.7132 27.6361 14.453L15.0404 0.458181Z" fill="#3D7186"/>
@@ -92,7 +92,7 @@ function App() {
                         <span className="text-list">Архив</span>
                     </a>
                 </div>
-                <div className="down-footer">
+                <div className="down-footer" id="down-footer">
                     <input className="search" type="text" placeholder="Поиск..."/>
                     <select className="filter" name='status'>
                         <option selected disabled value="Статус">Статус</option>
