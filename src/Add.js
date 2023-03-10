@@ -1,5 +1,7 @@
 import React from "react";
+// import axios from 'axios'
 import './Add.css';
+// import {today} from "react-big-calendar/lib/utils/dates";
 
 
 class Add extends React.Component {
@@ -16,7 +18,7 @@ class Add extends React.Component {
             weight: '0',
             belongs: 'Задача',
             status: 'Открыта',
-            priority: '',
+            priority: 'Низкий',
             file: '',
         }
         this.changeHandler = this.changeHandler.bind(this);
@@ -96,7 +98,7 @@ class Add extends React.Component {
             <div className="modal-box" id="modal-box-id">
                 <div className="top-panel">
                     <span className="task-title">Создание задачи</span>
-                    <a className="cancel" href="https://server-njsy.vercel.app">
+                    <a className="cancel" href="https://server-njsy.vercel.app/">
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="30" height="30" rx="8" fill="#9E0000"/>
                             <path d="M20.4834 17.9887C20.9642 18.4695 20.9642 19.249 20.4834 19.7298C20.0026 20.2106 19.2231 20.2106 18.7423 19.7298L9.87681 10.8643C9.39602 10.3835 9.39602 9.60398 9.87681 9.12319C10.3576 8.6424 11.1371 8.6424 11.6179 9.12319L20.4834 17.9887ZM20.3086 9.30861C20.8516 9.85155 20.8516 10.7318 20.3086 11.2748L11.6682 19.9152C11.1252 20.4582 10.245 20.4582 9.70201 19.9152C9.15908 19.3723 9.15908 18.492 9.70201 17.9491L18.3425 9.30862C18.8854 8.76568 19.7657 8.76568 20.3086 9.30861Z" fill="white"/>
@@ -110,6 +112,7 @@ class Add extends React.Component {
                                 <span className="status-name">Статус</span>
                             </div>
                             <div className="dedline">
+                                {/*<span class="task-name__style">Дедлайн:</span>*/}
                                 <input className="deadline" name="deadline" type="date" value={this.state.deadline} onChange={this.changeHandler} placeholder="Дедлайн"/>
                             </div>
                         </div>
@@ -125,9 +128,10 @@ class Add extends React.Component {
                                 <span className="name-executor">Исполнитель:</span>
                                 <select className="choice-executor" name="assignee" onChange={this.changeSelectedMultiple}>
                                     <option value={0} selected disabled>Исполнитель</option>
-                                    <option value={1}>{localStorage.getItem('users' + 0)}</option>
-                                    <option value={2}>{localStorage.getItem('users' + 1)}</option>
-                                    <option value={3}>{localStorage.getItem('users' + 2)}</option>
+                                    <option value={1}>{localStorage.getItem('users_' + 0)}</option>
+                                    <option value={2}>{localStorage.getItem('users_' + 1)}</option>
+                                    <option value={3}>{localStorage.getItem('users_' + 2)}</option>
+                                    {/*<option value={4}>{localStorage.getItem('users_' + 3)}</option>*/}
                                 </select>
                                 <span>
                                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -138,7 +142,7 @@ class Add extends React.Component {
                             </div>
                             <div className="block-author">
                                 <span className="name-author">Автор:</span>
-                                <span className="choice-author">Вы</span>
+                                <span className="choice-author">{localStorage.getItem('fio')}</span>
                             </div>
                             <div className="block-file">
                                 <span className="name-file">Вложенные файлы</span>
@@ -146,7 +150,7 @@ class Add extends React.Component {
                             </div>
                             <div className="buttony">
                                 <button className="send" type="submit" id="send" onClick={this.submitForm} placeholder="Создать">Создать</button>
-                                <a className="cancel" href="https://server-njsy.vercel.app"><p className="cancel-text">Отменить</p></a>
+                                <a className="cancel" href="https://server-njsy.vercel.app/"><p className="cancel-text">Отменить</p></a>
                             </div>
                         </div>
                     </div>
@@ -155,9 +159,9 @@ class Add extends React.Component {
                         <div className="chat-menu">
                             <form>
                                 <input className="chat-message" placeholder="Создайте задачу, чтобы писать в чат..." disabled/>
-                                <button className="fake_knopka" disabled>
-                                    <p className="otpravit">Отправить</p>
-                                </button>
+                                {/*<button className="fake_knopka" disabled>*/}
+                                {/*    <p className="otpravit">Отправить</p>*/}
+                                {/*</button>*/}
                             </form>
                         </div>
                     </div>

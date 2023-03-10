@@ -22,9 +22,25 @@ function Archive() {
             .catch(err => {
             })
     }, [])
+    function sort(task){
+        let sort_tasks = []
+        for(let i in task){
+            let assignee = task[i].assignee
+            let author = task[i].author
+            if(author == user_id) {
+                sort_tasks.push(task[i])
+            }
+            if(assignee == user_id){
+                sort_tasks.push(task[i])
+            }
+        }
+        console.log({'сортированный массив':sort_tasks})
+        return sort_tasks
+    }
+    sort(archive);
     return (
         <div className="all-tasks-status" id="all-tasks-status">
-            {archive?.filter(object => object.is_active === false).map((task) => (
+            {sort(archive)?.filter(object => object.is_active === false).map((task) => (
                 <div className="task-status">
                     <div className="task-name">
                         <span key={task.id}>{task.title}</span>
@@ -33,8 +49,8 @@ function Archive() {
                         <span className="title-task-content" key={task.id}>{task.status}</span>
                     </div>
                     <div className="task-content">
-                        {task.author == user_id && <span className="employee" key={task.id}>для {localStorage.getItem('users' + (task.assignee - 1))}</span>}
-                        {task.author != user_id && <span className="employee" key={task.id}>от {localStorage.getItem('users' + (task.author - 1))}</span>}
+                        {task.author == user_id && <span className="employee" key={task.id}>для {localStorage.getItem('users_' + (task.assignee - 1))}</span>}
+                        {task.author != user_id && <span className="employee" key={task.id}>от {localStorage.getItem('users_' + (task.author - 1))}</span>}
                         <span className="linedead" key={task.id}>{task.deadline}</span>
                     </div>
                     <div className="edit-edit">

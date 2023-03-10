@@ -5,7 +5,7 @@ import {generatePath} from "react-router";
 
 
 let user_id = localStorage.getItem('user_id')
-function Main() {
+function Closed() {
     const [tasks, SetTasks] = useState()
     let Token = localStorage.getItem('Token')
     useEffect(() => {
@@ -50,7 +50,7 @@ function Main() {
                     </span>
                 </a>
             </div>
-            {sort(tasks).filter(object => object.is_active != false)?.map((task) => (
+            {sort(tasks).filter(object => object.status != "Закрыта")?.map((task) => (
                 <div className="task-status">
                     <div className="task-name">
                         <span key={task.id}>{task.title}</span>
@@ -74,4 +74,4 @@ function Main() {
     );
 }
 
-export default Main;
+export default Closed;

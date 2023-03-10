@@ -47,7 +47,7 @@ class Profile_Edit extends React.Component {
         window.location.replace("https://server-njsy.vercel.app/");
     }
     Save(data) {
-        window.location.replace("https://server-njsy.vercel.app/profile");
+        window.location.replace("http://localhost:3000/profile");
         localStorage.removeItem("fio")
         localStorage.removeItem("email")
         localStorage.removeItem("number")
@@ -56,9 +56,6 @@ class Profile_Edit extends React.Component {
         localStorage.setItem("email", data.email)
         localStorage.setItem("number", data.work_phone_num)
         localStorage.setItem("position", data.position)
-    }
-    Cancle() {
-        window.location.replace("https://server-njsy.vercel.app/profile");
     }
     render() {
         return (
@@ -73,7 +70,7 @@ class Profile_Edit extends React.Component {
                         <div className="container__body-info">
                             <div className="container-info">
                                 <div className="container-name">
-                                    <input className="input-fio" id={'input1'}
+                                    <input className="input-fio" id='input1'
                                            type="full-name" name="fio" value={localStorage.getItem('fio')}
                                            placeholder="ФИО"/>
                                 </div>
@@ -83,26 +80,26 @@ class Profile_Edit extends React.Component {
                                            placeholder="Номер телефона" value={this.state.work_phone_num}/>
                                 </div>
                                 <div className="container-email">
-                                    <input className="input-email" onChange={this.changeHandler} id={'input3'}
+                                    <input className="input-email" onChange={this.changeHandler} id='input3'
                                            type="email" name="email" value={this.state.email}
                                            placeholder="Электронная почта"/>
                                 </div>
                                 <div className="container-status">
-                                    <input className="input-status" id={'input4'}
+                                    <input className="input-status" id='input4'
                                            type="status" name="position" value={localStorage.getItem('position')}
                                            placeholder="Должность"/>
                                 </div>
                             </div>
-                            <div className="edit_save-button" id={"edit_save-button"}>
-                                <button className="edit-button" onClick={this.Cancle}>Отмена</button>
-                                <button className="button-save" id={'edit_save'} onClick={this.submitForm}>Сохранить</button>
+                            <div className="edit_save-button" id="edit_save-button">
+                                <a className="edit-button" href="https://server-njsy.vercel.app/profile/">Отмена</a>
+                                <button className="button-save" id='edit_save' onClick={this.submitForm}>Сохранить</button>
                             </div>
 
                         </div>
                     </div>
                 </div>
                 {/*))}*/}
-                <footer className={"container_loggout"}>
+                <footer className="container_loggout">
                     <div className="loggout">
                         <button className="loggout-button" onClick={this.ClearToken}>Выйти из аккаунта</button>
                     </div>

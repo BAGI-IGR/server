@@ -5,8 +5,8 @@ import {generatePath} from "react-router";
 
 
 let user_id = localStorage.getItem('user_id')
-function Archive_anmy() {
-    let [archiveanmy, SetArchiveanmy] = useState()
+function Assignee() {
+    const [assignees, SetAssignees] = useState()
     let Token = localStorage.getItem('Token')
     useEffect(() => {
         axios
@@ -17,25 +17,35 @@ function Archive_anmy() {
                 },
             })
             .then(res => {
-                SetArchiveanmy(res.data)
+                SetAssignees(res.data)
             })
             .catch(err => {
             })
     }, [])
-    function sorty(archivanmy){
-        let sorty_tasks = []
-        for(let i in archivanmy){
-            let assignee = archivanmy[i].assignee
-            if(assignee == user_id) {
-                sorty_tasks.push(archivanmy[i])
+    function assignee(task){
+        let assignee_tasks = []
+        for(let i in task){
+            let assignee = task[i].assignee
+            if(assignee == user_id){
+                assignee_tasks.push(task[i])
             }
         }
-        return sorty_tasks
+        return assignee_tasks
     }
-    sorty(archiveanmy);
+    assignee(assignees);
     return (
         <div className="all-tasks-status" id="all-tasks-status">
-            {sorty(archiveanmy)?.filter(object => object.is_active === false).map((task) => (
+            <div className="create-new-task">
+                <p className="createtask">Создать задачу</p>
+                <a className="plusik" href="https://server-njsy.vercel.app/task/create">
+                    <span className="task-new">
+                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='#91A14D' width='24' height='24'>
+                            <path d="M15 2.013H9V9H2v6h7v6.987h6V15h7V9h-7z"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+            {assignee(assignees).filter(object => object.is_active != false)?.map((task) => (
                 <div className="task-status">
                     <div className="task-name">
                         <span key={task.id}>{task.title}</span>
@@ -44,7 +54,7 @@ function Archive_anmy() {
                         <span className="title-task-content" key={task.id}>{task.status}</span>
                     </div>
                     <div className="task-content">
-                        <span className="employee" key={task.id}>для {localStorage.getItem('users' + (task.assignee - 1))}</span>
+                        <span className="employee" key={task.id}>от {localStorage.getItem('users_' + (task.author - 1))}</span>
                         <span className="linedead" key={task.id}>{task.deadline}</span>
                     </div>
                     <div className="edit-edit">
@@ -58,4 +68,4 @@ function Archive_anmy() {
     );
 }
 
-export default Archive_anmy;
+export default Assignee;

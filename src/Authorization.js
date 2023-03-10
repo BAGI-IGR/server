@@ -41,7 +41,7 @@ class Authorization extends React.Component{
         axios.get('https://robot0005.pythonanywhere.com/auth/me/', {
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Token' + ' ' + Token,
+                'Authorization': 'Token ' + Token,
             }
         })
             .then(res => {
@@ -50,7 +50,7 @@ class Authorization extends React.Component{
                     axios.get('https://robot0005.pythonanywhere.com/auth/me/', {
                         headers: {
                             'Content-Type': 'application/json',
-                            'Authorization': 'Token' + ' ' + Token,
+                            'Authorization': 'Token ' + Token,
                         }
                     })
                         .then(res => {
@@ -75,14 +75,14 @@ class Authorization extends React.Component{
         return(
             <div className="main_">
                 <div className="autorization-image"></div>
-                <div className="login__form">
-                    <h4 className="h3 login__text">Авторизация</h4>
-                    <form>
-                        <input className="login__input" name="username" id="user_nexline_pass" type="login" onChange={this.changeHandler} placeholder="Логин"/>
-                        <input className="password__input" type="password" id="password" name="password" onChange={this.changeHandler} placeholder="Пароль"/>
-                        <button className="sign-in--button" id="submit_button_aut_user" onClick={this.submitForm}>Войти</button>
-                    </form>
-                </div>
+                    <div className="login__form">
+                        <h4 className="h3 login__text">Авторизация</h4>
+                        <form>
+                            <input className="login__input" name="username" id="user_nexline_pass" type="login" onChange={this.changeHandler} placeholder="Логин"/>
+                            <input className="password__input" type="password" id="password" name="password" onChange={this.changeHandler} placeholder="Пароль"/>
+                            <button className="sign-in--button" id="submit_button_aut_user" onClick={this.submitForm}>Войти</button>
+                        </form>
+                    </div>
             </div>
         )
     }
