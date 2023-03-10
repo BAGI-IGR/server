@@ -1,7 +1,7 @@
 .modal-box {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 169px;
+    margin-top: 79px;
     margin-left: 110px;
 
     width: 1700px;
@@ -60,6 +60,7 @@
     background: #ECE9E2;
     border: 1px solid #CBCDCE;
     border-right-width: 0;
+    border-left-width: 0;
 }
 
 .status {
@@ -382,7 +383,7 @@
     margin-right: 25px;
     box-sizing: border-box;
 
-    width: 536px;
+    width: 747px;
     height: 56px;
 
     background: #ECE9E2;

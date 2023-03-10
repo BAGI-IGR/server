@@ -57,6 +57,9 @@ export default function View() {
             },
         }).then(res=>console.log(res))
             .catch(err => console.log(err))
+        setTimeout(() => {
+            window.location.replace('http://localhost:3000/task/'+loc)
+        },1000)
     }
     let comments = JSON.parse(localStorage.getItem('comments'))
     window.onload = function() {
@@ -64,10 +67,10 @@ export default function View() {
             window.location = window.location + '#';
             setTimeout(() => {
                 window.location.reload();
-            },500)
+            },1000)
             setTimeout(() => {
                 window.location.reload();
-            },500)
+            },1000)
         }
     }
     return (
@@ -101,7 +104,7 @@ export default function View() {
                         <div className="block-executor">
                             <span className="name-executor">Исполнитель:</span>
                             <span className="view-executor">
-                                {localStorage.getItem('users' + (assignee[0] - 1))}
+                                {localStorage.getItem('users_' + (assignee[0] - 1))}
                             </span>
                             <span>
                                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
@@ -115,7 +118,7 @@ export default function View() {
                         </div>
                         <div className="block-author">
                             <span className="name-author">Автор:</span>
-                            <span className="choice-author">{localStorage.getItem('users' + (author - 1))}</span>
+                            <span className="choice-author">{localStorage.getItem('users_' + (author - 1))}</span>
                         </div>
                         <div className="block-file">
                             <span className="name-file">Вложенные файлы</span>
@@ -135,7 +138,7 @@ export default function View() {
                             <span className="chat-view">
                                 <span className="chat-avatar"/>
                                 <span className="chat-cloud">
-                                    <p className="chat-name">{localStorage.getItem('users' + ((comment.author) - 1))}</p>
+                                    <p className="chat-name">{localStorage.getItem('users_' + ((comment.author) - 1))}</p>
                                     <p className="chat-text">{comment.text}</p>
                                 </span>
                             </span>
@@ -143,10 +146,10 @@ export default function View() {
                     </div>
                     <div className="chat-menu">
                         <form id="submit_comment" onSubmit={Comment}>
-                            <input className="chat-message" type="text" name='text' placeholder="Введите ваше сообщение..."/>
-                            <button className="fake_knopka" id="fake_knopka">
-                                <p className="otpravit">Отправить</p>
-                            </button>
+                            <input className="chat-message" type="text" name="text" placeholder="Введите ваше сообщение..."/>
+                            {/*<button className="fake_knopka" type="text" name="text" id="fake_knopka" onClick={() => this.Comment()}>*/}
+                            {/*    <p className="otpravit">Отправить</p>*/}
+                            {/*</button>*/}
                         </form>
                     </div>
                 </div>

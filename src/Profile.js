@@ -12,7 +12,7 @@ function Profile() {
             axios.get('https://robot0005.pythonanywhere.com/auth/me/', {
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Token' + ' ' + Token,
+                    'Authorization': 'Token ' + Token,
                 }
             })
                 .then(res => {
@@ -20,7 +20,7 @@ function Profile() {
                     let user_id = localStorage.getItem('user_id')
                     console.log(user_id)
                     if (res.status === 401) {
-                        window.location.replace("http://localhost:3000/authorization");
+                        window.location.replace("http://localhost:3000/");
                     }
                 })
                 .catch(err => {
@@ -28,10 +28,9 @@ function Profile() {
                     console.log('oshibka')
                 })
         } else {
-            document.getElementById('sidebar close').style.display = "none";
             setTimeout(() => {
-                window.location.replace("http://localhost:3000/authorization")
-            }, 10000);
+                window.location.replace("http://localhost:3000/")
+            }, 500);
         }
     });
     let user_id = localStorage.getItem('user_id')
@@ -41,7 +40,7 @@ function Profile() {
         axios.get('https://robot0005.pythonanywhere.com/profile/retrieve/' + user_id, {
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
-                'Authorization': 'Token' + ' ' + Token
+                'Authorization': 'Token ' + Token
             },
         })
             .then(res => {
@@ -61,7 +60,6 @@ function Profile() {
     }, [])
     function ClearToken() {
         localStorage.clear()
-        document.getElementById('sidebar close').style.display = "none";
         window.location.replace("http://localhost:3000/");
 
     }
@@ -70,33 +68,26 @@ function Profile() {
     let email = localStorage.getItem('email')
     let number = localStorage.getItem('number')
     let position = localStorage.getItem('position')
-    function Edit() {
-        window.location.replace("http://localhost:3000/profile-edit");
-    }
-    function To_Main() {
-        window.location.replace("http://localhost:3000/");
-    }
     return (
         <div>
             {/*{profiles?.map(profile =>(*/}
             <div className="main">
                 <div className="container">
                     <div className="container-ava">
-                        {/*<img className="container-ava" src={require("./files/" + avatar.split('/')[6])}/>*/}
                         <img className="container-ava"/>
                     </div>
                     <div className="container__body-info">
                         <div className="container-info">
                             <div className="container-name">
-                                <input className="input-fio" id={'input1'} type="full-name" name="full-name"
+                                <input className="input-fio" id='input1' type="full-name" name="full-name"
                                        placeholder="ФИО" value={fio}/>
                             </div>
                             <div className="phone_number">
-                                <input className="input-number" id={'input2'} type="phone_number" name="phone_number"
+                                <input className="input-number" id='input2' type="phone_number" name="phone_number"
                                        placeholder="Номер телефона" value={number}/>
                             </div>
                             <div className="container-email">
-                                <input className="input-email" id={'input3'} type="email" name="_email"
+                                <input className="input-email" id='input3' type="email" name="_email"
                                        placeholder="Электронная почта" value={email}/>
                             </div>
                             <div className="container-status">
@@ -104,16 +95,16 @@ function Profile() {
                                        placeholder="Должность" value={position}/>
                             </div>
                         </div>
-                        <div className="edit_save-button" id={"edit_save-button"}>
-                            <button className="edit-button" onClick={To_Main}>На главную</button>
-                            <button className="save-button" id={'edit_button'} onClick={Edit}>Редактировать</button>
+                        <div className="edit_save-button" id="edit_save-button">
+                            <a className="edit-button" href="http://localhost:3000">На главную</a>
+                            <a className="save-button" id='edit_button' href="http://localhost:3000/profile/edit">Редактировать</a>
                         </div>
 
                     </div>
                 </div>
             </div>
             {/*))}*/}
-            <footer className={"container_loggout"}>
+            <footer className="container_loggout">
                 <div className="loggout">
                     <button className="loggout-button" onClick={ClearToken}>Выйти из аккаунта</button>
                 </div>

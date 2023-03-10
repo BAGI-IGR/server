@@ -20,15 +20,16 @@ axios
     .get('https://robot0005.pythonanywhere.com/profile/', {
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
-            'Authorization': 'Token' + ' ' + Token
+            'Authorization': 'Token ' + Token
         },
     })
     .then(res => {
         console.log(res.data)
         for (let i in res.data) {
-            localStorage.setItem('users' + i, res.data[i].fio)
+            localStorage.setItem('users_' + i, res.data[i].fio)
             localStorage.setItem('number_users', i)
         }
+        localStorage.setItem('profile_all', JSON.stringify(res.data))
     })
     .catch(err => {
         console.log(err)
@@ -79,12 +80,9 @@ window.addEventListener('load', async function (event) {
             })
     } else {
         if (window.location.href !== window.location.href("http://localhost:3000/")) {
-            document.getElementById('sidebar close').style.display = "none";
             setTimeout(() => {
                 window.location.replace("http://localhost:3000/")
-            }, 30000);
-        } else {
-            document.getElementById('sidebar close').style.display = "none";
+            }, 500);
         }
     }
 });

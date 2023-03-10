@@ -6,8 +6,8 @@ import {Delete} from "./functions";
 
 
 let user_id = localStorage.getItem('user_id')
-function Archive_my() {
-    let [archivemy, SetArchivemy] = useState()
+function Archive_author() {
+    let [archiveAuthor, SetArchiveAuthor] = useState()
     let Token = localStorage.getItem('Token')
     useEffect(() => {
         axios
@@ -18,25 +18,25 @@ function Archive_my() {
                 },
             })
             .then(res => {
-                SetArchivemy(res.data)
+                SetArchiveAuthor(res.data)
             })
             .catch(err => {
             })
     }, [])
-    function sorta(archivmy){
+    function archive_author(task){
         let sorta_tasks = []
-        for(let i in archivmy){
-            let author = archivmy[i].author
+        for(let i in task){
+            let author = task[i].author
             if(author == user_id) {
-                sorta_tasks.push(archivmy[i])
+                sorta_tasks.push(task[i])
             }
         }
         return sorta_tasks
     }
-    sorta(archivemy);
+    archive_author(archiveAuthor);
     return (
         <div className="all-tasks-status" id="all-tasks-status">
-            {sorta(archivemy)?.filter(object => object.is_active === false).map((task) => (
+            {archive_author(archiveAuthor)?.filter(object => object.is_active === false).map((task) => (
                 <div className="task-status">
                     <div className="task-name">
                         <span key={task.id}>{task.title}</span>
@@ -45,7 +45,7 @@ function Archive_my() {
                         <span className="title-task-content" key={task.id}>{task.status}</span>
                     </div>
                     <div className="task-content">
-                        <span className="employee" key={task.id}>для {localStorage.getItem('users' + (task.assignee - 1))}</span>
+                        <span className="employee" key={task.id}>для {localStorage.getItem('users_' + (task.assignee - 1))}</span>
                         <span className="linedead" key={task.id}>{task.deadline}</span>
                     </div>
                     <div className="edit-edit">
@@ -64,4 +64,4 @@ function Archive_my() {
     );
 }
 
-export default Archive_my;
+export default Archive_author;

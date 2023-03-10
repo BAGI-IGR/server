@@ -5,8 +5,8 @@ import {generatePath} from "react-router";
 
 
 let user_id = localStorage.getItem('user_id')
-function Archive() {
-    let [archive, SetArchive] = useState()
+function Work() {
+    const [tasks, SetTasks] = useState()
     let Token = localStorage.getItem('Token')
     useEffect(() => {
         axios
@@ -17,7 +17,7 @@ function Archive() {
                 },
             })
             .then(res => {
-                SetArchive(res.data)
+                SetTasks(res.data)
             })
             .catch(err => {
             })
@@ -37,10 +37,20 @@ function Archive() {
         console.log({'сортированный массив':sort_tasks})
         return sort_tasks
     }
-    sort(archive);
+    sort(tasks);
     return (
         <div className="all-tasks-status" id="all-tasks-status">
-            {sort(archive)?.filter(object => object.is_active === false).map((task) => (
+            <div className="create-new-task">
+                <p className="createtask">Создать задачу</p>
+                <a className="plusik" href="http://localhost:3000/task/create">
+                    <span className="task-new">
+                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='#91A14D' width='24' height='24'>
+                            <path d="M15 2.013H9V9H2v6h7v6.987h6V15h7V9h-7z"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+            {sort(tasks).filter(object => object.status != "В работе")?.map((task) => (
                 <div className="task-status">
                     <div className="task-name">
                         <span key={task.id}>{task.title}</span>
@@ -64,4 +74,4 @@ function Archive() {
     );
 }
 
-export default Archive;
+export default Work;

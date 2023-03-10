@@ -41,7 +41,7 @@ class Authorization extends React.Component{
         axios.get('https://robot0005.pythonanywhere.com/auth/me/', {
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Token' + ' ' + Token,
+                'Authorization': 'Token ' + Token,
             }
         })
             .then(res => {
@@ -50,7 +50,7 @@ class Authorization extends React.Component{
                     axios.get('https://robot0005.pythonanywhere.com/auth/me/', {
                         headers: {
                             'Content-Type': 'application/json',
-                            'Authorization': 'Token' + ' ' + Token,
+                            'Authorization': 'Token ' + Token,
                         }
                     })
                         .then(res => {

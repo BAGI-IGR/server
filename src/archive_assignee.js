@@ -5,8 +5,8 @@ import {generatePath} from "react-router";
 
 
 let user_id = localStorage.getItem('user_id')
-function Archive_anmy() {
-    let [archiveanmy, SetArchiveanmy] = useState()
+function Archive_assignee() {
+    let [archiveAssignee, SetArchiveAssignee] = useState()
     let Token = localStorage.getItem('Token')
     useEffect(() => {
         axios
@@ -17,25 +17,25 @@ function Archive_anmy() {
                 },
             })
             .then(res => {
-                SetArchiveanmy(res.data)
+                SetArchiveAssignee(res.data)
             })
             .catch(err => {
             })
     }, [])
-    function sorty(archivanmy){
-        let sorty_tasks = []
-        for(let i in archivanmy){
-            let assignee = archivanmy[i].assignee
+    function archive_assignee(task){
+        let archive_assignee_tasks = []
+        for(let i in task){
+            let assignee = task[i].assignee
             if(assignee == user_id) {
-                sorty_tasks.push(archivanmy[i])
+                archive_assignee_tasks.push(task[i])
             }
         }
-        return sorty_tasks
+        return archive_assignee_tasks
     }
-    sorty(archiveanmy);
+    archive_assignee(archiveAssignee);
     return (
         <div className="all-tasks-status" id="all-tasks-status">
-            {sorty(archiveanmy)?.filter(object => object.is_active === false).map((task) => (
+            {archive_assignee(archiveAssignee)?.filter(object => object.is_active === false).map((task) => (
                 <div className="task-status">
                     <div className="task-name">
                         <span key={task.id}>{task.title}</span>
@@ -44,7 +44,7 @@ function Archive_anmy() {
                         <span className="title-task-content" key={task.id}>{task.status}</span>
                     </div>
                     <div className="task-content">
-                        <span className="employee" key={task.id}>для {localStorage.getItem('users' + (task.assignee - 1))}</span>
+                        <span className="employee" key={task.id}>для {localStorage.getItem('users_' + (task.assignee - 1))}</span>
                         <span className="linedead" key={task.id}>{task.deadline}</span>
                     </div>
                     <div className="edit-edit">
@@ -58,4 +58,4 @@ function Archive_anmy() {
     );
 }
 
-export default Archive_anmy;
+export default Archive_assignee;

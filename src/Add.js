@@ -128,10 +128,10 @@ class Add extends React.Component {
                                 <span className="name-executor">Исполнитель:</span>
                                 <select className="choice-executor" name="assignee" onChange={this.changeSelectedMultiple}>
                                     <option value={0} selected disabled>Исполнитель</option>
-                                    <option value={1}>{localStorage.getItem('users' + 0)}</option>
-                                    <option value={2}>{localStorage.getItem('users' + 1)}</option>
-                                    <option value={3}>{localStorage.getItem('users' + 2)}</option>
-                                    {/*<option value={4}>{localStorage.getItem('users' + 3)}</option>*/}
+                                    <option value={1}>{localStorage.getItem('users_' + 0)}</option>
+                                    <option value={2}>{localStorage.getItem('users_' + 1)}</option>
+                                    <option value={3}>{localStorage.getItem('users_' + 2)}</option>
+                                    {/*<option value={4}>{localStorage.getItem('users_' + 3)}</option>*/}
                                 </select>
                                 <span>
                                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -142,7 +142,7 @@ class Add extends React.Component {
                             </div>
                             <div className="block-author">
                                 <span className="name-author">Автор:</span>
-                                <span className="choice-author">Вы</span>
+                                <span className="choice-author">{localStorage.getItem('fio')}</span>
                             </div>
                             <div className="block-file">
                                 <span className="name-file">Вложенные файлы</span>
@@ -159,9 +159,9 @@ class Add extends React.Component {
                         <div className="chat-menu">
                             <form>
                                 <input className="chat-message" placeholder="Создайте задачу, чтобы писать в чат..." disabled/>
-                                <button className="fake_knopka" disabled>
-                                    <p className="otpravit">Отправить</p>
-                                </button>
+                                {/*<button className="fake_knopka" disabled>*/}
+                                {/*    <p className="otpravit">Отправить</p>*/}
+                                {/*</button>*/}
                             </form>
                         </div>
                     </div>
