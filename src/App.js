@@ -38,10 +38,10 @@ function App() {
         let Token = localStorage.getItem('Token')
         if (Token != null) {
             if (document.getElementById('up-footer').style.display != null) {
-               document.getElementById('up-footer').style.display = "block";
+               document.getElementById('up-footer').style.display = "flex";
             }
             if (document.getElementById('down-footer').style.display != null) {
-               document.getElementById('down-footer').style.display = "block";
+               document.getElementById('down-footer').style.display = "flex";
             }
             axios.get('https://robot0005.pythonanywhere.com/auth/me/', {
                 headers: {
