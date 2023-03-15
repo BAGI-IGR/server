@@ -3,18 +3,21 @@ import {Routes, Route} from "react-router-dom";
 import axios from "axios";
 import React from "react";
 import Authorization from "./Authorization";
-import Main from "./Main";
-import Unlock from "./Unlock";
-import Work from "./Work";
-import Closed from "./Closed";
-import Author from "./Author";
-import Assignee from "./Assignee";
-import Add from './Add'
-import View from "./Task_View";
-import Update from "./Task_Update";
-import Archive from "./archive";
-import Archive_author from "./archive_author";
-import Archive_assignee from "./archive_assignee";
+import Main from "./task/Main";
+import Unlock from "./task/Unlock";
+import Work from "./task/Work";
+import Closed from "./task/Closed";
+import Author from "./task/Author";
+import Assignee from "./task/Assignee";
+import Add from './task/Add'
+import View from "./task/Task_View";
+import Update from "./task/Task_Update";
+import Archive from "./archive/archive";
+import Archive_unlock from "./archive/archive_unlock";
+import Archive_work from "./archive/archive_work";
+import Archive_closed from "./archive/archive_closed";
+import Archive_author from "./archive/archive_author";
+import Archive_assignee from "./archive/archive_assignee";
 import Profile from './Profile';
 import Profile_Edit from "./Profile_Edit";
 import Profile_all from "./Profile_all";
@@ -86,27 +89,7 @@ function App() {
                         <span className="text-list">Архив</span>
                     </a>
                 </div>
-                <div className="down-footer">
-                    <input className="search" type="text" placeholder="Поиск..."/>
-                    <select className="filter" name='status'>
-                        <option selected disabled value="Статус">Статус</option>
-                        <option value={"Открыта"} onClick={() => window.location.replace("http://localhost:3000/unlock")}>Открыта</option>
-                        <option value={"В работе"} onClick={() => window.location.replace("http://localhost:3000/work")}>В работе</option>
-                        <option value={"Закрыта"} onClick={() => window.location.replace("http://localhost:3000/closed")}>Выполнена</option>
-                    </select>
-                    <select className="filter">
-                        <option selected disabled value="Автор/исполнитель">Автор/исполнитель</option>
-                        <option value={"Автор"} onClick={() => window.location.replace("http://localhost:3000/author")}>Автор</option>
-                        <option value={"Исполнитель"} onClick={() => window.location.replace("http://localhost:3000/assignee")}>Исполнитель</option>
-                    </select>
-                    <a className="filter" href="http://localhost:3000/">Сбросить фильтр</a>
-                    <a className="profile" href="http://localhost:3000/profile">
-                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.5 7.10526C7.5 11.0226 10.865 14.2105 15 14.2105C19.135 14.2105 22.5 11.0226 22.5 7.10526C22.5 3.1879 19.135 0 15 0C10.865 0 7.5 3.1879 7.5 7.10526ZM28.3333 30H30V28.4211C30 22.3279 24.765 17.3684 18.3333 17.3684H11.6667C5.23333 17.3684 0 22.3279 0 28.4211V30H28.3333Z" fill="#3D7186"/>
-                        </svg>
-                        Профиль
-                    </a>
-                </div>
+
                 <Routes>
                     <Route path="/authorization" element={<Authorization/>}/>
                     {main}
@@ -119,7 +102,10 @@ function App() {
                     <Route path="/task/:id" element={<View/>}/>
                     {update_page}
                     <Route path='/archive' element={<Archive/>}/>
-                    <Route path='/archive/my' element={<Archive_author/>}/>
+                    <Route path='/archive/unlock' element={<Archive_unlock/>}/>
+                    <Route path='/archive/work' element={<Archive_work/>}/>
+                    <Route path='/archive/closed' element={<Archive_closed/>}/>
+                    <Route path='/archive/author' element={<Archive_author/>}/>
                     <Route path='/archive/assignee' element={<Archive_assignee/>}/>
                     <Route path='/profile' element={<Profile/>}/>
                     <Route path='/profile/edit' element={<Profile_Edit/>}/>

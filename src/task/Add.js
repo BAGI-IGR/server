@@ -1,13 +1,11 @@
 import React from "react";
-// import axios from 'axios'
 import './Add.css';
-// import {today} from "react-big-calendar/lib/utils/dates";
 
 
 class Add extends React.Component {
     constructor() {
-        let user_id = localStorage.getItem('user_id')
         super();
+        let user_id = localStorage.getItem('user_id')
         this.state = {
             author: user_id,
             assignee: [],
@@ -49,7 +47,7 @@ class Add extends React.Component {
         });
     }
     submitForm() {
-        this.state.file = null
+        this.setState({file: null});
         console.log(this.state);
         let Token = localStorage.getItem('Token')
         console.log(Token)
@@ -61,25 +59,26 @@ class Add extends React.Component {
                 'Authorization': 'Token ' + Token
             },
         })
-            .then(response => {response.json()
-                console.log(response.status)
-                if(response.status === 201) {
+            .then(response => {
+                console.log(response.status);
+                if (response.status === 201) {
                     document.getElementById('send').style.background = 'green';
                     window.location.replace("http://localhost:3000/");
-                } else{
+                } else {
                     document.getElementById('send').style.background = 'red';
                     window.location.reload();
                 }
+                return response.json();
             })
-            .then((data) => {
-                console.log(data)
+            .then(data => {
+                console.log(data);
             })
             .catch(err => {
-                console.log(err)
-                console.log('oshibka')
+                console.log(err);
+                console.log('Ошибка');
             });
         let user_id = localStorage.getItem('user_id')
-        this.setState = ({
+        this.setState({
             author: user_id,
             assignee: [],
             title: '',
@@ -124,6 +123,10 @@ class Add extends React.Component {
                                 <input class="name_description" placeholder="Описание задачи" name="description"
                                        value={this.state.description} onChange={this.changeHandler} />
                             </div>
+                            <div className="block-author">
+                                <span className="name-author">Автор:</span>
+                                <span className="choice-author">{localStorage.getItem('fio')}</span>
+                            </div>
                             <div className="block-executor">
                                 <span className="name-executor">Исполнитель:</span>
                                 <select className="choice-executor" name="assignee" onChange={this.changeSelectedMultiple}>
@@ -133,16 +136,6 @@ class Add extends React.Component {
                                     <option value={3}>{localStorage.getItem('users_' + 2)}</option>
                                     {/*<option value={4}>{localStorage.getItem('users_' + 3)}</option>*/}
                                 </select>
-                                <span>
-                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect width="40" height="40" rx="6" fill="#91A14D"/>
-                                        <path d="M29.1123 17.2217C30.1548 17.2217 31 18.0669 31 19.1094V19.1094C31 20.152 30.1548 20.9972 29.1123 20.9972H9.88774C8.84517 20.9972 8 20.152 8 19.1094V19.1094C8 18.0669 8.84517 17.2217 9.88774 17.2217H29.1123ZM19.5115 8C20.6889 8 21.6433 8.95442 21.6433 10.1318V28.8682C21.6433 30.0456 20.6889 31 19.5115 31V31C18.3342 31 17.3798 30.0456 17.3798 28.8682V10.1318C17.3798 8.95442 18.3342 8 19.5115 8V8Z" fill="white"/>
-                                    </svg>
-                                </span>
-                            </div>
-                            <div className="block-author">
-                                <span className="name-author">Автор:</span>
-                                <span className="choice-author">{localStorage.getItem('fio')}</span>
                             </div>
                             <div className="block-file">
                                 <span className="name-file">Вложенные файлы</span>

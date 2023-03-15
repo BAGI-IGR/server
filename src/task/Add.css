@@ -170,6 +170,7 @@
     display: flex;
     width: 649px;
     height: 40px;
+    margin-bottom: 33px;
 }
 
 .name-executor {
@@ -201,8 +202,7 @@
 }
 
 .block-author {
-    margin-top: 19px;
-    margin-bottom: 33px;
+    margin-bottom: 19px;
     display: flex;
     width: 585px;
     height: 40px;
@@ -330,6 +330,8 @@
     height: 35px;
 
     background: #707070;
+    border-radius: 20px;
+    margin-right: 10px;
 }
 
 .chat-cloud {
