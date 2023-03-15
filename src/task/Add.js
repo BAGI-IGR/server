@@ -47,7 +47,7 @@ class Add extends React.Component {
         });
     }
     submitForm() {
-        this.setState({file: null});
+        this.state.file = null
         console.log(this.state);
         let Token = localStorage.getItem('Token')
         console.log(Token)
