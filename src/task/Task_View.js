@@ -117,9 +117,11 @@ export default function View() {
                             {/*       ref={this.fileInput} id="input__file"/>*/}
                         </div>
                         <div className="buttony">
-                            <a className="update" href={generatePath("/task/update/:id/", {id: localStorage.getItem('id')})}>
-                                <p className="update-text">Редактировать</p>
-                            </a>
+                            {user_id == author &&
+                                <a className="update" href={generatePath("/task/update/:id/", {id: localStorage.getItem('id')})}>
+                                    <p className="update-text">Редактировать</p>
+                                </a>
+                            }
                         </div>
                     </div>
                 </div>
