@@ -1,11 +1,9 @@
 import './Task_Update.css';
 import { useEffect, useState } from "react";
 import axios from "axios";
-import makeAnimated from 'react-select/animated';
 import React from "react";
 
 let loc = window.location.href.split('/')[5]
-const animatedComponents = makeAnimated();
 class Update extends React.Component {
     constructor() {
         let user_id = localStorage.getItem('user_id')
