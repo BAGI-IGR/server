@@ -30,6 +30,7 @@ export default function View() {
         .catch(err => {
             console.log(err)
         })
+    let user_id = localStorage.getItem('user_id')
     let author = localStorage.getItem('author')
     let assignee = localStorage.getItem('assignee')
     let title = localStorage.getItem('title')
