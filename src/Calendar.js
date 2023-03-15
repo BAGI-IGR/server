@@ -37,23 +37,23 @@ const localaizer = dateFnsLocalizer({
 export default function Task_Calendar(){
     const [tasks, SetTasks] = useState()
     useEffect(() => {
-    let Token = localStorage.getItem('Token')
-    axios.get('https://robot0005.pythonanywhere.com/tasks/?format=json', {
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-            'Authorization': 'Token' + ' ' + Token
-        },
-    })
-        .then(res => {
-            console.log(res.data)
-            let mas = []
-            for(let i in res.data){
-                mas.push({title: res.data[i].title, allDay:true , start: res.data[i].created_at, end: res.data[i].deadline})
-            }
-            SetTasks(mas)
+        let Token = localStorage.getItem('Token')
+        axios.get('https://robot0005.pythonanywhere.com/tasks/?format=json', {
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+                'Authorization': 'Token' + ' ' + Token
+            },
         })
-        .catch(err => {
-        })
+            .then(res => {
+                console.log(res.data)
+                let mas = []
+                for(let i in res.data){
+                    mas.push({title: res.data[i].title, allDay:true , start: res.data[i].created_at, end: res.data[i].deadline})
+                }
+                SetTasks(mas)
+            })
+            .catch(err => {
+            })
     }, [])
     return(
         <div>

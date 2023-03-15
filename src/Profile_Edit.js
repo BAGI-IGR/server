@@ -47,7 +47,7 @@ class Profile_Edit extends React.Component {
         window.location.replace("https://server-njsy.vercel.app/");
     }
     Save(data) {
-        window.location.replace("http://localhost:3000/profile");
+        window.location.replace("https://server-njsy.vercel.app/profile");
         localStorage.removeItem("fio")
         localStorage.removeItem("email")
         localStorage.removeItem("number")

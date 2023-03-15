@@ -3,18 +3,21 @@ import {Routes, Route} from "react-router-dom";
 import axios from "axios";
 import React from "react";
 import Authorization from "./Authorization";
-import Main from "./Main";
-import Unlock from "./Unlock";
-import Work from "./Work";
-import Closed from "./Closed";
-import Author from "./Author";
-import Assignee from "./Assignee";
-import Add from './Add'
-import View from "./Task_View";
-import Update from "./Task_Update";
-import Archive from "./archive";
-import Archive_author from "./archive_author";
-import Archive_assignee from "./archive_assignee";
+import Main from "./task/Main";
+import Unlock from "./task/Unlock";
+import Work from "./task/Work";
+import Closed from "./task/Closed";
+import Author from "./task/Author";
+import Assignee from "./task/Assignee";
+import Add from './task/Add'
+import View from "./task/Task_View";
+import Update from "./task/Task_Update";
+import Archive from "./archive/archive";
+import Archive_unlock from "./archive/archive_unlock";
+import Archive_work from "./archive/archive_work";
+import Archive_closed from "./archive/archive_closed";
+import Archive_author from "./archive/archive_author";
+import Archive_assignee from "./archive/archive_assignee";
 import Profile from './Profile';
 import Profile_Edit from "./Profile_Edit";
 import Profile_all from "./Profile_all";
@@ -37,12 +40,9 @@ function App() {
     window.addEventListener('load', async function (event) {
         let Token = localStorage.getItem('Token')
         if (Token != null) {
-            if (document.getElementById('up-footer').style.display != null) {
-               document.getElementById('up-footer').style.display = "flex";
-            }
-            if (document.getElementById('down-footer').style.display != null) {
-               document.getElementById('down-footer').style.display = "flex";
-            }
+            // if (document.getElementById('sidebar close') != null) {
+            //    document.getElementById('sidebar close').style.display = "block";
+            // }
             axios.get('https://robot0005.pythonanywhere.com/auth/me/', {
                 headers: {
                     'Content-Type': 'application/json',
@@ -55,8 +55,6 @@ function App() {
                     console.log(user_id)
                     if (res.status === 401) {
                         window.location.replace("https://server-njsy.vercel.app/");
-                        document.getElementById('up-footer').style.display = "none";
-                        document.getElementById('down-footer').style.display = "none";
                     }
                 })
                 .catch(err => {
@@ -64,14 +62,13 @@ function App() {
                     console.log('oshibka')
                 })
         } else {
-            document.getElementById('up-footer').style.display = "none";
-            document.getElementById('down-footer').style.display = "none";
+            // document.getElementById('sidebar close').style.display = "none";
         }
     })
     return (
         <div>
             <div className="slider-main">
-                <div className="up-footer" id="up-footer">
+                <div className="up-footer">
                     <a className="home" href="https://server-njsy.vercel.app/">
                         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15.0404 0.458181C14.9092 0.313869 14.7493 0.198564 14.571 0.119661C14.3926 0.0407585 14.1998 0 14.0047 0C13.8097 0 13.6169 0.0407585 13.4385 0.119661C13.2602 0.198564 13.1003 0.313869 12.9691 0.458181L0.373406 14.453C0.187672 14.6533 0.0645933 14.9035 0.019342 15.1728C-0.0259092 15.4422 0.00864462 15.7189 0.118744 15.9688C0.228844 16.2188 0.409677 16.431 0.638954 16.5795C0.86823 16.7279 1.13593 16.806 1.40905 16.8041H4.2081V26.6005C4.2081 26.9717 4.35555 27.3276 4.61801 27.5901C4.88047 27.8526 5.23644 28 5.60762 28H22.4019C22.7731 28 23.129 27.8526 23.3915 27.5901C23.6539 27.3276 23.8014 26.9717 23.8014 26.6005V16.8041H26.6004C26.9716 16.8041 27.3276 16.6567 27.5901 16.3942C27.8525 16.1318 28 15.7758 28 15.4047C28.0026 15.053 27.8726 14.7132 27.6361 14.453L15.0404 0.458181Z" fill="#3D7186"/>
@@ -92,33 +89,7 @@ function App() {
                         <span className="text-list">Архив</span>
                     </a>
                 </div>
-                <div className="down-footer" id="down-footer">
-                    <input className="search" type="text" placeholder="Поиск..."/>
-                    <select className="filter" name='status'>
-                        <option selected disabled value="Статус">Статус</option>
-                        <option value={"Открыта"}>
-                            <a className="tak-v" href="https://server-njsy.vercel.app/unlock">Открыта</a>
-                        </option>
-                        <option value={"В работе"}>
-                            <a className="tak-v" href="https://server-njsy.vercel.app/work">В работе</a>
-                        </option>
-                        <option value={"Закрыта"}>
-                            <a className="tak-v" href="https://server-njsy.vercel.app/closed">Закрыта</a>
-                        </option>
-                    </select>
-                    <select className="filter">
-                        <option selected disabled value="Автор/исполнитель">Автор/исполнитель</option>
-                        <option value={"Автор"} onClick={() => window.location.replace("https://server-njsy.vercel.app/author")}>Автор</option>
-                        <option value={"Исполнитель"} onClick={() => window.location.replace("https://server-njsy.vercel.app/assignee")}>Исполнитель</option>
-                    </select>
-                    <a className="filter" href="https://server-njsy.vercel.app/">Сбросить фильтр</a>
-                    <a className="profile" href="https://server-njsy.vercel.app/profile">
-                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.5 7.10526C7.5 11.0226 10.865 14.2105 15 14.2105C19.135 14.2105 22.5 11.0226 22.5 7.10526C22.5 3.1879 19.135 0 15 0C10.865 0 7.5 3.1879 7.5 7.10526ZM28.3333 30H30V28.4211C30 22.3279 24.765 17.3684 18.3333 17.3684H11.6667C5.23333 17.3684 0 22.3279 0 28.4211V30H28.3333Z" fill="#3D7186"/>
-                        </svg>
-                        Профиль
-                    </a>
-                </div>
+
                 <Routes>
                     <Route path="/authorization" element={<Authorization/>}/>
                     {main}
@@ -131,6 +102,9 @@ function App() {
                     <Route path="/task/:id" element={<View/>}/>
                     {update_page}
                     <Route path='/archive' element={<Archive/>}/>
+                    <Route path='/archive/unlock' element={<Archive_unlock/>}/>
+                    <Route path='/archive/work' element={<Archive_work/>}/>
+                    <Route path='/archive/closed' element={<Archive_closed/>}/>
                     <Route path='/archive/author' element={<Archive_author/>}/>
                     <Route path='/archive/assignee' element={<Archive_assignee/>}/>
                     <Route path='/profile' element={<Profile/>}/>
