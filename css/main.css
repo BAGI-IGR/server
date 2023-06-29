@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+.content {
+    position: static;
+    display: flex;
+    align-items: flex-end;
+}
+
+.content-text {
+    display: flex;
+    position: absolute;
+    margin-left: 100px;
+    margin-bottom: 40px;
+    color: #fff;
+    font-size: 25px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.arrow {
+    margin-left: 80px;
+}
