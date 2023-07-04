@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1 {
@@ -26,5 +27,143 @@ h1 {
 }
 
 .arrow {
-    margin-left: 80px;
+    margin-left: 450px;
+}
+
+.information {
+  display: flex;
+  margin-left: 75px;
+  margin-top: 90px;
+  color: #000;
+  font-size: 45px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: regular;
+  line-height: normal;
+}
+
+.adress_block {
+  display: flex;
+  color: #000;
+  font-size: 45px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.35px;
+}
+
+.partner_card {
+  display: flex;
+  color: #000;
+  font-size: 45px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.35px;
+}
+
+.INN_block {
+  display: flex;
+  margin-top: 100px;
+  margin-left: -230px;
+}
+
+.INN {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.INN_text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: regular;
+  font-size: 40px;
+}
+
+.KPP_block {
+  display: flex;
+  margin-top: 100px;
+  margin-left: 50px;
+  font-size: 40px;
+}
+
+.KPP {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.adress {
+  display: flex;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: regular;
+  font-size: 40px;
+  width: 775px;
+  margin-left: 75px;
+}
+
+.adresstext {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: regular;
+  font-size: 40px;
+  margin-left: -650px;
+  margin-top: 100px;
+}
+
+.copy_adress {
+  color: #3A83F0;
+  font-size: 25px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  margin-left: -200px;
+  margin-top: 100px;
+
+}
+
+.partner_card {
+  display: flex;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: regular;
+  font-size: 40px;
+  width: 717px;
+  margin-top: 50px;
+}
+
+.OGRN_block {
+  display: flex;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: regular;
+  font-size: 40px;
+  width: 717px;
+  margin-left: 75px;
+  margin-top: -45px;
+}
+
+.OGRN_text {
+  display: flex;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  width: 717px;
+  margin-left: -273px;
+  margin-top: 100px;
+}
+
+.numberOGRN {
+  display: flex;
+  margin-top: 100px;
+  margin-left: -595px;
 }
