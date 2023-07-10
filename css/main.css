@@ -3,8 +3,58 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-h1 {
+h1, p {
     margin: 0;
+}
+
+input {
+    display: none;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.numbers {
+    border: none;
+    background: none;
+    color: #3A83F0;
+    margin-left: 100px;
+    font-size: 25px;
+    text-decoration-line: underline;
 }
 
 .content {
@@ -31,139 +81,388 @@ h1 {
 }
 
 .information {
-  display: flex;
-  margin-left: 75px;
-  margin-top: 90px;
-  color: #000;
-  font-size: 45px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: regular;
-  line-height: normal;
+    display: flex;
+    flex-direction: column;
+    margin-left: 75px;
+    margin-top: 90px;
+    color: #000;
+    font-size: 45px;
 }
 
-.adress_block {
-  display: flex;
-  color: #000;
-  font-size: 45px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 1.35px;
-}
-
-.partner_card {
-  display: flex;
-  color: #000;
-  font-size: 45px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 1.35px;
+.information-block {
+    margin-left: 100px;
+    margin-top: 45px;
+    display: flex;
 }
 
 .INN_block {
-  display: flex;
-  margin-top: 100px;
-  margin-left: -230px;
+    display: flex;
+    margin-right: 85px;
 }
 
 .INN {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 40px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
 }
 
 .INN_text {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: regular;
-  font-size: 40px;
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 40px;
 }
 
 .KPP_block {
-  display: flex;
-  margin-top: 100px;
-  margin-left: 50px;
-  font-size: 40px;
+    display: flex;
+    font-size: 40px;
 }
 
 .KPP {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 40px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.adress_block {
+    margin-left: 75px;
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    font-size: 45px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.35px;
+}
+
+.adress-content {
+    display: flex;
 }
 
 .adress {
-  display: flex;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: regular;
-  font-size: 40px;
-  width: 775px;
-  margin-left: 75px;
+    font-size: 40px;
 }
 
 .adresstext {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: regular;
-  font-size: 40px;
-  margin-left: -650px;
-  margin-top: 100px;
-}
-
-.copy_adress {
-  color: #3A83F0;
-  font-size: 25px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-decoration-line: underline;
-  margin-left: -200px;
-  margin-top: 100px;
-
+    font-size: 40px;
+    margin-left: 100px;
+    margin-top: 45px;
 }
 
 .partner_card {
-  display: flex;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: regular;
-  font-size: 40px;
-  width: 717px;
-  margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 75px;
+    margin-top: 90px;
+    color: #000;
+    letter-spacing: 1.35px;
+    font-size: 40px;
 }
 
-.OGRN_block {
-  display: flex;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: regular;
-  font-size: 40px;
-  width: 717px;
-  margin-left: 75px;
-  margin-top: -45px;
+.card-content {
+    display: flex;
+    margin-left: 100px;
+    margin-top: 45px;
 }
 
-.OGRN_text {
-  display: flex;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 40px;
-  width: 717px;
-  margin-left: -273px;
-  margin-top: 100px;
+.download-partner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
-.numberOGRN {
-  display: flex;
-  margin-top: 100px;
-  margin-left: -595px;
+.download-partner .download-partnertext {
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
+
+.download-partner .download-partnertext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.download-partner:hover .download-partnertext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.download-card {
+    border: none;
+    background: none;
+    color: #3A83F0;
+    font-size: 25px;
+    text-decoration-line: underline;
+    margin-top: -35px;
+}
+
+.card_text {
+    display: flex;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.activity-content {
+    display: flex;
+    margin-left: 100px;
+    margin-top: 45px;
+}
+
+.main_text {
+    display: flex;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.second-activity-content {
+    display: flex;
+    margin-left: 100px;
+    margin-top: 45px;
+}
+
+.second_text {
+    display: flex;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    width: 700px;
+}
+
+.details-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0px;
+    margin-top: 90px;
+    color: #000;
+    letter-spacing: 1.35px;
+    font-size: 40px;
+}
+
+.download {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.download .downloadtext {
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.download .downloadtext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.download:hover .downloadtext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.Download-details {
+    border: none;
+    background: none;
+    color: #3A83F0;
+    font-size: 25px;
+    text-decoration-line: underline;
+    margin-top: -35px;
+}
+
+.check-content {
+    display: flex;
+    margin-left: 100px;
+    margin-top: 45px;
+}
+
+.check_text {
+    display: flex;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.bank-content {
+    display: flex;
+    margin-left: 100px;
+    margin-top: 45px;
+}
+
+.bank_text {
+    display: flex;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.correspondent {
+    display: flex;
+    margin-left: 100px;
+    margin-top: 45px;
+}
+
+.correspondent_text {
+    display: flex;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.bik-content {
+    display: flex;
+    margin-left: 100px;
+    margin-top: 45px;
+}
+
+.bik_text {
+    display: flex;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0px;
+    margin-top: 90px;
+    color: #000;
+    letter-spacing: 1.35px;
+    font-size: 40px;
+}
+
+.director {
+    display: flex;
+    margin-left: 100px;
+    margin-top: 45px;
+}
+
+.director_text {
+    display: flex;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.phone {
+    display: flex;
+    margin-left: 100px;
+    margin-top: 45px;
+}
+
+.phone_text {
+    display: flex;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.phone_number {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.phone_number .phone_number {
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.phone_number .phone_numbertext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.phone_number:hover .phone_numbertext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.call_number {
+    border: none;
+    background: none;
+    color: #3A83F0;
+    font-size: 40px;
+    text-decoration-line: underline;
+    margin-top: 0px;
+}
+
+.mail-content {
+    display: flex;
+    margin-left: 100px;
+    margin-top: 45px;
+}
+
+.mail_text {
+    display: flex;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+

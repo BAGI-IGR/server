@@ -18,26 +18,111 @@
         </div>
     </div>
     <div class="information">
-        Информация
-        <div class="INN_block">
-            <p class="INN">ИНН:</p>
-            <p class="INN_text"> 1674004405</p>
+        <div class="information-text">
+            Информация
         </div>
-        <div class="KPP_block">
-            <p class="KPP">КПП:</p>
-            <p class="KPP_text"> 167401001</p>
+        <div class="information-block">
+            <div class="INN_block">
+                <p class="INN">ИНН:</p>
+                <p class="INN_text"> 1674004405</p>
+            </div>
+            <div class="KPP_block">
+                <p class="KPP">КПП:</p>
+                <p class="KPP_text"> 167401001</p>
+            </div>
         </div>
     </div>
     <div class="adress_block">
-        <p class="adress">Юридический адрес:</p>
+        <div class="adress-content">
+            <p class="adress">Юридический адрес:</p>
+            <input type="text" value="423600, Республика Татарстан, г. Елабуга, ул. Автомобилистов, дом 4, квартира 1." id="myInput"/>
+
+            <div class="tooltip">
+                <button onclick="myFunction()" onmouseout="outFunc()" class="numbers">
+                    <span class="tooltiptext" id="myTooltip">Скопировать в буфер обмена</span>
+                    Скопировать
+                </button>
+            </div>
+        </div>
         <p class="adresstext">423600, Республика Татарстан, г. Елабуга, ул. Автомобилистов, дом 4, квартира 1.</p>
-        <p class="copy_adress">Скопировть</p>
     </div>
     <div class="partner_card">
-        <div class="OGRN_block">Карта партнера
-            <p class="OGRN_text">ОГРН:</p>
+        <div class="card-name">Карта партнера</div>
+        <div class="download-partner">
+                <button onclick="myCard()" onmouseout="offFunc()" class="download-card">
+                    <span class="button-card" id="myCard">Скачать файл "Карта партнера.doc"</span>
+                </button>
+        <div class="card-content">
+            <p class="card_text">ОГРН:</p>
             <p class="numberOGRN"> 1231600008914</p>
         </div>
+        <div class="activity-content">
+            <p class="main_text">Основной вид деятельности: </p>
+            <p class="main_content"> Разработка строительных материалов.</p>
+        </div>
+        <div class="second-activity-content">
+            <p class="second_text">Доп. вид деятельности: </p>
+            <p class="second_content">Строительство прочих инженерных сооружений, не включенных в другие группировки.</p>
+        </div>
     </div>
+    <div class="details-content">
+        <div class="details_name">Банковские реквизиты </div>
+        <div class="download">
+                <button onclick="myDetails()" onmouseout="endFunc()" class="Download-details">
+                    <span class="button-details" id="myDetails">Скачать файл "Банковские реквизиты.doc"</span>
+                </button>
+        </div>
+        <div class="check-content">
+          <p class="check_text">Расчетный счет: </p>
+          <p class="check_number">40702810490020001030</p>
+        </div>
+        <div class="bank-content">
+          <p class="bank_text">Банк:</p>
+          <p class="bank_name"> ПАО “Ак барс Банк”</p>
+        </div>
+        <div class="correspondent">
+          <p class="correspondent_text">Корреспондентский счет:</p>
+          <p class="correspondent_number">30101810000000000805</p>
+        </div>
+        <div class="bik-content">
+          <p class="bik_text">БИК:</p>
+          <p class="bik_number"> 049205805</p>
+        </div>
+    </div>
+    <div class="contacts">
+        <div class="contacts-name">Контакты</div>
+        <div class="director">
+            <p class="director_text">Генеральный директор:  </p>
+            <p class="fio_director">Колесников Виталий Николаевич</p>
+        </div>
+        <div class="phone">
+            <p class="phone_text">Контактный телефон:</p>
+            <div class="phone_number">
+                <button onclick="myPhone()" onmouseout="outFunc()" class="call_number">
+                    <span class="button-details" id="myPhone">89274430182</span>
+                </button>
+            </div>
+        </div>
+        <div class="mail-content">
+            <p class="mail_text">Электронный адрес: </p>
+            <p class="mail">K.Kolesnikovvitaly@gmail.com</p>
+        </div>
+    </div>
+
+    <script>
+        function myFunction() {
+            var copyText = document.getElementById("myInput");
+            copyText.select();
+            document.execCommand("copy");
+
+            var tooltip = document.getElementById("myTooltip");
+            tooltip.innerHTML = "Скопировано: " + copyText.value;
+        }
+
+        function outFunc() {
+            var tooltip = document.getElementById("myTooltip");
+            tooltip.innerHTML = "Скопировать в буфер обмена";
+        }
+    </script>
 </body>
 </html>
