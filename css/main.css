@@ -90,14 +90,14 @@ input {
 }
 
 .information-block {
-    margin-left: 100px;
+    margin-left: 0px;
     margin-top: 45px;
     display: flex;
 }
 
 .INN_block {
     display: flex;
-    margin-right: 85px;
+    margin-right: 20px;
 }
 
 .INN {
@@ -149,7 +149,7 @@ input {
 
 .adresstext {
     font-size: 40px;
-    margin-left: 100px;
+    margin-left: 0px;
     margin-top: 45px;
 }
 
@@ -169,7 +169,7 @@ input {
 
 .card-content {
     display: flex;
-    margin-left: 100px;
+    margin-left: 0px;
     margin-top: 45px;
 }
 
@@ -231,7 +231,7 @@ input {
 
 .activity-content {
     display: flex;
-    margin-left: 100px;
+    margin-left: 0px;
     margin-top: 45px;
 }
 
@@ -244,7 +244,7 @@ input {
 
 .second-activity-content {
     display: flex;
-    margin-left: 100px;
+    margin-left: 0px;
     margin-top: 45px;
 }
 
@@ -313,7 +313,7 @@ input {
 
 .check-content {
     display: flex;
-    margin-left: 100px;
+    margin-left: 0px;
     margin-top: 45px;
 }
 
@@ -327,7 +327,7 @@ input {
 
 .bank-content {
     display: flex;
-    margin-left: 100px;
+    margin-left: 0px;
     margin-top: 45px;
 }
 
@@ -341,7 +341,7 @@ input {
 
 .bik-content {
     display: flex;
-    margin-left: 100px;
+    margin-left: 0px;
     margin-top: 45px;
 }
 
@@ -356,7 +356,7 @@ input {
 .contacts {
     display: flex;
     flex-direction: column;
-    margin-left: 0px;
+    margin-left: 75px;
     margin-top: 90px;
     color: #000;
     letter-spacing: 1.35px;
@@ -365,7 +365,7 @@ input {
 
 .director {
     display: flex;
-    margin-left: 100px;
+    margin-left: 0px;
     margin-top: 45px;
 }
 
@@ -379,7 +379,7 @@ input {
 
 .phone {
     display: flex;
-    margin-left: 100px;
+    margin-left: 0px;
     margin-top: 45px;
 }
 
@@ -440,7 +440,7 @@ input {
 
 .mail-content {
     display: flex;
-    margin-left: 100px;
+    margin-left: 0px;
     margin-top: 45px;
 }
 
