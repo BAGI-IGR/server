@@ -657,6 +657,7 @@ input {
     }
 
     .contacts {
+        margin-left: 40px;
         margin-top: 50px;
         font-size: 20px;
     }
