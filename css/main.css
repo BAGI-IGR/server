@@ -561,10 +561,9 @@ input {
     .information {
         margin-left: 40px;
         margin-top: 50px;
-        font-size: 25px;
+        font-size: 20px;
     }
     .information-block {
-        margin-left: 50px;
         margin-top: 29px;
     }
     .INN {
@@ -592,7 +591,6 @@ input {
         font-size: 15px;
     }
     .adresstext {
-        margin-left: 50px;
         margin-top: 29px;
         font-size: 20px;
     }
@@ -607,18 +605,15 @@ input {
         font-size: 15px;
     }
     .card-content {
-        margin-left: 50px;
         margin-top: 29px;
     }
     .card_text {
         font-size: 20px;
     }
     .activity-content {
-        margin-left: 50px;
         margin-top: 29px;
     }
     .second-activity-content {
-        margin-left: 50px;
         margin-top: 29px;
     }
     .main_text {
@@ -662,31 +657,25 @@ input {
         font-size: 20px;
     }
     .check-content {
-        margin-left: 50px;
         margin-top: 29px;
     }
     .bank-content {
-        margin-left: 50px;
         margin-top: 29px;
     }
     .correspondent {
-        margin-left: 50px;
         margin-top: 29px;
     }
     .bik-content {
-        margin-left: 50px;
         margin-top: 29px;
     }
     .director {
         font-size: 20px;
-        margin-left: 50px;
         margin-top: 29px;
     }
     .director_text {
         font-size: 20px;
     }
     .phone {
-        margin-left: 50px;
         margin-top: 29px;
         font-size: 20px;
     }
@@ -697,7 +686,6 @@ input {
         font-size: 20px;
     }
     .mail-content {
-        margin-left: 50px;
         margin-top: 29px;
     }
     .mail_text {
