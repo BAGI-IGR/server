@@ -565,3 +565,155 @@ input {
         font-size: 30px;
     }
 }
+
+@media (max-width: 850px) {
+    .content-text {
+        margin-left: 80px;
+        margin-bottom: 40px;
+        font-size: 10px;
+    }
+    .information {
+        margin-left: 40px;
+        margin-top: 50px;
+        font-size: 25px;
+    }
+    .information-block {
+        margin-left: 50px;
+        margin-top: 29px;
+    }
+    .INN {
+        font-size: 20px;
+    }
+    .INN_text {
+        font-size: 20px;
+    }
+    .KPP_block {
+        font-size: 20px;
+    }
+    .KPP {
+        font-size: 20px;
+    }
+
+    .adress_block {
+        margin-left: 40px;
+        margin-top: 50px;
+    }
+    .adress {
+        font-size: 20px;
+    }
+    .numbers {
+        margin-left: 30px;
+        font-size: 15px;
+    }
+    .adresstext {
+        margin-left: 50px;
+        margin-top: 29px;
+        font-size: 20px;
+    }
+
+    .partner_card {
+        margin-left: 40px;
+        margin-top: 50px;
+        font-size: 20px;
+    }
+    .download-card {
+        margin-top: 5px;
+        font-size: 15px;
+    }
+    .card-content {
+        margin-left: 50px;
+        margin-top: 29px;
+    }
+    .card_text {
+        font-size: 20px;
+    }
+    .activity-content {
+        margin-left: 50px;
+        margin-top: 29px;
+    }
+    .second-activity-content {
+        margin-left: 50px;
+        margin-top: 29px;
+    }
+    .main_text {
+        font-size: 20px;
+    }
+
+    .second_text {
+        font-size: 20px;
+    }
+    .second_content {
+        font-size: 20px;
+    }
+
+    .details-content {
+        margin-top: 50px;
+        font-size: 20px;
+    }
+    .Download-details {
+        margin-top: 5px;
+        font-size: 15px;
+    }
+    .check_text {
+        font-size: 20px;
+    }
+    .bank_text {
+        font-size: 20px;
+    }
+    .correspondent_text {
+        font-size: 20px;
+    }
+    .bik-content {
+        font-size: 20px;
+    }
+    .bik_text {
+        font-size: 20px;
+    }
+
+    .contacts {
+        margin-top: 50px;
+        font-size: 20px;
+    }
+    .check-content {
+        margin-left: 50px;
+        margin-top: 29px;
+    }
+    .bank-content {
+        margin-left: 50px;
+        margin-top: 29px;
+    }
+    .correspondent {
+        margin-left: 50px;
+        margin-top: 29px;
+    }
+    .bik-content {
+        margin-left: 50px;
+        margin-top: 29px;
+    }
+    .director {
+        font-size: 20px;
+        margin-left: 50px;
+        margin-top: 29px;
+    }
+    .director_text {
+        font-size: 20px;
+    }
+    .phone {
+        margin-left: 50px;
+        margin-top: 29px;
+        font-size: 20px;
+    }
+    .phone_text {
+        font-size: 20px;
+    }
+    .call-number {
+        font-size: 20px;
+    }
+    .mail-content {
+        margin-left: 50px;
+        margin-top: 29px;
+    }
+    .mail_text {
+        font-size: 20px;
+    }
+}
