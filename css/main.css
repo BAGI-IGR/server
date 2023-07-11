@@ -339,20 +339,6 @@ input {
     font-size: 40px;
 }
 
-.correspondent {
-    display: flex;
-    margin-left: 100px;
-    margin-top: 45px;
-}
-
-.correspondent_text {
-    display: flex;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 40px;
-}
-
 .bik-content {
     display: flex;
     margin-left: 100px;
