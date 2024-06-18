@@ -51,7 +51,7 @@ class Add extends React.Component {
         console.log(this.state);
         let Token = localStorage.getItem('Token')
         console.log(Token)
-        fetch('https://robot0005.pythonanywhere.com/task/create/', {
+        fetch('https://alabuga.pythonanywhere.com/task/create/', {
             method: "POST",
             body: JSON.stringify(this.state),
             headers: {

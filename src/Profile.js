@@ -9,7 +9,7 @@ function Profile() {
         let Token = localStorage.getItem('Token')
         console.log(Token);
         if (Token != null) {
-            axios.get('https://robot0005.pythonanywhere.com/auth/me/', {
+            axios.get('https://alabuga.pythonanywhere.com/auth/me/', {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Token ' + Token,
@@ -37,7 +37,7 @@ function Profile() {
     const [profiles, SetProfile] = useState()
     let Token = localStorage.getItem('Token')
     useEffect(() => {
-        axios.get('https://robot0005.pythonanywhere.com/profile/retrieve/' + user_id, {
+        axios.get('https://alabuga.pythonanywhere.com/profile/retrieve/' + user_id, {
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
                 'Authorization': 'Token ' + Token

@@ -10,7 +10,7 @@ function Archive_assignee() {
     let Token = localStorage.getItem('Token')
     useEffect(() => {
         axios
-            .get('https://robot0005.pythonanywhere.com/tasks/?format=json', {
+            .get('https://alabuga.pythonanywhere.com/tasks/?format=json', {
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
                     'Authorization': 'Token ' + Token

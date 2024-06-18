@@ -30,7 +30,7 @@ class Profile_Edit extends React.Component {
         let Token = localStorage.getItem('Token')
         event.preventDefault();
         console.log(this.state)
-        fetch('https://robot0005.pythonanywhere.com/profile/update/' + user_id, {
+        fetch('https://alabuga.pythonanywhere.com/profile/update/' + user_id, {
             headers: {'Content-type': 'application/json'}, method: "PUT",
             body: JSON.stringify(this.state),
             'Authorization': 'Token ' + Token

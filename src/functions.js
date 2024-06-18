@@ -6,7 +6,7 @@ export function Delete(id) {
     window.location = window.location.href
     let Token = localStorage.getItem('Token')
     axios
-        .delete('https://robot0005.pythonanywhere.com/task/delete/' + id, {
+        .delete('https://alabuga.pythonanywhere.com/task/delete/' + id, {
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
                 'Authorization': 'Token ' + Token

@@ -62,7 +62,7 @@ class Update extends React.Component {
         console.log(this.state);
         let Token = localStorage.getItem('Token')
         console.log(Token)
-        fetch('https://robot0005.pythonanywhere.com/task/update/' + loc, {
+        fetch('https://alabuga.pythonanywhere.com/task/update/' + loc, {
             method: "PUT",
             body: JSON.stringify(this.state),
             headers: {

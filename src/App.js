@@ -43,7 +43,7 @@ function App() {
             if (document.getElementById('up-footer') != null) {
                document.getElementById('up-footer').style.display = "flex";
             }
-            axios.get('https://robot0005.pythonanywhere.com/auth/me/', {
+            axios.get('https://alabuga.pythonanywhere.com/auth/me/', {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Token ' + Token,

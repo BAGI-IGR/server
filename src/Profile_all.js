@@ -10,7 +10,7 @@ function Profile_all() {
     let Token = localStorage.getItem('Token')
     const [profiles, SetProfiles] = useState()
     axios
-        .get('https://robot0005.pythonanywhere.com/profile/', {
+        .get('https://alabuga.pythonanywhere.com/profile/', {
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
                 'Authorization': 'Token ' + Token
